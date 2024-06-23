@@ -11,7 +11,7 @@ import SwiftUI
 struct Terra_Peregrini_RahasyaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }

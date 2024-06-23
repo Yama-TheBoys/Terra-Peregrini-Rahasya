@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */; };
-		D84F10DC2C27E52C00D8AAB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10DB2C27E52C00D8AAB9 /* ContentView.swift */; };
 		D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */; };
 		D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */; };
+		D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10EB2C27F39700D8AAB9 /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D84F10D62C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terra-Peregrini-Rahasya.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terra_Peregrini_RahasyaApp.swift; sourceTree = "<group>"; };
-		D84F10DB2C27E52C00D8AAB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D84F10EB2C27F39700D8AAB9 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +51,9 @@
 		D84F10D82C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya */ = {
 			isa = PBXGroup;
 			children = (
+				D84F10E82C27F34800D8AAB9 /* Data */,
+				D84F10E72C27F34000D8AAB9 /* Feature */,
 				D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */,
-				D84F10DB2C27E52C00D8AAB9 /* ContentView.swift */,
 				D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */,
 				D84F10DF2C27E52D00D8AAB9 /* Preview Content */,
 			);
@@ -65,6 +66,189 @@
 				D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D84F10E72C27F34000D8AAB9 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				D84F11012C27FC8A00D8AAB9 /* MissionFinished */,
+				D84F11002C27FC7B00D8AAB9 /* Mission4 */,
+				D84F10FF2C27FC7700D8AAB9 /* Mission3 */,
+				D84F10FE2C27FC7000D8AAB9 /* Mission2 */,
+				D84F10FC2C27FC5500D8AAB9 /* Mission1 */,
+				D84F10F62C27FBC200D8AAB9 /* JoinRoom */,
+				D84F10ED2C27FA2400D8AAB9 /* CreateRoom */,
+				D84F10E92C27F36100D8AAB9 /* Splash */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		D84F10E82C27F34800D8AAB9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D84F10E92C27F36100D8AAB9 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				D84F10EA2C27F38800D8AAB9 /* View */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		D84F10EA2C27F38800D8AAB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D84F10EB2C27F39700D8AAB9 /* SplashView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D84F10ED2C27FA2400D8AAB9 /* CreateRoom */ = {
+			isa = PBXGroup;
+			children = (
+				D84F10F52C27FB9D00D8AAB9 /* StartGame */,
+				D84F10F42C27FB4F00D8AAB9 /* AssembleTeam */,
+				D84F10F32C27FB3800D8AAB9 /* IoTConnected */,
+				D84F10F22C27FB1800D8AAB9 /* ConnectIoT */,
+				D84F10F12C27FAF900D8AAB9 /* TestSense */,
+				D84F10F02C27FAEA00D8AAB9 /* Name */,
+				D84F10EF2C27FADD00D8AAB9 /* Greetings */,
+			);
+			path = CreateRoom;
+			sourceTree = "<group>";
+		};
+		D84F10EF2C27FADD00D8AAB9 /* Greetings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Greetings;
+			sourceTree = "<group>";
+		};
+		D84F10F02C27FAEA00D8AAB9 /* Name */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Name;
+			sourceTree = "<group>";
+		};
+		D84F10F12C27FAF900D8AAB9 /* TestSense */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TestSense;
+			sourceTree = "<group>";
+		};
+		D84F10F22C27FB1800D8AAB9 /* ConnectIoT */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ConnectIoT;
+			sourceTree = "<group>";
+		};
+		D84F10F32C27FB3800D8AAB9 /* IoTConnected */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IoTConnected;
+			sourceTree = "<group>";
+		};
+		D84F10F42C27FB4F00D8AAB9 /* AssembleTeam */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AssembleTeam;
+			sourceTree = "<group>";
+		};
+		D84F10F52C27FB9D00D8AAB9 /* StartGame */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StartGame;
+			sourceTree = "<group>";
+		};
+		D84F10F62C27FBC200D8AAB9 /* JoinRoom */ = {
+			isa = PBXGroup;
+			children = (
+				D84F10FB2C27FC3C00D8AAB9 /* AssembleTeam */,
+				D84F10FA2C27FC1700D8AAB9 /* HostDetected */,
+				D84F10F92C27FBF400D8AAB9 /* ConnectHost */,
+				D84F10F82C27FBE000D8AAB9 /* Name */,
+				D84F10F72C27FBCB00D8AAB9 /* Greetings */,
+			);
+			path = JoinRoom;
+			sourceTree = "<group>";
+		};
+		D84F10F72C27FBCB00D8AAB9 /* Greetings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Greetings;
+			sourceTree = "<group>";
+		};
+		D84F10F82C27FBE000D8AAB9 /* Name */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Name;
+			sourceTree = "<group>";
+		};
+		D84F10F92C27FBF400D8AAB9 /* ConnectHost */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ConnectHost;
+			sourceTree = "<group>";
+		};
+		D84F10FA2C27FC1700D8AAB9 /* HostDetected */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HostDetected;
+			sourceTree = "<group>";
+		};
+		D84F10FB2C27FC3C00D8AAB9 /* AssembleTeam */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AssembleTeam;
+			sourceTree = "<group>";
+		};
+		D84F10FC2C27FC5500D8AAB9 /* Mission1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mission1;
+			sourceTree = "<group>";
+		};
+		D84F10FE2C27FC7000D8AAB9 /* Mission2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mission2;
+			sourceTree = "<group>";
+		};
+		D84F10FF2C27FC7700D8AAB9 /* Mission3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mission3;
+			sourceTree = "<group>";
+		};
+		D84F11002C27FC7B00D8AAB9 /* Mission4 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mission4;
+			sourceTree = "<group>";
+		};
+		D84F11012C27FC8A00D8AAB9 /* MissionFinished */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MissionFinished;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +321,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D84F10DC2C27E52C00D8AAB9 /* ContentView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
+				D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = WTU6YK528U;
+				DEVELOPMENT_TEAM = 3B2V262XU7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -301,7 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = WTU6YK528U;
+				DEVELOPMENT_TEAM = 3B2V262XU7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
