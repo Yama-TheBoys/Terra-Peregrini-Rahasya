@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354592C2BF0500050EB72 /* Router.swift */; };
+		7BC3545F2C2BF22A0050EB72 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3545E2C2BF22A0050EB72 /* OnboardView.swift */; };
+		7BC354632C2BF3B80050EB72 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354622C2BF3B80050EB72 /* Image.swift */; };
+		7BC354652C2BF54D0050EB72 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354642C2BF54D0050EB72 /* Color.swift */; };
+		7BC354692C2BF74A0050EB72 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354682C2BF74A0050EB72 /* HomeService.swift */; };
+		7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3546B2C2C031B0050EB72 /* HomeService+Delegate.swift */; };
 		D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */; };
 		D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */; };
 		D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */; };
@@ -14,6 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7BC354592C2BF0500050EB72 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		7BC3545E2C2BF22A0050EB72 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		7BC354622C2BF3B80050EB72 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		7BC354642C2BF54D0050EB72 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		7BC354682C2BF74A0050EB72 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		7BC3546A2C2BF83C0050EB72 /* Terra-Peregrini-Rahasya.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Terra-Peregrini-Rahasya.entitlements"; sourceTree = "<group>"; };
+		7BC3546B2C2C031B0050EB72 /* HomeService+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeService+Delegate.swift"; sourceTree = "<group>"; };
 		D84F10D62C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terra-Peregrini-Rahasya.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terra_Peregrini_RahasyaApp.swift; sourceTree = "<group>"; };
 		D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +45,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BC354582C2BF0420050EB72 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				7BC354592C2BF0500050EB72 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7BC3545D2C2BF1D90050EB72 /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				7BC3545E2C2BF22A0050EB72 /* OnboardView.swift */,
+			);
+			path = Onboard;
+			sourceTree = "<group>";
+		};
+		7BC354602C2BF39E0050EB72 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7BC354612C2BF3A90050EB72 /* Extensions */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		7BC354612C2BF3A90050EB72 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7BC354622C2BF3B80050EB72 /* Image.swift */,
+				7BC354642C2BF54D0050EB72 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7BC354662C2BF7260050EB72 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7BC354732C2C1EB30050EB72 /* Torch */,
+				7BC354722C2C1E9F0050EB72 /* AVFoundation */,
+				7BC354712C2C1E900050EB72 /* Camera */,
+				7BC3546F2C2C1E7F0050EB72 /* CoreMotion */,
+				7BC3546E2C2C1E740050EB72 /* NearbyInteraction */,
+				7BC3546D2C2C1E680050EB72 /* MultiPeerConnectivity */,
+				7BC354672C2BF73E0050EB72 /* HomeKit */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7BC354672C2BF73E0050EB72 /* HomeKit */ = {
+			isa = PBXGroup;
+			children = (
+				7BC354682C2BF74A0050EB72 /* HomeService.swift */,
+				7BC3546B2C2C031B0050EB72 /* HomeService+Delegate.swift */,
+			);
+			path = HomeKit;
+			sourceTree = "<group>";
+		};
+		7BC3546D2C2C1E680050EB72 /* MultiPeerConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MultiPeerConnectivity;
+			sourceTree = "<group>";
+		};
+		7BC3546E2C2C1E740050EB72 /* NearbyInteraction */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NearbyInteraction;
+			sourceTree = "<group>";
+		};
+		7BC3546F2C2C1E7F0050EB72 /* CoreMotion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreMotion;
+			sourceTree = "<group>";
+		};
+		7BC354712C2C1E900050EB72 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		7BC354722C2C1E9F0050EB72 /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AVFoundation;
+			sourceTree = "<group>";
+		};
+		7BC354732C2C1EB30050EB72 /* Torch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Torch;
+			sourceTree = "<group>";
+		};
 		D84F10CD2C27E52C00D8AAB9 = {
 			isa = PBXGroup;
 			children = (
@@ -51,7 +162,10 @@
 		D84F10D82C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya */ = {
 			isa = PBXGroup;
 			children = (
-				D84F10E82C27F34800D8AAB9 /* Data */,
+				7BC3546A2C2BF83C0050EB72 /* Terra-Peregrini-Rahasya.entitlements */,
+				7BC354662C2BF7260050EB72 /* Service */,
+				7BC354602C2BF39E0050EB72 /* Helper */,
+				7BC354582C2BF0420050EB72 /* Router */,
 				D84F10E72C27F34000D8AAB9 /* Feature */,
 				D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */,
 				D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */,
@@ -71,184 +185,18 @@
 		D84F10E72C27F34000D8AAB9 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				D84F11012C27FC8A00D8AAB9 /* MissionFinished */,
-				D84F11002C27FC7B00D8AAB9 /* Mission4 */,
-				D84F10FF2C27FC7700D8AAB9 /* Mission3 */,
-				D84F10FE2C27FC7000D8AAB9 /* Mission2 */,
-				D84F10FC2C27FC5500D8AAB9 /* Mission1 */,
-				D84F10F62C27FBC200D8AAB9 /* JoinRoom */,
-				D84F10ED2C27FA2400D8AAB9 /* CreateRoom */,
+				7BC3545D2C2BF1D90050EB72 /* Onboard */,
 				D84F10E92C27F36100D8AAB9 /* Splash */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
 		};
-		D84F10E82C27F34800D8AAB9 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		D84F10E92C27F36100D8AAB9 /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				D84F10EA2C27F38800D8AAB9 /* View */,
-			);
-			path = Splash;
-			sourceTree = "<group>";
-		};
-		D84F10EA2C27F38800D8AAB9 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				D84F10EB2C27F39700D8AAB9 /* SplashView.swift */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D84F10ED2C27FA2400D8AAB9 /* CreateRoom */ = {
-			isa = PBXGroup;
-			children = (
-				D84F10F52C27FB9D00D8AAB9 /* StartGame */,
-				D84F10F42C27FB4F00D8AAB9 /* AssembleTeam */,
-				D84F10F32C27FB3800D8AAB9 /* IoTConnected */,
-				D84F10F22C27FB1800D8AAB9 /* ConnectIoT */,
-				D84F10F12C27FAF900D8AAB9 /* TestSense */,
-				D84F10F02C27FAEA00D8AAB9 /* Name */,
-				D84F10EF2C27FADD00D8AAB9 /* Greetings */,
-			);
-			path = CreateRoom;
-			sourceTree = "<group>";
-		};
-		D84F10EF2C27FADD00D8AAB9 /* Greetings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Greetings;
-			sourceTree = "<group>";
-		};
-		D84F10F02C27FAEA00D8AAB9 /* Name */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Name;
-			sourceTree = "<group>";
-		};
-		D84F10F12C27FAF900D8AAB9 /* TestSense */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TestSense;
-			sourceTree = "<group>";
-		};
-		D84F10F22C27FB1800D8AAB9 /* ConnectIoT */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ConnectIoT;
-			sourceTree = "<group>";
-		};
-		D84F10F32C27FB3800D8AAB9 /* IoTConnected */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = IoTConnected;
-			sourceTree = "<group>";
-		};
-		D84F10F42C27FB4F00D8AAB9 /* AssembleTeam */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AssembleTeam;
-			sourceTree = "<group>";
-		};
-		D84F10F52C27FB9D00D8AAB9 /* StartGame */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = StartGame;
-			sourceTree = "<group>";
-		};
-		D84F10F62C27FBC200D8AAB9 /* JoinRoom */ = {
-			isa = PBXGroup;
-			children = (
-				D84F10FB2C27FC3C00D8AAB9 /* AssembleTeam */,
-				D84F10FA2C27FC1700D8AAB9 /* HostDetected */,
-				D84F10F92C27FBF400D8AAB9 /* ConnectHost */,
-				D84F10F82C27FBE000D8AAB9 /* Name */,
-				D84F10F72C27FBCB00D8AAB9 /* Greetings */,
-			);
-			path = JoinRoom;
-			sourceTree = "<group>";
-		};
-		D84F10F72C27FBCB00D8AAB9 /* Greetings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Greetings;
-			sourceTree = "<group>";
-		};
-		D84F10F82C27FBE000D8AAB9 /* Name */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Name;
-			sourceTree = "<group>";
-		};
-		D84F10F92C27FBF400D8AAB9 /* ConnectHost */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ConnectHost;
-			sourceTree = "<group>";
-		};
-		D84F10FA2C27FC1700D8AAB9 /* HostDetected */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HostDetected;
-			sourceTree = "<group>";
-		};
-		D84F10FB2C27FC3C00D8AAB9 /* AssembleTeam */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AssembleTeam;
-			sourceTree = "<group>";
-		};
-		D84F10FC2C27FC5500D8AAB9 /* Mission1 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mission1;
-			sourceTree = "<group>";
-		};
-		D84F10FE2C27FC7000D8AAB9 /* Mission2 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mission2;
-			sourceTree = "<group>";
-		};
-		D84F10FF2C27FC7700D8AAB9 /* Mission3 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mission3;
-			sourceTree = "<group>";
-		};
-		D84F11002C27FC7B00D8AAB9 /* Mission4 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mission4;
-			sourceTree = "<group>";
-		};
-		D84F11012C27FC8A00D8AAB9 /* MissionFinished */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MissionFinished;
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,8 +269,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BC3545F2C2BF22A0050EB72 /* OnboardView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
+				7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */,
+				7BC354692C2BF74A0050EB72 /* HomeService.swift in Sources */,
 				D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */,
+				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
+				7BC354632C2BF3B80050EB72 /* Image.swift in Sources */,
+				7BC354652C2BF54D0050EB72 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,12 +407,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Terra-Peregrini-Rahasya/Terra-Peregrini-Rahasya.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 3B2V262XU7;
+				DEVELOPMENT_TEAM = 4GHAAG6R5U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -482,12 +438,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Terra-Peregrini-Rahasya/Terra-Peregrini-Rahasya.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 3B2V262XU7;
+				DEVELOPMENT_TEAM = 4GHAAG6R5U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

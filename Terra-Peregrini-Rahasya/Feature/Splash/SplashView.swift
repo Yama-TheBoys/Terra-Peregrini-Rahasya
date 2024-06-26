@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct SplashView: View {
+    @EnvironmentObject var router: Router
+    
     var body: some View {
         ZStack{
-            Image("splashscreen").ignoresSafeArea()
+            Image.SplashScreen
+                .resizable()
+                .ignoresSafeArea()
+            
+            Image.WaveForm
+                .resizable()
             
             VStack{
                 Text("Terra Peregrini Rahasya")
@@ -18,13 +25,16 @@ struct SplashView: View {
                     .padding(.horizontal, 120)
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color.TPRColor.PrimaryBlue)
                 
                 Image(systemName: "touchid")
                     .resizable()
                     .frame(width: 70, height: 70)
                     .foregroundStyle(.white)
                     .offset(y: 210)
+                    .onTapGesture {
+                        router.navigate(to: .onboard)
+                    }
                 
                 Text("Sign your fingerprint to enter")
                     .multilineTextAlignment(.center)
@@ -33,10 +43,11 @@ struct SplashView: View {
                     .foregroundStyle(.white)
                     .opacity(0.5)
                     .offset(y: 260)
-
             }
         }
     }
+    
+    // TODO: Niko create function to wait for 2 seconds then navigate to StartView
 }
 
 #Preview {
