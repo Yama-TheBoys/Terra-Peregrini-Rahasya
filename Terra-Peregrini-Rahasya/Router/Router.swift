@@ -11,7 +11,6 @@ final class Router: ObservableObject {
     
     public enum Destination: Codable, Hashable {
         case onboard
-        case setupHome(Apalah)
     }
     
     @Published var navPath = NavigationPath()
@@ -29,8 +28,8 @@ final class Router: ObservableObject {
     }
 }
 
-typealias Taperable = Codable & Equatable & Hashable
-
-struct Apalah: Taperable {
-    let name: String
-}
+//typealias Taperable = Codable & Equatable & Hashable
+//
+//struct Apalah: Taperable {
+//    let name: String
+//}

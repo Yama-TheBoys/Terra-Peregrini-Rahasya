@@ -20,12 +20,10 @@ struct Terra_Peregrini_RahasyaApp: App {
                         switch destination {
                         case .onboard:
                             OnboardView()
-                        case .setupHome(let apalah):
-                            print(apalah)
                         }
                     }
+                    .environmentObject(router)
             }
-            .environmentObject(router)
         }
     }
 }

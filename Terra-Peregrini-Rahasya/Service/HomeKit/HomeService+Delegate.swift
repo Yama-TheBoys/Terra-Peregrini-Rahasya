@@ -9,6 +9,6 @@ import HomeKit
 
 extension HomeService: HMHomeManagerDelegate {
     func homeManager(_ manager: HMHomeManager, didAdd home: HMHome) {
-        <#code#>
+        
     }
 }

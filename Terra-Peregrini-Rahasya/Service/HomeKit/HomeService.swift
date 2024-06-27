@@ -10,11 +10,9 @@ import HomeKit
 final class HomeService: NSObject {
     
     let homeManager: HMHomeManager
-    let accessoriesSetupManager: HMAccessorySetupManager
     
     override init() {
         self.homeManager = HMHomeManager()
-        self.accessoriesSetupManager = HMAccessorySetupManager()
         super.init()
 
         self.homeManager.delegate = self
