@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct Terra_Peregrini_RahasyaApp: App {
+    
+    @ObservedObject var router = Router()
+    
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            NavigationStack(path: $router.navPath) {
+                SplashView()
+                    .navigationDestination(for: Router.Destination.self) { destination in
+                        switch destination {
+                        case .onboard:
+                            OnboardView()
+                        }
+                    }
+                    .environmentObject(router)
+            }
         }
     }
 }
