@@ -23,6 +23,7 @@ struct MinimumReqView: View {
                     .foregroundStyle(Color(red: 0.85, green: 0.95, blue: 0.99))
                 
                 Text("MINIMUM REQUIREMENTS")
+                    .multilineTextAlignment(.center)
                     .foregroundStyle(Color.white)
                     .font(.custom("JetBrainsMono-Regular", size: 36))
                     .font(.title)
@@ -30,10 +31,16 @@ struct MinimumReqView: View {
                 
                 VStack(alignment: .leading){
                     
-                    Text("To play this game, ensure you have the following devices installed in your room and connected to your HomeKit or HOME app:")
+                    HStack{
+                        Text("To play this game, ensure you have the following devices installed in your room and connected to your ")
+                        + Text("HomeKit").bold()
+                        + Text(" or ")
+                        + Text("HOME").bold()
+                        + Text(" app:")
+                    }
+                        .font(.custom("JetBrainsMono-Regular", size: 18))
                         .padding(.horizontal, 24)
                         .foregroundStyle(Color.white)
-                        .font(.custom("JetBrainsMono-Regular", size: 18))
                     
                     HStack{
                         Image(systemName: "lightbulb.max.fill")
@@ -69,7 +76,7 @@ struct MinimumReqView: View {
                 Spacer()
                 
                 Button(action: {
-                    router.navigate(to: .onboard)
+                    router.navigate(to: .splashscreen)
                 }, label: {
                     ZStack{
                         Image.ProceedButton

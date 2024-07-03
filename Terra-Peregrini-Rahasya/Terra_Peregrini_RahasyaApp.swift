@@ -24,6 +24,8 @@ struct Terra_Peregrini_RahasyaApp: App {
                             DisclaimerView()
                         case .minimumreq:
                             MinimumReqView()
+                        case .splashscreen:
+                            SplashView()
                         }
                     }
                     .environmentObject(router)

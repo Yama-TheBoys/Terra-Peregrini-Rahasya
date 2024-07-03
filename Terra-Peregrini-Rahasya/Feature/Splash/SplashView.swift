@@ -17,14 +17,17 @@ struct SplashView: View {
                 .ignoresSafeArea()
             
             VStack{
+                Spacer()
                 Text("Terra Peregrini Rahasya")
                     .padding(.horizontal, 85)
                     .fontWeight(.bold)
                     .font(.custom("JetBrainsMono-Regular", size: 40))
                     .foregroundStyle(Color.white)
                 
+                Spacer()
+                
                 Button {
-//                    router.navigate(to: <#T##Router.Destination#>)
+                    router.navigate(to: .onboard)
                 } label: {
                     ZStack{
                         Image.EnterGameButton
@@ -36,6 +39,7 @@ struct SplashView: View {
                             .font(.custom("JetBrainsMono-Regular", size: 24))
                     }
                 }
+                .padding()
 
             }
         }

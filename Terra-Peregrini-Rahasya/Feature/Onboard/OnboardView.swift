@@ -13,7 +13,6 @@ struct OnboardView: View {
     var body: some View {
         ZStack {
             
-            
         }
             .navigationBarBackButtonHidden()
     }
