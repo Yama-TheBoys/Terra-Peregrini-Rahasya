@@ -12,6 +12,7 @@ final class Router: ObservableObject {
     public enum Destination: Codable, Hashable {
         case disclaimer
         case minimumreq
+        case splashscreen
         case onboard
     }
     
