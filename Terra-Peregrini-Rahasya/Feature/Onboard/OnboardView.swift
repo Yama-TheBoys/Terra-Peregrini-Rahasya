@@ -11,12 +11,9 @@ struct OnboardView: View {
     @EnvironmentObject var router: Router
     
     var body: some View {
-        VStack {
-            Button(action: {
-                router.navigateBack()
-            }, label: {
-                Text("Back")
-            })
+        ZStack {
+            
+            
         }
             .navigationBarBackButtonHidden()
     }

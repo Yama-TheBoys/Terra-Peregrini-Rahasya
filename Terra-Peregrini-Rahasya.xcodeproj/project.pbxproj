@@ -13,10 +13,15 @@
 		7BC354652C2BF54D0050EB72 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354642C2BF54D0050EB72 /* Color.swift */; };
 		7BC354692C2BF74A0050EB72 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354682C2BF74A0050EB72 /* HomeService.swift */; };
 		7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3546B2C2C031B0050EB72 /* HomeService+Delegate.swift */; };
+		D82182DA2C34002B0015C5A9 /* JetBrainsMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D82182D92C34000B0015C5A9 /* JetBrainsMono-Regular.ttf */; };
+		D82182DB2C34002E0015C5A9 /* JetBrainsMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D82182D82C34000B0015C5A9 /* JetBrainsMono-Bold.ttf */; };
+		D82182DE2C3402260015C5A9 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182DD2C3402260015C5A9 /* Font.swift */; };
+		D82182E02C340BB20015C5A9 /* MinimumReqView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182DF2C340BB20015C5A9 /* MinimumReqView.swift */; };
 		D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */; };
 		D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */; };
 		D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */; };
 		D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10EB2C27F39700D8AAB9 /* SplashView.swift */; };
+		D84F110C2C33EFBE00D8AAB9 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F110B2C33EFBE00D8AAB9 /* DisclaimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +32,17 @@
 		7BC354682C2BF74A0050EB72 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		7BC3546A2C2BF83C0050EB72 /* Terra-Peregrini-Rahasya.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Terra-Peregrini-Rahasya.entitlements"; sourceTree = "<group>"; };
 		7BC3546B2C2C031B0050EB72 /* HomeService+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeService+Delegate.swift"; sourceTree = "<group>"; };
+		D82182D82C34000B0015C5A9 /* JetBrainsMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JetBrainsMono-Bold.ttf"; path = "../../../../../../../Downloads/JetBrainsMono-2/fonts/ttf/JetBrainsMono-Bold.ttf"; sourceTree = "<group>"; };
+		D82182D92C34000B0015C5A9 /* JetBrainsMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JetBrainsMono-Regular.ttf"; path = "../../../../../../../Downloads/JetBrainsMono-2/fonts/ttf/JetBrainsMono-Regular.ttf"; sourceTree = "<group>"; };
+		D82182DC2C34004F0015C5A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D82182DD2C3402260015C5A9 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		D82182DF2C340BB20015C5A9 /* MinimumReqView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumReqView.swift; sourceTree = "<group>"; };
 		D84F10D62C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terra-Peregrini-Rahasya.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terra_Peregrini_RahasyaApp.swift; sourceTree = "<group>"; };
 		D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D84F10EB2C27F39700D8AAB9 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		D84F110B2C33EFBE00D8AAB9 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +85,7 @@
 			children = (
 				7BC354622C2BF3B80050EB72 /* Image.swift */,
 				7BC354642C2BF54D0050EB72 /* Color.swift */,
+				D82182DD2C3402260015C5A9 /* Font.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -143,6 +155,15 @@
 			path = Torch;
 			sourceTree = "<group>";
 		};
+		D82182D72C33FF7B0015C5A9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D82182D82C34000B0015C5A9 /* JetBrainsMono-Bold.ttf */,
+				D82182D92C34000B0015C5A9 /* JetBrainsMono-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		D84F10CD2C27E52C00D8AAB9 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +183,8 @@
 		D84F10D82C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya */ = {
 			isa = PBXGroup;
 			children = (
+				D82182DC2C34004F0015C5A9 /* Info.plist */,
+				D82182D72C33FF7B0015C5A9 /* Fonts */,
 				7BC3546A2C2BF83C0050EB72 /* Terra-Peregrini-Rahasya.entitlements */,
 				7BC354662C2BF7260050EB72 /* Service */,
 				7BC354602C2BF39E0050EB72 /* Helper */,
@@ -185,6 +208,7 @@
 		D84F10E72C27F34000D8AAB9 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				D84F110A2C33EFA000D8AAB9 /* Disclaimer */,
 				7BC3545D2C2BF1D90050EB72 /* Onboard */,
 				D84F10E92C27F36100D8AAB9 /* Splash */,
 			);
@@ -197,6 +221,15 @@
 				D84F10EB2C27F39700D8AAB9 /* SplashView.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		D84F110A2C33EFA000D8AAB9 /* Disclaimer */ = {
+			isa = PBXGroup;
+			children = (
+				D84F110B2C33EFBE00D8AAB9 /* DisclaimerView.swift */,
+				D82182DF2C340BB20015C5A9 /* MinimumReqView.swift */,
+			);
+			path = Disclaimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +292,8 @@
 			files = (
 				D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */,
 				D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */,
+				D82182DA2C34002B0015C5A9 /* JetBrainsMono-Regular.ttf in Resources */,
+				D82182DB2C34002E0015C5A9 /* JetBrainsMono-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,10 +306,13 @@
 			files = (
 				7BC3545F2C2BF22A0050EB72 /* OnboardView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
+				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
 				7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */,
 				7BC354692C2BF74A0050EB72 /* HomeService.swift in Sources */,
+				D84F110C2C33EFBE00D8AAB9 /* DisclaimerView.swift in Sources */,
 				D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */,
 				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
+				D82182E02C340BB20015C5A9 /* MinimumReqView.swift in Sources */,
 				7BC354632C2BF3B80050EB72 /* Image.swift in Sources */,
 				7BC354652C2BF54D0050EB72 /* Color.swift in Sources */,
 			);
@@ -411,9 +449,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 4GHAAG6R5U;
+				DEVELOPMENT_TEAM = 3B2V262XU7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Terra-Peregrini-Rahasya";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
@@ -448,9 +487,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 4GHAAG6R5U;
+				DEVELOPMENT_TEAM = 3B2V262XU7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Terra-Peregrini-Rahasya";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";

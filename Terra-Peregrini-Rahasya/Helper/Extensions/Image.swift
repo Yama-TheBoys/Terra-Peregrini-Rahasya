@@ -16,4 +16,16 @@ extension Image {
     public static var WaveForm: Image {
         return Image("WaveForm")
     }
+    
+    public static var DisclaimerScreen: Image {
+        return Image("DisclaimerScreen")
+    }
+    
+    public static var ProceedButton: Image {
+        return Image("ProceedButton")
+    }
+    
+    public static var EnterGameButton: Image {
+        return Image("EnterGameButton")
+    }
 }

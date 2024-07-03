@@ -10,6 +10,8 @@ import SwiftUI
 final class Router: ObservableObject {
     
     public enum Destination: Codable, Hashable {
+        case disclaimer
+        case minimumreq
         case onboard
     }
     

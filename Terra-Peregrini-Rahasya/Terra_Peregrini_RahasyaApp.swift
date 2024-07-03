@@ -15,11 +15,15 @@ struct Terra_Peregrini_RahasyaApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navPath) {
-                SplashView()
+                DisclaimerView()
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
                         case .onboard:
                             OnboardView()
+                        case .disclaimer:
+                            DisclaimerView()
+                        case .minimumreq:
+                            MinimumReqView()
                         }
                     }
                     .environmentObject(router)
