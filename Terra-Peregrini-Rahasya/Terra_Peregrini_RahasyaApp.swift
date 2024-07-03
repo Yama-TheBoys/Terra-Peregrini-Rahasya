@@ -19,7 +19,7 @@ struct Terra_Peregrini_RahasyaApp: App {
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
                         case .onboard:
-                            OnboardView()
+                            EmailView()
                         case .disclaimer:
                             DisclaimerView()
                         case .minimumreq:
