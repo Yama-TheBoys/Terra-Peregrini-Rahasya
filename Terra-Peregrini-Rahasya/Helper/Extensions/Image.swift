@@ -28,4 +28,16 @@ extension Image {
     public static var EnterGameButton: Image {
         return Image("EnterGameButton")
     }
+    
+    public static var Envelope: Image {
+        return Image("Envelope")
+    }
+    
+    public static var Message: Image {
+        return Image("Message")
+    }
+    
+    public static var Invitation: Image {
+        return Image("Invitation")
+    }
 }
