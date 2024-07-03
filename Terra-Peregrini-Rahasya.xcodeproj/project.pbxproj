@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F772C2D44F700DB1EA4 /* MPCService.swift */; };
+		7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F7E2C2D586900DB1EA4 /* MPCView.swift */; };
+		7B30E2242C33FBCB004B0346 /* NIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B30E2232C33FBCB004B0346 /* NIService.swift */; };
+		7B30E2272C355A0B004B0346 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B30E2262C355A0B004B0346 /* ConnectivityManager.swift */; };
 		7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354592C2BF0500050EB72 /* Router.swift */; };
 		7BC3545F2C2BF22A0050EB72 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3545E2C2BF22A0050EB72 /* OnboardView.swift */; };
 		7BC354632C2BF3B80050EB72 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354622C2BF3B80050EB72 /* Image.swift */; };
@@ -20,6 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B245F762C2D44A000DB1EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7B245F772C2D44F700DB1EA4 /* MPCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCService.swift; sourceTree = "<group>"; };
+		7B245F7E2C2D586900DB1EA4 /* MPCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCView.swift; sourceTree = "<group>"; };
+		7B30E2232C33FBCB004B0346 /* NIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIService.swift; sourceTree = "<group>"; };
+		7B30E2262C355A0B004B0346 /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
 		7BC354592C2BF0500050EB72 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7BC3545E2C2BF22A0050EB72 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		7BC354622C2BF3B80050EB72 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -45,6 +54,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B245F7D2C2D585700DB1EA4 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				7B245F7E2C2D586900DB1EA4 /* MPCView.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		7B30E2252C340B38004B0346 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7B30E2262C355A0B004B0346 /* ConnectivityManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		7BC354582C2BF0420050EB72 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +129,7 @@
 		7BC3546D2C2C1E680050EB72 /* MultiPeerConnectivity */ = {
 			isa = PBXGroup;
 			children = (
+				7B245F772C2D44F700DB1EA4 /* MPCService.swift */,
 			);
 			path = MultiPeerConnectivity;
 			sourceTree = "<group>";
@@ -111,6 +137,7 @@
 		7BC3546E2C2C1E740050EB72 /* NearbyInteraction */ = {
 			isa = PBXGroup;
 			children = (
+				7B30E2232C33FBCB004B0346 /* NIService.swift */,
 			);
 			path = NearbyInteraction;
 			sourceTree = "<group>";
@@ -162,6 +189,9 @@
 		D84F10D82C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya */ = {
 			isa = PBXGroup;
 			children = (
+				7B30E2252C340B38004B0346 /* Manager */,
+				7B245F7D2C2D585700DB1EA4 /* Example */,
+				7B245F762C2D44A000DB1EA4 /* Info.plist */,
 				7BC3546A2C2BF83C0050EB72 /* Terra-Peregrini-Rahasya.entitlements */,
 				7BC354662C2BF7260050EB72 /* Service */,
 				7BC354602C2BF39E0050EB72 /* Helper */,
@@ -273,10 +303,14 @@
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
 				7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */,
 				7BC354692C2BF74A0050EB72 /* HomeService.swift in Sources */,
+				7B30E2272C355A0B004B0346 /* ConnectivityManager.swift in Sources */,
+				7B30E2242C33FBCB004B0346 /* NIService.swift in Sources */,
 				D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */,
 				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
+				7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */,
 				7BC354632C2BF3B80050EB72 /* Image.swift in Sources */,
 				7BC354652C2BF54D0050EB72 /* Color.swift in Sources */,
+				7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,20 +448,22 @@
 				DEVELOPMENT_TEAM = 4GHAAG6R5U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Terra-Peregrini-Rahasya";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ".com.domainname.Terra-Peregrini-Rahasya";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.domainname.Terra-Peregrini-Rahasya";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -451,20 +487,22 @@
 				DEVELOPMENT_TEAM = 4GHAAG6R5U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Terra-Peregrini-Rahasya";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ".com.domainname.Terra-Peregrini-Rahasya";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.domainname.Terra-Peregrini-Rahasya";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
