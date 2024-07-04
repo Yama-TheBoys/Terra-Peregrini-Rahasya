@@ -75,7 +75,7 @@ struct MinimumReqView: View {
                 Spacer()
                 
                 Button(action: {
-                    router.navigate(to: .missionIntro)
+                    router.navigate(to: .missionIntro(0))
                 }, label: {
                     ZStack{
                         Image.ProceedButton

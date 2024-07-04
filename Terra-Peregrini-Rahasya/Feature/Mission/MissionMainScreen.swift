@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MissionMainScreen: View {
-    
     @EnvironmentObject var router: Router
     
     @State var isShowInstruction = false
@@ -45,6 +44,14 @@ struct MissionMainScreen: View {
                     .multilineTextAlignment(.center)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            .onTapGesture {
+                if mission < 3 {
+                    router.navigate(to: .missionIntro(mission + 1))
+                } else {
+                    router.navigate(to: .splashscreen)
+                }
+                
+            }
             
             ZStack {
                 Image.Time
