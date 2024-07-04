@@ -12,6 +12,10 @@
 		62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */; };
 		62C5ADAA2C367B710093C5E5 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA92C367B710093C5E5 /* Mission.swift */; };
 		62C5ADAF2C367DE20093C5E5 /* MissionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADAE2C367DE20093C5E5 /* MissionDetail.swift */; };
+		62C5ADB12C36ECCF0093C5E5 /* FinalCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB02C36ECCF0093C5E5 /* FinalCodeView.swift */; };
+		62C5ADB32C36F5140093C5E5 /* FinalColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB22C36F5140093C5E5 /* FinalColorView.swift */; };
+		62C5ADB52C36F6580093C5E5 /* EndingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB42C36F6580093C5E5 /* EndingStatus.swift */; };
+		62C5ADB72C36F9340093C5E5 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB62C36F9340093C5E5 /* Util.swift */; };
 		7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354592C2BF0500050EB72 /* Router.swift */; };
 		7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3545E2C2BF22A0050EB72 /* EmailView.swift */; };
 		7BC354632C2BF3B80050EB72 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354622C2BF3B80050EB72 /* Image.swift */; };
@@ -45,6 +49,10 @@
 		62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionMainScreen.swift; sourceTree = "<group>"; };
 		62C5ADA92C367B710093C5E5 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		62C5ADAE2C367DE20093C5E5 /* MissionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetail.swift; sourceTree = "<group>"; };
+		62C5ADB02C36ECCF0093C5E5 /* FinalCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCodeView.swift; sourceTree = "<group>"; };
+		62C5ADB22C36F5140093C5E5 /* FinalColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalColorView.swift; sourceTree = "<group>"; };
+		62C5ADB42C36F6580093C5E5 /* EndingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingStatus.swift; sourceTree = "<group>"; };
+		62C5ADB62C36F9340093C5E5 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		7BC354592C2BF0500050EB72 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7BC3545E2C2BF22A0050EB72 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		7BC354622C2BF3B80050EB72 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -99,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */,
+				62C5ADB02C36ECCF0093C5E5 /* FinalCodeView.swift */,
+				62C5ADB22C36F5140093C5E5 /* FinalColorView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -107,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				62C5ADA92C367B710093C5E5 /* Mission.swift */,
+				62C5ADB42C36F6580093C5E5 /* EndingStatus.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 				7BC354622C2BF3B80050EB72 /* Image.swift */,
 				7BC354642C2BF54D0050EB72 /* Color.swift */,
 				D82182DD2C3402260015C5A9 /* Font.swift */,
+				62C5ADB62C36F9340093C5E5 /* Util.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -408,8 +420,10 @@
 			files = (
 				D82182E62C358EF70015C5A9 /* NameCodeView.swift in Sources */,
 				D82182FC2C368AC50015C5A9 /* SelectHomeHostView.swift in Sources */,
+				62C5ADB32C36F5140093C5E5 /* FinalColorView.swift in Sources */,
 				D82182F42C3665DB0015C5A9 /* RoomCompJoineeView.swift in Sources */,
 				62C5ADAF2C367DE20093C5E5 /* MissionDetail.swift in Sources */,
+				62C5ADB72C36F9340093C5E5 /* Util.swift in Sources */,
 				7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
 				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
@@ -426,6 +440,8 @@
 				7BC354632C2BF3B80050EB72 /* Image.swift in Sources */,
 				D82182EC2C3655500015C5A9 /* TeamAssembledView.swift in Sources */,
 				62C5ADA62C3644300093C5E5 /* CircularProgressView.swift in Sources */,
+				62C5ADB12C36ECCF0093C5E5 /* FinalCodeView.swift in Sources */,
+				62C5ADB52C36F6580093C5E5 /* EndingStatus.swift in Sources */,
 				62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */,
 				7BC354652C2BF54D0050EB72 /* Color.swift in Sources */,
 				D82182F02C365F1B0015C5A9 /* RoomReqHostView.swift in Sources */,

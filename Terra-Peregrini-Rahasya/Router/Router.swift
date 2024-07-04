@@ -22,7 +22,7 @@ final class Router: ObservableObject {
         case roomcompjoinee
         case selecthome
         case selectroom
-        case missionIntro
+        case missionIntro(Int)
         case missionMainScreen(Int)
     }
     
