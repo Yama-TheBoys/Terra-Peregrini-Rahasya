@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */; };
+		62C5ADA62C3644300093C5E5 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */; };
+		62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */; };
+		62C5ADAA2C367B710093C5E5 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA92C367B710093C5E5 /* Mission.swift */; };
+		62C5ADAF2C367DE20093C5E5 /* MissionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADAE2C367DE20093C5E5 /* MissionDetail.swift */; };
 		7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354592C2BF0500050EB72 /* Router.swift */; };
 		7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3545E2C2BF22A0050EB72 /* EmailView.swift */; };
 		7BC354632C2BF3B80050EB72 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354622C2BF3B80050EB72 /* Image.swift */; };
@@ -35,6 +40,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionIntro.swift; sourceTree = "<group>"; };
+		62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionMainScreen.swift; sourceTree = "<group>"; };
+		62C5ADA92C367B710093C5E5 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		62C5ADAE2C367DE20093C5E5 /* MissionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetail.swift; sourceTree = "<group>"; };
 		7BC354592C2BF0500050EB72 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7BC3545E2C2BF22A0050EB72 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		7BC354622C2BF3B80050EB72 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -76,6 +86,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62C5ADA12C3590700093C5E5 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */,
+				62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
+		62C5ADA42C3644190093C5E5 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		62C5ADAB2C367CFA0093C5E5 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				62C5ADA92C367B710093C5E5 /* Mission.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		62C5ADAC2C367D6D0093C5E5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				62C5ADAB2C367CFA0093C5E5 /* Enums */,
+				62C5ADAD2C367DA10093C5E5 /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		62C5ADAD2C367DA10093C5E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				62C5ADAE2C367DE20093C5E5 /* MissionDetail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7BC354582C2BF0420050EB72 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +281,7 @@
 		D84F10D82C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya */ = {
 			isa = PBXGroup;
 			children = (
+				62C5ADAC2C367D6D0093C5E5 /* Data */,
 				D82182DC2C34004F0015C5A9 /* Info.plist */,
 				D82182D72C33FF7B0015C5A9 /* Fonts */,
 				7BC3546A2C2BF83C0050EB72 /* Terra-Peregrini-Rahasya.entitlements */,
@@ -254,7 +307,9 @@
 		D84F10E72C27F34000D8AAB9 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				62C5ADA42C3644190093C5E5 /* Reusable */,
 				D84F110A2C33EFA000D8AAB9 /* Disclaimer */,
+				62C5ADA12C3590700093C5E5 /* Mission */,
 				7BC3545D2C2BF1D90050EB72 /* Onboard */,
 				D84F10E92C27F36100D8AAB9 /* Splash */,
 			);
@@ -354,6 +409,7 @@
 				D82182E62C358EF70015C5A9 /* NameCodeView.swift in Sources */,
 				D82182FC2C368AC50015C5A9 /* SelectHomeHostView.swift in Sources */,
 				D82182F42C3665DB0015C5A9 /* RoomCompJoineeView.swift in Sources */,
+				62C5ADAF2C367DE20093C5E5 /* MissionDetail.swift in Sources */,
 				7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
 				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
@@ -361,6 +417,7 @@
 				7BC354692C2BF74A0050EB72 /* HomeService.swift in Sources */,
 				D84F110C2C33EFBE00D8AAB9 /* DisclaimerView.swift in Sources */,
 				D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */,
+				62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */,
 				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
 				D82182F22C3663F50015C5A9 /* RoomCompHostView.swift in Sources */,
 				D82182E02C340BB20015C5A9 /* MinimumReqView.swift in Sources */,
@@ -368,8 +425,11 @@
 				D82182EA2C35A1DE0015C5A9 /* AssembleView.swift in Sources */,
 				7BC354632C2BF3B80050EB72 /* Image.swift in Sources */,
 				D82182EC2C3655500015C5A9 /* TeamAssembledView.swift in Sources */,
+				62C5ADA62C3644300093C5E5 /* CircularProgressView.swift in Sources */,
+				62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */,
 				7BC354652C2BF54D0050EB72 /* Color.swift in Sources */,
 				D82182F02C365F1B0015C5A9 /* RoomReqHostView.swift in Sources */,
+				62C5ADAA2C367B710093C5E5 /* Mission.swift in Sources */,
 				D82182E22C357ECA0015C5A9 /* InvitationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

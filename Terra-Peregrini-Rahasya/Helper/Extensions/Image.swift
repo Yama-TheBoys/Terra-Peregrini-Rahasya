@@ -76,4 +76,40 @@ extension Image {
     public static var InfoCard: Image {
         return Image("InfoCard")
     }
+    
+    public static var MissionTitle: Image {
+        return Image(.missionTitle)
+    }
+    
+    public static var Instruction: Image {
+        return Image(.instruction)
+    }
+    
+    public static var Timer: Image {
+        return Image(.timer)
+    }
+    
+    public static var Time: Image {
+        return Image(.time)
+    }
+    
+    public static var Bell: Image {
+        return Image(.bell)
+    }
+    
+    public static var Card: Image {
+        return Image(.card)
+    }
+    
+    public static var DistanceCode: Image {
+        return Image(.distanceCode)
+    }
+    
+    public static var FinalCode: Image {
+        return Image(.finalCode)
+    }
+    
+    public static var Phone: Image {
+        return Image(.phone)
+    }
 }
