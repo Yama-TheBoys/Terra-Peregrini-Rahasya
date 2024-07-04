@@ -15,51 +15,74 @@ struct MissionMainScreen: View {
     @State var isShowClue = false
     @State var isClueClicked = false
     
-    @State var code: Int = 0
+    @State var code: [String] = ["0","0","0","0"]
+    @State var colorCode: [Color] = [.white, .white, .blue, .white]
+    
+    @State var isComplete = false
+    
+    @State var endingStatus: EndingStatus? = nil
+    
+    @State var isHost = false
+    
+    @State var point = 100
     
     var mission: Int
     
     var body: some View {
         ZStack {
-            HStack {
-                ZStack {
-                    Image.Time
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 112, alignment: .leading)
-                        .padding(.leading, -46)
-                        .onTapGesture {
-                            isShowClue = !isShowClue
-                        }
-                    
-                    Text("20:00")
-                        .foregroundStyle(Color.white)
-                        .fontWeight(.bold)
-                        .font(.custom("JetBrainsMono-Regular", size: 18))
-                        .frame(width: 112, alignment: .leading)
-                        .padding(.leading, 46)
-                }
+            HStack(alignment: .center) {
+                Image(systemName: "trophy")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 32)
+                    .padding(.leading, 40)
+                    .foregroundStyle(Color.TPRColor.PrimaryBlue)
                 
-                Spacer()
-                
-                if isShowClue {
-                    Image.Bell
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 47)
-                        .onTapGesture {
-                            isClueClicked.toggle()
-                        }
-                }
+                Text("\(point) pts")
+                    .foregroundStyle(Color.white)
+                    .customFont(.bold, 18)
+                    .frame(width: 43)
+                    .multilineTextAlignment(.center)
             }
-            .padding(.horizontal, 34)
-            .frame(maxHeight: .infinity, alignment: .top)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            
+            ZStack {
+                Image.Time
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 112, alignment: .leading)
+                    .onTapGesture {
+                        isShowClue = !isShowClue
+                    }
+                
+                Text("20:00")
+                    .foregroundStyle(Color.white)
+                    .customFont(.bold, 18)
+                    .frame(width: 112, alignment: .leading)
+                    .offset(x: 48)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            
+            if isShowClue {
+                Image.Bell
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.trailing, 40)
+                    .frame(height: 47)
+                    .onTapGesture {
+                        isClueClicked.toggle()
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+            }
             
             ZStack {
                 Image.Card
                     .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(cardBackgroundColor(endingStatus: endingStatus))
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 324, height: 279)
+                
                     .onTapGesture {
                         isShowInstruction = !isShowInstruction
                     }
@@ -67,22 +90,29 @@ struct MissionMainScreen: View {
                 
                 Text("897123412")
                     .foregroundStyle(Color.white)
-                    .font(.custom("JetBrainsMono-Regular", size: 16))
+                    .customFont(.bold, 16)
                     .padding([.top, .trailing], 48)
                     .frame(width: 324, height: 279, alignment: .topTrailing)
-                    
+                
+                if endingStatus != nil {
+                    Text(endingStatus!.rawValue)
+                        .foregroundStyle(Color.white)
+                        .customFont(.bold, 22)
+                        .padding(.top, 16)
+                        .padding(.leading, 32)
+                        .frame(width: 324, height: 279, alignment: .topLeading)
+                }
                 
                 VStack {
                     Text(allMission[mission].tagline)
                         .foregroundStyle(Color.white)
-                        .font(.custom("JetBrainsMono-Regular", size: 20))
+                        .customFont(.bold, 20)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.top, 35)
                     
-                    Text("Objective: \(allMission[mission-1].objective)")
+                    Text("Objective: \(.init(allMission[mission].objective))")
                         .foregroundStyle(Color.white)
-                        .font(.custom("JetBrainsMono-Regular", size: 14))
-                        .fontWeight(.bold)
+                        .customFont(.regular, 14)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.top, 14)
                 }
@@ -90,75 +120,27 @@ struct MissionMainScreen: View {
                 .frame(width: 324, height: 279)
                 
                 if mission == 2 {
-                    Image.DistanceCode
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 163)
-                        .overlay(alignment: .center) {
-                            Text("2")
-                                .foregroundStyle(Color.white)
-                                .font(.custom("JetBrainsMono-Regular", size: 72))
-                                .multilineTextAlignment(.center)
-                        }
-                        .offset(x: 0, y: -194)
-                        
+                    if isHost {
+                        FinalColorView(colorCode: $colorCode)
+                            .offset(x: 0, y: 245)
+                    } else {
+                        Image.DistanceCode
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 163)
+                            .overlay(alignment: .center) {
+                                Text("2")
+                                    .foregroundStyle(Color.white)
+                                    .customFont(.regular, 72)
+                                    .multilineTextAlignment(.center)
+                            }
+                            .offset(x: 0, y: -194)
+                    }
                 }
                 
                 if mission == 3 {
-                    HStack(spacing: 0) {
-                        Image.FinalCode
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 72)
-                            .shadow(color: Color.TPRColor.LightPurple ,radius: 1.5)
-                            .overlay(alignment: .center) {
-                                TextField("", value: $code, formatter: NumberFormatter())
-                                    .foregroundStyle(Color.white)
-                                    .font(.custom("JetBrainsMono-Regular", size: 28))
-                                    .multilineTextAlignment(.center)
-                                    
-                            }
-                        
-                        Image.FinalCode
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 72)
-                            .shadow(color: Color.TPRColor.LightPurple ,radius: 1.5)
-                            .overlay(alignment: .center) {
-                                TextField("", value: $code, formatter: NumberFormatter())
-                                    .foregroundStyle(Color.white)
-                                    .font(.custom("JetBrainsMono-Regular", size: 28))
-                                    .multilineTextAlignment(.center)
-                                    
-                            }
-                        
-                        Image.FinalCode
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 72)
-                            .shadow(color: Color.TPRColor.LightPurple ,radius: 1.5)
-                            .overlay(alignment: .center) {
-                                TextField("", value: $code, formatter: NumberFormatter())
-                                    .foregroundStyle(Color.white)
-                                    .font(.custom("JetBrainsMono-Regular", size: 28))
-                                    .multilineTextAlignment(.center)
-                                    
-                            }
-                        
-                        Image.FinalCode
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 72)
-                            .shadow(color: Color.TPRColor.LightPurple ,radius: 1.5)
-                            .overlay(alignment: .center) {
-                                TextField("", value: $code, formatter: NumberFormatter())
-                                    .foregroundStyle(Color.white)
-                                    .font(.custom("JetBrainsMono-Regular", size: 28))
-                                    .multilineTextAlignment(.center)
-                                    
-                            }
-                    }
-                    .offset(x: 0, y: -165)
+                    FinalCodeView(code: $code, isComplete: $isComplete, endingStatus: endingStatus)
+                        .offset(x: 0, y: -165)
                 }
                 
                 
@@ -173,7 +155,7 @@ struct MissionMainScreen: View {
                     
                     Text("Almost there...")
                         .foregroundStyle(Color.white)
-                        .font(.custom("JetBrainsMono-Regular", size: 18))
+                        .font(.customFont(.regular, 18))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, 34)
                 }
@@ -186,14 +168,16 @@ struct MissionMainScreen: View {
         .background(Color.TPRColor.PrimaryPurple)
         .navigationBarBackButtonHidden()
         .sheet(isPresented: $isClueClicked) {
-            VStack(alignment: .leading) {
+            VStack {
                 Text("Clues:")
                     .foregroundStyle(Color.white)
-                    .font(.custom("JetBrainsMono-Regular", size: 20))
+                    .font(.customFont(.regular, 20))
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text("You guys made it!\n\nEven with the clue I gave last time, the test was still tough, so well done on passing the first one.\n\nNow, for the second test, focus on how you interact with each other.\n\nIf you can pass this stage, I'm sure you're truly meant for this position!")
+                Text(allMission[mission].clue)
                     .foregroundStyle(Color.white)
-                    .font(.custom("JetBrainsMono-Regular", size: 16))
+                    .font(.customFont(.regular, 16))
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 16)
             }
             .padding()
@@ -201,9 +185,12 @@ struct MissionMainScreen: View {
             .presentationBackground(Color.TPRColor.LightBlue)
             .presentationDragIndicator(.visible)
         }
+        .onChange(of: isComplete) {
+            isShowInstruction = isComplete
+        }
     }
 }
 
 #Preview {
-    MissionMainScreen(mission: 3)
+    MissionMainScreen(mission: 2)
 }
