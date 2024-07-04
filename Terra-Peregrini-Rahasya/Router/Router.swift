@@ -10,10 +10,18 @@ import SwiftUI
 final class Router: ObservableObject {
     
     public enum Destination: Codable, Hashable {
-        case disclaimer
         case minimumreq
         case splashscreen
-        case onboard
+        case email
+        case invitation
+        case namecode
+        case assemble
+        case teamassembled
+        case roomreqhost
+        case roomcomphost
+        case roomcompjoinee
+        case selecthome
+        case selectroom
     }
     
     @Published var navPath = NavigationPath()

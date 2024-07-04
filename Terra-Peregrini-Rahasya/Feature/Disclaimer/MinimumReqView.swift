@@ -23,14 +23,11 @@ struct MinimumReqView: View {
                     .foregroundStyle(Color(red: 0.85, green: 0.95, blue: 0.99))
                 
                 Text("MINIMUM REQUIREMENTS")
+                    .customFont(.bold, 36)
                     .multilineTextAlignment(.center)
                     .foregroundStyle(Color.white)
-                    .font(.custom("JetBrainsMono-Regular", size: 36))
-                    .font(.title)
-                    .fontWeight(.bold)
                 
                 VStack(alignment: .leading){
-                    
                     HStack{
                         Text("To play this game, ensure you have the following devices installed in your room and connected to your ")
                         + Text("HomeKit").bold()
@@ -38,9 +35,9 @@ struct MinimumReqView: View {
                         + Text("HOME").bold()
                         + Text(" app:")
                     }
-                        .font(.custom("JetBrainsMono-Regular", size: 18))
-                        .padding(.horizontal, 24)
-                        .foregroundStyle(Color.white)
+                    .font(.customFont(.regular, 18))
+                    .padding(.horizontal, 24)
+                    .foregroundStyle(Color.white)
                     
                     HStack{
                         Image(systemName: "lightbulb.max.fill")
@@ -50,10 +47,11 @@ struct MinimumReqView: View {
                             .foregroundStyle(Color(red: 0.85, green: 0.95, blue: 0.99))
                         
                         Text("Smart lamp with RGB support")
+                            .customFont(.regular, 18)
                             .padding(.horizontal, 12)
                             .foregroundStyle(Color.white)
-                            .font(.custom("JetBrainsMono-Regular", size: 18))
                     }
+                    .frame(width: 300, alignment: .center)
                     .padding(.top, 24)
                     
                     HStack{
@@ -64,10 +62,11 @@ struct MinimumReqView: View {
                             .foregroundStyle(Color(red: 0.85, green: 0.95, blue: 0.99))
                         
                         Text("Smart door lock")
+                            .customFont(.regular, 18)
                             .padding(.horizontal, 12)
                             .foregroundStyle(Color.white)
-                            .font(.custom("JetBrainsMono-Regular", size: 18))
                     }
+                    .frame(width: 300, alignment: .center)
                     .padding(.top, 16)
                     
                 }
@@ -83,9 +82,8 @@ struct MinimumReqView: View {
                             .resizable()
                             .frame(width: 237, height: 81)
                         Text("Proceed")
+                            .customFont(.bold, 18)
                             .foregroundStyle(Color.white)
-                            .fontWeight(.bold)
-                            .font(.custom("JetBrainsMono-Regular", size: 18))
                     }
                 })
             }
