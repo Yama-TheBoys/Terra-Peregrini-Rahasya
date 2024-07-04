@@ -27,7 +27,7 @@ struct SplashView: View {
                 Spacer()
                 
                 Button {
-                    router.navigate(to: .onboard)
+                    router.navigate(to: .email)
                 } label: {
                     ZStack{
                         Image.EnterGameButton
@@ -43,6 +43,7 @@ struct SplashView: View {
 
             }
         }
+        .navigationBarBackButtonHidden()
     }
     
 }

@@ -36,7 +36,7 @@ struct EmailView: View {
                     .padding(.bottom, 10)
                 
                 Button(action: {
-                    router.navigate(to: .splashscreen)
+                    router.navigate(to: .invitation)
                 }, label: {
                     ZStack{
                         Image.ProceedButton

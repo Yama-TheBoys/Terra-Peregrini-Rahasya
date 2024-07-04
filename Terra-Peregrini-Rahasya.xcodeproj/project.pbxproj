@@ -17,6 +17,16 @@
 		D82182E02C340BB20015C5A9 /* MinimumReqView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182DF2C340BB20015C5A9 /* MinimumReqView.swift */; };
 		D82182E22C357ECA0015C5A9 /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182E12C357ECA0015C5A9 /* InvitationView.swift */; };
 		D82182E42C358A540015C5A9 /* JetBrainsMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D82182E32C358A540015C5A9 /* JetBrainsMono-Regular.ttf */; };
+		D82182E62C358EF70015C5A9 /* NameCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182E52C358EF70015C5A9 /* NameCodeView.swift */; };
+		D82182E82C359EEE0015C5A9 /* JetBrainsMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D82182E72C359EEE0015C5A9 /* JetBrainsMono-Bold.ttf */; };
+		D82182EA2C35A1DE0015C5A9 /* AssembleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182E92C35A1DE0015C5A9 /* AssembleView.swift */; };
+		D82182EC2C3655500015C5A9 /* TeamAssembledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182EB2C3655500015C5A9 /* TeamAssembledView.swift */; };
+		D82182F02C365F1B0015C5A9 /* RoomReqHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182EF2C365F1B0015C5A9 /* RoomReqHostView.swift */; };
+		D82182F22C3663F50015C5A9 /* RoomCompHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182F12C3663F50015C5A9 /* RoomCompHostView.swift */; };
+		D82182F42C3665DB0015C5A9 /* RoomCompJoineeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182F32C3665DB0015C5A9 /* RoomCompJoineeView.swift */; };
+		D82182FA2C3682180015C5A9 /* JetBrainsMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D82182F92C3682180015C5A9 /* JetBrainsMono-Italic.ttf */; };
+		D82182FC2C368AC50015C5A9 /* SelectHomeHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FB2C368AC50015C5A9 /* SelectHomeHostView.swift */; };
+		D82182FE2C368FDE0015C5A9 /* SelectRoomHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FD2C368FDE0015C5A9 /* SelectRoomHostView.swift */; };
 		D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */; };
 		D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */; };
 		D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */; };
@@ -37,6 +47,16 @@
 		D82182DF2C340BB20015C5A9 /* MinimumReqView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumReqView.swift; sourceTree = "<group>"; };
 		D82182E12C357ECA0015C5A9 /* InvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
 		D82182E32C358A540015C5A9 /* JetBrainsMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Regular.ttf"; sourceTree = "<group>"; };
+		D82182E52C358EF70015C5A9 /* NameCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCodeView.swift; sourceTree = "<group>"; };
+		D82182E72C359EEE0015C5A9 /* JetBrainsMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Bold.ttf"; sourceTree = "<group>"; };
+		D82182E92C35A1DE0015C5A9 /* AssembleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleView.swift; sourceTree = "<group>"; };
+		D82182EB2C3655500015C5A9 /* TeamAssembledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamAssembledView.swift; sourceTree = "<group>"; };
+		D82182EF2C365F1B0015C5A9 /* RoomReqHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomReqHostView.swift; sourceTree = "<group>"; };
+		D82182F12C3663F50015C5A9 /* RoomCompHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCompHostView.swift; sourceTree = "<group>"; };
+		D82182F32C3665DB0015C5A9 /* RoomCompJoineeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCompJoineeView.swift; sourceTree = "<group>"; };
+		D82182F92C3682180015C5A9 /* JetBrainsMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Italic.ttf"; sourceTree = "<group>"; };
+		D82182FB2C368AC50015C5A9 /* SelectHomeHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHomeHostView.swift; sourceTree = "<group>"; };
+		D82182FD2C368FDE0015C5A9 /* SelectRoomHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomHostView.swift; sourceTree = "<group>"; };
 		D84F10D62C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terra-Peregrini-Rahasya.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terra_Peregrini_RahasyaApp.swift; sourceTree = "<group>"; };
 		D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,8 +87,13 @@
 		7BC3545D2C2BF1D90050EB72 /* Onboard */ = {
 			isa = PBXGroup;
 			children = (
+				D82182EE2C365F040015C5A9 /* Joinee */,
+				D82182ED2C365EFF0015C5A9 /* Host */,
 				7BC3545E2C2BF22A0050EB72 /* EmailView.swift */,
 				D82182E12C357ECA0015C5A9 /* InvitationView.swift */,
+				D82182E52C358EF70015C5A9 /* NameCodeView.swift */,
+				D82182E92C35A1DE0015C5A9 /* AssembleView.swift */,
+				D82182EB2C3655500015C5A9 /* TeamAssembledView.swift */,
 			);
 			path = Onboard;
 			sourceTree = "<group>";
@@ -159,9 +184,30 @@
 		D82182D72C33FF7B0015C5A9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D82182F92C3682180015C5A9 /* JetBrainsMono-Italic.ttf */,
+				D82182E72C359EEE0015C5A9 /* JetBrainsMono-Bold.ttf */,
 				D82182E32C358A540015C5A9 /* JetBrainsMono-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D82182ED2C365EFF0015C5A9 /* Host */ = {
+			isa = PBXGroup;
+			children = (
+				D82182EF2C365F1B0015C5A9 /* RoomReqHostView.swift */,
+				D82182F12C3663F50015C5A9 /* RoomCompHostView.swift */,
+				D82182FB2C368AC50015C5A9 /* SelectHomeHostView.swift */,
+				D82182FD2C368FDE0015C5A9 /* SelectRoomHostView.swift */,
+			);
+			path = Host;
+			sourceTree = "<group>";
+		};
+		D82182EE2C365F040015C5A9 /* Joinee */ = {
+			isa = PBXGroup;
+			children = (
+				D82182F32C3665DB0015C5A9 /* RoomCompJoineeView.swift */,
+			);
+			path = Joinee;
 			sourceTree = "<group>";
 		};
 		D84F10CD2C27E52C00D8AAB9 = {
@@ -290,9 +336,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82182FA2C3682180015C5A9 /* JetBrainsMono-Italic.ttf in Resources */,
 				D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */,
 				D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */,
 				D82182E42C358A540015C5A9 /* JetBrainsMono-Regular.ttf in Resources */,
+				D82182E82C359EEE0015C5A9 /* JetBrainsMono-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +351,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82182E62C358EF70015C5A9 /* NameCodeView.swift in Sources */,
+				D82182FC2C368AC50015C5A9 /* SelectHomeHostView.swift in Sources */,
+				D82182F42C3665DB0015C5A9 /* RoomCompJoineeView.swift in Sources */,
 				7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
 				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
@@ -311,9 +362,14 @@
 				D84F110C2C33EFBE00D8AAB9 /* DisclaimerView.swift in Sources */,
 				D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */,
 				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
+				D82182F22C3663F50015C5A9 /* RoomCompHostView.swift in Sources */,
 				D82182E02C340BB20015C5A9 /* MinimumReqView.swift in Sources */,
+				D82182FE2C368FDE0015C5A9 /* SelectRoomHostView.swift in Sources */,
+				D82182EA2C35A1DE0015C5A9 /* AssembleView.swift in Sources */,
 				7BC354632C2BF3B80050EB72 /* Image.swift in Sources */,
+				D82182EC2C3655500015C5A9 /* TeamAssembledView.swift in Sources */,
 				7BC354652C2BF54D0050EB72 /* Color.swift in Sources */,
+				D82182F02C365F1B0015C5A9 /* RoomReqHostView.swift in Sources */,
 				D82182E22C357ECA0015C5A9 /* InvitationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

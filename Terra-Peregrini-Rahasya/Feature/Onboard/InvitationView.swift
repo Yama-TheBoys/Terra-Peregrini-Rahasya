@@ -43,7 +43,7 @@ struct InvitationView: View {
                     .padding(.horizontal, 60)
                     
                     Button(action: {
-                        router.navigate(to: .splashscreen)
+                        router.navigate(to: .namecode)
                     }, label: {
                         ZStack{
                             Image.ProceedButton

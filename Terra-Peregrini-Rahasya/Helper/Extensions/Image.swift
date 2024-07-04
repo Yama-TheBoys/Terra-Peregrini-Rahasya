@@ -25,8 +25,24 @@ extension Image {
         return Image("ProceedButton")
     }
     
+    public static var DisableButton: Image {
+        return Image("DisableButton")
+    }
+    
+    public static var HelpButton: Image {
+        return Image("HelpButton")
+    }
+    
+    public static var BackButton: Image {
+        return Image("BackButton")
+    }
+    
     public static var EnterGameButton: Image {
         return Image("EnterGameButton")
+    }
+    
+    public static var SelectHomeButton: Image {
+        return Image("SelectHomeButton")
     }
     
     public static var Envelope: Image {
@@ -39,5 +55,25 @@ extension Image {
     
     public static var Invitation: Image {
         return Image("Invitation")
+    }
+    
+    public static var TitleBackground: Image {
+        return Image("TitleBackground")
+    }
+    
+    public static var InputField: Image {
+        return Image("InputField")
+    }
+    
+    public static var Candidate: Image {
+        return Image("Candidate")
+    }
+    
+    public static var Room: Image {
+        return Image("Room")
+    }
+    
+    public static var InfoCard: Image {
+        return Image("InfoCard")
     }
 }
