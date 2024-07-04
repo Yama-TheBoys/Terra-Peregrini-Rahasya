@@ -54,6 +54,12 @@ struct Terra_Peregrini_RahasyaApp: App {
                         case .selectroom:
                             SelectRoomHostView()
                                 .environmentObject(router)
+                        case .missionIntro:
+                            MissionIntro()
+                                .environmentObject(router)
+                        case .missionMainScreen(let mission):
+                            MissionMainScreen(mission: mission)
+                                .environmentObject(router)
                         }
                     }
                     .environmentObject(router)

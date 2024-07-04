@@ -25,5 +25,13 @@ extension Color {
         public static var SecondaryPurple: Color {
             return Color("SecondaryPurple")
         }
+        
+        public static var LightPurple: Color {
+            return Color(.lightPurple)
+        }
+        
+        public static var LightBlue: Color {
+            return Color(.lightBlue)
+        }
     }
 }

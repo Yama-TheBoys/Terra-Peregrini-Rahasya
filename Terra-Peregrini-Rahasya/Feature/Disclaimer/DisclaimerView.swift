@@ -12,7 +12,7 @@ struct DisclaimerView: View {
     
     var body: some View {
         ZStack{
-            Image.DisclaimerScreen
+            Image(.dIsclaimerScreen)
                 .resizable()
                 .ignoresSafeArea()
             
