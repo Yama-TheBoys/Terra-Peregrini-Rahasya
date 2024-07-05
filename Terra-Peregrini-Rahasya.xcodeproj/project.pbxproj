@@ -16,6 +16,11 @@
 		62C5ADB32C36F5140093C5E5 /* FinalColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB22C36F5140093C5E5 /* FinalColorView.swift */; };
 		62C5ADB52C36F6580093C5E5 /* EndingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB42C36F6580093C5E5 /* EndingStatus.swift */; };
 		62C5ADB72C36F9340093C5E5 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB62C36F9340093C5E5 /* Util.swift */; };
+		62C5ADB92C37A6210093C5E5 /* VotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB82C37A6210093C5E5 /* VotingView.swift */; };
+		62C5ADBB2C3854610093C5E5 /* WaitingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADBA2C3854610093C5E5 /* WaitingPlayerView.swift */; };
+		62C5ADBD2C3855EE0093C5E5 /* ColorBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADBC2C3855EE0093C5E5 /* ColorBackgroundView.swift */; };
+		62C5ADBF2C385B910093C5E5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADBE2C385B910093C5E5 /* CardView.swift */; };
+		62C5ADC12C3860460093C5E5 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADC02C3860460093C5E5 /* PopUpView.swift */; };
 		7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354592C2BF0500050EB72 /* Router.swift */; };
 		7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3545E2C2BF22A0050EB72 /* EmailView.swift */; };
 		7BC354632C2BF3B80050EB72 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354622C2BF3B80050EB72 /* Image.swift */; };
@@ -56,6 +61,11 @@
 		62C5ADB22C36F5140093C5E5 /* FinalColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalColorView.swift; sourceTree = "<group>"; };
 		62C5ADB42C36F6580093C5E5 /* EndingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingStatus.swift; sourceTree = "<group>"; };
 		62C5ADB62C36F9340093C5E5 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		62C5ADB82C37A6210093C5E5 /* VotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingView.swift; sourceTree = "<group>"; };
+		62C5ADBA2C3854610093C5E5 /* WaitingPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPlayerView.swift; sourceTree = "<group>"; };
+		62C5ADBC2C3855EE0093C5E5 /* ColorBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBackgroundView.swift; sourceTree = "<group>"; };
+		62C5ADBE2C385B910093C5E5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		62C5ADC02C3860460093C5E5 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		7BC354592C2BF0500050EB72 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7BC3545E2C2BF22A0050EB72 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		7BC354622C2BF3B80050EB72 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -105,6 +115,7 @@
 			children = (
 				62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */,
 				62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */,
+				62C5ADB82C37A6210093C5E5 /* VotingView.swift */,
 			);
 			path = Mission;
 			sourceTree = "<group>";
@@ -115,6 +126,10 @@
 				62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */,
 				62C5ADB02C36ECCF0093C5E5 /* FinalCodeView.swift */,
 				62C5ADB22C36F5140093C5E5 /* FinalColorView.swift */,
+				62C5ADBA2C3854610093C5E5 /* WaitingPlayerView.swift */,
+				62C5ADBC2C3855EE0093C5E5 /* ColorBackgroundView.swift */,
+				62C5ADBE2C385B910093C5E5 /* CardView.swift */,
+				62C5ADC02C3860460093C5E5 /* PopUpView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -437,6 +452,7 @@
 				7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
 				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
+				62C5ADBF2C385B910093C5E5 /* CardView.swift in Sources */,
 				7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */,
 				7BC354692C2BF74A0050EB72 /* HomeService.swift in Sources */,
 				D84F110C2C33EFBE00D8AAB9 /* DisclaimerView.swift in Sources */,
@@ -444,6 +460,7 @@
 				D82183042C37C4E40015C5A9 /* HomeNotFoundHostView.swift in Sources */,
 				62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */,
 				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
+				62C5ADB92C37A6210093C5E5 /* VotingView.swift in Sources */,
 				D82182F22C3663F50015C5A9 /* RoomCompHostView.swift in Sources */,
 				D82182E02C340BB20015C5A9 /* MinimumReqView.swift in Sources */,
 				D82182FE2C368FDE0015C5A9 /* SelectRoomHostView.swift in Sources */,
@@ -453,8 +470,11 @@
 				62C5ADA62C3644300093C5E5 /* CircularProgressView.swift in Sources */,
 				62C5ADB12C36ECCF0093C5E5 /* FinalCodeView.swift in Sources */,
 				62C5ADB52C36F6580093C5E5 /* EndingStatus.swift in Sources */,
+				62C5ADBD2C3855EE0093C5E5 /* ColorBackgroundView.swift in Sources */,
+				62C5ADC12C3860460093C5E5 /* PopUpView.swift in Sources */,
 				62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */,
 				7BC354652C2BF54D0050EB72 /* Color.swift in Sources */,
+				62C5ADBB2C3854610093C5E5 /* WaitingPlayerView.swift in Sources */,
 				D82182F02C365F1B0015C5A9 /* RoomReqHostView.swift in Sources */,
 				62C5ADAA2C367B710093C5E5 /* Mission.swift in Sources */,
 				D82183022C370AF70015C5A9 /* RoomCompSuccessHostView.swift in Sources */,

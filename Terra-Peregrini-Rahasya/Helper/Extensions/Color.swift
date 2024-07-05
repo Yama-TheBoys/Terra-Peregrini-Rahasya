@@ -41,5 +41,9 @@ extension Color {
         public static var FailedRed: Color {
             return Color(.failedRed)
         }
+        
+        public static var DarkPurple: Color {
+            return Color(.darkPurple)
+        }
     }
 }

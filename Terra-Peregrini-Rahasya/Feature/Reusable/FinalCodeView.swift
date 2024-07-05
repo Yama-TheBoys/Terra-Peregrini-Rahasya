@@ -86,6 +86,6 @@ enum CodeField {
     FinalCodeView(code: .constant(["0","0","0","0"]), isComplete: .constant(false))
 }
 
-#Preview {
-    CodeView(code: .constant("0"))
-}
+//#Preview {
+//    CodeView(code: .constant("0"))
+//}

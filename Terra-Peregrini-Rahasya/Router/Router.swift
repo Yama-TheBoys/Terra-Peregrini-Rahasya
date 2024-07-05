@@ -24,6 +24,7 @@ final class Router: ObservableObject {
         case selectroom
         case missionIntro(Int)
         case missionMainScreen(Int)
+        case votingScreen
     }
     
     @Published var navPath = NavigationPath()

@@ -116,4 +116,8 @@ extension Image {
     public static var Phone: Image {
         return Image(.phone)
     }
+    
+    public static var Alert: Image {
+        return Image(.alert)
+    }
 }

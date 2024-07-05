@@ -23,30 +23,30 @@ let allMission: [MissionDetail] = [
         description: "Restore the lighting and demonstrate your ability to maintain stability under pressure.",
         tagline: "STABIL1TY IS A MUST-HAVE SKILL FOR EVERY SECRET AGENT.",
         objective: "Regain control of the **lighting power** system.",
-        clue: ""
+        clue: "A balanced approach might shed some light."
     ),
     MissionDetail(
         order: "2nd",
         name: "Tolerance Skills",
-        description: "Embrace the unique qualities in you and others. Recognize how unity can be achieved through diversity.",
+        description: "The test system has regained control of the lighting power, but it's unstable. Find a way to stabilize the lighting power system and make it work normally.",
         tagline: "UNIQUENE5S IS A KEY VALUE FOR CREATING UNITY IN DIVERSITY",
-        objective: "Find the **common ground**.",
-        clue: ""
+        objective: "Find the **common ground** and **switch the lamp** back to normal.",
+        clue: "Unity forms where boundaries meet."
     ),
     MissionDetail(
         order: "3rd",
         name: "Collaboration Skills",
-        description: "Unleash your team's synergy. Together, you will learn to move as one, executing with precision and grace. ",
+        description: "The test system takes out the power supply. You need to find a way to restore the power supply. As it is important for the test to continue.",
         tagline: "TRAIN YOUR ALIGNMENT FOR V1CTORY",
-        objective: "Work in **perfect harmony** and **coordination**.",
-        clue: ""
+        objective: "Work in **perfect coordination** to regain control of the **Power Supply** system.",
+        clue: "Observe other candidates."
     ),
     MissionDetail(
         order: "4th",
         name: "Observation Skills",
-        description: "Your ability to notice and interpret subtle details will be the greatest asset as future secret agents.",
+        description: "Power supply has been restored. Now, let’s test your ability to notice and interpret subtle details. It will be the greatest asset as future secret agents.",
         tagline: "SECRET AGENTS MUST STAY ALERT AND ATTENTIVE T0 DETAILS.",
         objective: "Decode the **door lock** and **escape** the room!",
-        clue: ""
+        clue: "Recall, reflect, and share! Even the tiniest detail matters."
     ),
 ]
