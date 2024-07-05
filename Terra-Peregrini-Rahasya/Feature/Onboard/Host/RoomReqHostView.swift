@@ -21,32 +21,13 @@ struct RoomReqHostView: View {
                     .scaledToFit()
                     .frame(width: 172)
                 
-                ZStack{
-                    Image.InfoCard
-                        .resizable()
-                        .frame(width: 324, height: 300)
-                    
-                    VStack{
-                        Text("Online Test Room Requirement")
-                            .bold()
-                            .font(.custom("JetBrainsMono-Regular", size: 24))
-                            .foregroundStyle(.white)
-                            .padding(.leading, -18)
-                            .padding()
-                        
-                        HStack{
-                            Text("One of the candidates will host the online test in their home, if you volunteer to be the host, please select ")
-                            + Text("In my home.")
-                                .bold()
-                        }
-                            .font(.custom("JetBrainsMono-Regular", size: 16))
-                            .foregroundStyle(.white)
-                            .padding(.horizontal, 62)
-                        
-                        
-                    }
-                    .padding(.top, 48)
-                }
+                CardView(
+                    isMission: false,
+                    backgroundColor: .defaults,
+                    title: "Online Test Room Requirement",
+                    description: "One of the candidates will host the online test in their home, if you volunteer to be the host, please select **In my home**."
+                )
+                .padding(.top, 28)
                 
                 Spacer()
                 

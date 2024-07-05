@@ -16,7 +16,13 @@ func cardBackgroundColor(endingStatus: EndingStatus?) -> Color {
     case .failed:
         Color.TPRColor.FailedRed
         
+    case .ingame:
+        Color.TPRColor.SecondaryPurple
+        
     case .none:
         Color.TPRColor.SecondaryPurple
+        
+    case .defaults:
+        Color.TPRColor.PrimaryBlue
     }
 }
