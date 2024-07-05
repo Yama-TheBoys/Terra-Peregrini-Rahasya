@@ -21,5 +21,8 @@ func cardBackgroundColor(endingStatus: EndingStatus?) -> Color {
         
     case .none:
         Color.TPRColor.SecondaryPurple
+        
+    case .defaults:
+        Color.TPRColor.PrimaryBlue
     }
 }

@@ -12,7 +12,7 @@ struct VotingView: View {
     
     @State var playerNames : [String] = ["Jul", "Daffa", "Anjar", "Niko"]
     
-    @State var isVotingDone = false
+    @State var isVotingDone = true
     
     @State var choosenPlayer : String = ""
     
@@ -72,6 +72,7 @@ struct VotingView: View {
                 
                 Color(.black)
                     .opacity(0.7)
+                    .ignoresSafeArea()
                 
                 VStack {
                     Spacer()

@@ -27,7 +27,7 @@ struct PopUpView: View {
             
             Image.Alert
                 .resizable()
-                .frame(maxWidth: UIScreen.main.bounds.size.width * 0.7, maxHeight: UIScreen.main.bounds.size.height * 0.25)
+                .frame(maxWidth: UIScreen.main.bounds.size.width * 0.85, maxHeight: UIScreen.main.bounds.size.height * 0.25)
                 .cornerRadius(12)
                 .overlay {
                     VStack {

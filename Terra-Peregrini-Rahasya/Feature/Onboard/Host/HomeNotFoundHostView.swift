@@ -33,33 +33,13 @@ struct HomeNotFoundHostView: View {
                 
                 Spacer()
                 
-                ZStack{
-                    Image.ErrorCard
-                        .resizable()
-                        .frame(width: 324, height: 279)
-                    
-                    Text("1237856619")
-                        .customFont(.bold, 16)
-                        .foregroundStyle(.white)
-                        .padding([.top, .trailing], 48)
-                        .frame(width: 324, height: 279, alignment: .topTrailing)
-                    
-                    VStack{
-                        Text("ERROR!!!")
-                            .customFont(.bold, 24)
-                            .foregroundStyle(.white)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.top, 48)
-                        
-                        Text("We didn’t find any home connected to your **HOME APP** or **HOMEKIT**")
-                            .customFont(.regular, 16)
-                            .foregroundStyle(.white)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.top, 10)
-                    }
-                    .padding(.horizontal, 36)
-                    .frame(width: 324, height: 279)
-                }
+                CardView(
+                    isMission: false,
+                    backgroundColor: .failed,
+                    title: "ERROR!!!",
+                    description: "We didn’t find any home connected to your **HOME APP** or **HOMEKIT**"
+                )
+                .padding(.top, 28)
                 
                 Spacer()
                 
