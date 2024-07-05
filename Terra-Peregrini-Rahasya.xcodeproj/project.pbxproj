@@ -32,6 +32,9 @@
 		D82182FA2C3682180015C5A9 /* JetBrainsMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D82182F92C3682180015C5A9 /* JetBrainsMono-Italic.ttf */; };
 		D82182FC2C368AC50015C5A9 /* SelectHomeHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FB2C368AC50015C5A9 /* SelectHomeHostView.swift */; };
 		D82182FE2C368FDE0015C5A9 /* SelectRoomHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FD2C368FDE0015C5A9 /* SelectRoomHostView.swift */; };
+		D82183002C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FF2C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift */; };
+		D82183022C370AF70015C5A9 /* RoomCompSuccessHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183012C370AF70015C5A9 /* RoomCompSuccessHostView.swift */; };
+		D82183042C37C4E40015C5A9 /* HomeNotFoundHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183032C37C4E40015C5A9 /* HomeNotFoundHostView.swift */; };
 		D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */; };
 		D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */; };
 		D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		D82182F92C3682180015C5A9 /* JetBrainsMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Italic.ttf"; sourceTree = "<group>"; };
 		D82182FB2C368AC50015C5A9 /* SelectHomeHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHomeHostView.swift; sourceTree = "<group>"; };
 		D82182FD2C368FDE0015C5A9 /* SelectRoomHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomHostView.swift; sourceTree = "<group>"; };
+		D82182FF2C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCompSuccessJoineeView.swift; sourceTree = "<group>"; };
+		D82183012C370AF70015C5A9 /* RoomCompSuccessHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCompSuccessHostView.swift; sourceTree = "<group>"; };
+		D82183032C37C4E40015C5A9 /* HomeNotFoundHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNotFoundHostView.swift; sourceTree = "<group>"; };
 		D84F10D62C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terra-Peregrini-Rahasya.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terra_Peregrini_RahasyaApp.swift; sourceTree = "<group>"; };
 		D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -250,6 +256,8 @@
 				D82182F12C3663F50015C5A9 /* RoomCompHostView.swift */,
 				D82182FB2C368AC50015C5A9 /* SelectHomeHostView.swift */,
 				D82182FD2C368FDE0015C5A9 /* SelectRoomHostView.swift */,
+				D82183012C370AF70015C5A9 /* RoomCompSuccessHostView.swift */,
+				D82183032C37C4E40015C5A9 /* HomeNotFoundHostView.swift */,
 			);
 			path = Host;
 			sourceTree = "<group>";
@@ -258,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				D82182F32C3665DB0015C5A9 /* RoomCompJoineeView.swift */,
+				D82182FF2C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift */,
 			);
 			path = Joinee;
 			sourceTree = "<group>";
@@ -406,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82183002C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift in Sources */,
 				D82182E62C358EF70015C5A9 /* NameCodeView.swift in Sources */,
 				D82182FC2C368AC50015C5A9 /* SelectHomeHostView.swift in Sources */,
 				D82182F42C3665DB0015C5A9 /* RoomCompJoineeView.swift in Sources */,
@@ -417,6 +427,7 @@
 				7BC354692C2BF74A0050EB72 /* HomeService.swift in Sources */,
 				D84F110C2C33EFBE00D8AAB9 /* DisclaimerView.swift in Sources */,
 				D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */,
+				D82183042C37C4E40015C5A9 /* HomeNotFoundHostView.swift in Sources */,
 				62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */,
 				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
 				D82182F22C3663F50015C5A9 /* RoomCompHostView.swift in Sources */,
@@ -430,6 +441,7 @@
 				7BC354652C2BF54D0050EB72 /* Color.swift in Sources */,
 				D82182F02C365F1B0015C5A9 /* RoomReqHostView.swift in Sources */,
 				62C5ADAA2C367B710093C5E5 /* Mission.swift in Sources */,
+				D82183022C370AF70015C5A9 /* RoomCompSuccessHostView.swift in Sources */,
 				D82182E22C357ECA0015C5A9 /* InvitationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

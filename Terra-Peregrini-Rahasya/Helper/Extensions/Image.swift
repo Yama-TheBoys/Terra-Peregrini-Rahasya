@@ -10,71 +10,75 @@ import SwiftUI
 extension Image {
     
     public static var SplashScreen: Image {
-        return Image("SplashScreen")
-    }
-    
-    public static var WaveForm: Image {
-        return Image("WaveForm")
+        return Image(.splashScreen)
     }
     
     public static var DisclaimerScreen: Image {
-        return Image("DisclaimerScreen")
+        return Image(.disclaimerScreen)
     }
     
     public static var ProceedButton: Image {
-        return Image("ProceedButton")
+        return Image(.proceedButton)
     }
     
     public static var DisableButton: Image {
-        return Image("DisableButton")
+        return Image(.disableButton)
     }
     
     public static var HelpButton: Image {
-        return Image("HelpButton")
+        return Image(.helpButton)
     }
     
     public static var BackButton: Image {
-        return Image("BackButton")
+        return Image(.backButton)
     }
     
     public static var EnterGameButton: Image {
-        return Image("EnterGameButton")
+        return Image(.enterGameButton)
     }
     
     public static var SelectHomeButton: Image {
-        return Image("SelectHomeButton")
+        return Image(.selectHomeButton)
     }
     
     public static var Envelope: Image {
-        return Image("Envelope")
+        return Image(.envelope)
     }
     
     public static var Message: Image {
-        return Image("Message")
+        return Image(.message)
     }
     
     public static var Invitation: Image {
-        return Image("Invitation")
+        return Image(.invitation)
     }
     
     public static var TitleBackground: Image {
-        return Image("TitleBackground")
+        return Image(.titleBackground)
     }
     
     public static var InputField: Image {
-        return Image("InputField")
+        return Image(.inputField)
     }
     
     public static var Candidate: Image {
-        return Image("Candidate")
+        return Image(.candidate)
     }
     
     public static var Room: Image {
-        return Image("Room")
+        return Image(.room)
     }
     
     public static var InfoCard: Image {
-        return Image("InfoCard")
+        return Image(.infoCard)
+    }
+    
+    public static var SuccessCard: Image {
+        return Image(.successCard)
+    }
+    
+    public static var ErrorCard: Image {
+        return Image(.errorCard)
     }
     
     public static var MissionTitle: Image {
