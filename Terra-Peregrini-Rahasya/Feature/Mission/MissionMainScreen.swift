@@ -26,9 +26,12 @@ struct MissionMainScreen: View {
     
     @State var point = 100
 
-    @State private var isActive: Bool = false
+    @State private var isPopUpActive: Bool = false
     
     @State private var isFromVotingScreen: Bool = false
+    
+    @State private var isOtherDeviceDetected: Bool = false
+    @State private var instructionMessage: String = Instructions.almostThere.rawValue
     
     var mission: Int
     
@@ -66,12 +69,7 @@ struct MissionMainScreen: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .onTapGesture {
-                if mission < 3 {
-                    router.navigate(to: .missionIntro(mission + 1))
-                } else {
-                    router.navigate(to: .splashscreen)
-                }
-                
+                isOtherDeviceDetected = !isOtherDeviceDetected
             }
             
             ZStack {
@@ -108,7 +106,7 @@ struct MissionMainScreen: View {
                     .frame(height: 47)
             }
             .onTapGesture {
-                isActive = true
+                isPopUpActive = true
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             
@@ -121,6 +119,45 @@ struct MissionMainScreen: View {
                 )
                 .onTapGesture {
                     isShowInstruction = !isShowInstruction
+                }
+                
+                if mission == 1 && isOtherDeviceDetected {
+                    
+                    VStack {
+                        Spacer()
+                        
+                        HStack(spacing: 0) {
+                            Button(action: {
+                                
+                            }, label: {
+                                ZStack{
+                                    Image.ProceedButton
+                                        .resizable()
+                                    
+                                    Text("Send")
+                                        .foregroundStyle(Color.white)
+                                        .customFont(.bold, 18)
+                                }
+                            })
+                            .frame(width: 153, height: 81)
+                            
+                            Button(action: {
+                                
+                            }, label: {
+                                ZStack{
+                                    Image.ProceedButton
+                                        .resizable()
+                                        .scaleEffect(x: -1, y: 1)
+                                    
+                                    Text("Accept")
+                                        .foregroundStyle(Color.white)
+                                        .customFont(.bold, 18)
+                                }
+                            })
+                            .frame(width: 153, height: 81)
+                        }
+                    }
+                    
                 }
                 
                 //                if mission == 2 {
@@ -156,7 +193,7 @@ struct MissionMainScreen: View {
                         .aspectRatio(contentMode: .fit)
                         .shadow(color: Color.TPRColor.SecondaryPurple ,radius: 10)
                     
-                    Text("Almost there...")
+                    Text(instructionMessage)
                         .foregroundStyle(Color.white)
                         .font(.customFont(.regular, 18))
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -166,12 +203,46 @@ struct MissionMainScreen: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                 .onTapGesture {
                     endingStatus = EndingStatus.allCases.randomElement() ?? .ingame
+                    if endingStatus == .success || endingStatus == .failed {
+                        isOtherDeviceDetected = false
+                    }
                 }
             }
             
-            if isActive {
+            if endingStatus == .success || endingStatus == .failed {
+                VStack {
+                    Spacer()
+                    
+                    Button(action: {
+                        if endingStatus == .success {
+                            if mission < 3 {
+                                router.navigate(to: .missionIntro(mission + 1))
+                            } else {
+                                router.navigate(to: .splashscreen)
+                            }
+                        } else {
+                            router.navigate(to: .splashscreen)
+                        }
+                    }, label: {
+                        ZStack{
+                            Image.ProceedButton
+                                .resizable()
+                            
+                            Text(
+                                endingStatus == .success ? "Continue" :
+                                    endingStatus == .failed ? "Leave Test" : "Leave Test"
+                            )
+                            .foregroundStyle(Color.white)
+                            .customFont(.bold, 18)
+                        }
+                    })
+                    .frame(width: 237, height: 81)
+                }
+            }
+            
+            if isPopUpActive {
                 PopUpView(
-                    isActive: $isActive,
+                    isActive: $isPopUpActive,
                     message: "Are you sure you need extra clues?",
                     onYes: {
                         print("User selected Yes")
@@ -225,5 +296,5 @@ struct MissionMainScreen: View {
 }
 
 #Preview {
-    MissionMainScreen(mission: 3)
+    MissionMainScreen(mission: 1)
 }

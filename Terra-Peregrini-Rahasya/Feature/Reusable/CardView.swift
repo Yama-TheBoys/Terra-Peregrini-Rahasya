@@ -35,7 +35,7 @@ struct CardView: View {
                 .padding([.top, .trailing], 48)
                 .frame(width: 324, height: 279, alignment: .topTrailing)
             
-            if isMission {
+            if isMission && (backgroundColor == .failed || backgroundColor == .success) {
                 Text(backgroundColor.rawValue)
                     .foregroundStyle(Color.white)
                     .customFont(.bold, 22)

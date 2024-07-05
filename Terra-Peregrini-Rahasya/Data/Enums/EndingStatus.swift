@@ -10,6 +10,6 @@ import Foundation
 enum EndingStatus: String, CaseIterable, Codable, Hashable {
     case success = "SUCCESS!!!"
     case failed = "FAILED!!!"
-    case ingame = ""
-    case defaults = "defaults"
+    case ingame = "In Game"
+    case defaults = "Defaults"
 }
