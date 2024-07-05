@@ -40,9 +40,3 @@ final class Router: ObservableObject {
         navPath.removeLast(navPath.count)
     }
 }
-
-//typealias Taperable = Codable & Equatable & Hashable
-//
-//struct Apalah: Taperable {
-//    let name: String
-//}
