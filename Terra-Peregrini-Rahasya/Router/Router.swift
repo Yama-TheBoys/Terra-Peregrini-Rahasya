@@ -24,6 +24,13 @@ final class Router: ObservableObject {
         case selectroom
         case missionIntro(Int)
         case missionMainScreen(Int)
+        case leaderboard
+        case firstplace
+        case others
+        case takepicture
+        case captured
+        case idcardoverview
+        case credits
         case votingScreen
     }
     
