@@ -20,71 +20,53 @@ struct Terra_Peregrini_RahasyaApp: App {
                         switch destination {
                         case .minimumreq:
                             MinimumReqView()
-                                .environmentObject(router)
                         case .splashscreen:
                             SplashView()
-                                .environmentObject(router)
                         case .email:
                             EmailView()
-                                .environmentObject(router)
                         case .invitation:
                             InvitationView()
-                                .environmentObject(router)
                         case .namecode:
                             NameCodeView()
-                                .environmentObject(router)
                         case .assemble:
                             AssembleView()
-                                .environmentObject(router)
                         case .teamassembled:
                             TeamAssembledView()
-                                .environmentObject(router)
                         case .roomreqhost:
                             RoomReqHostView()
-                                .environmentObject(router)
                         case .roomcomphost:
                             RoomCompHostView()
-                                .environmentObject(router)
                         case .roomcompjoinee:
                             RoomCompJoineeView()
-                                .environmentObject(router)
                         case .selecthome:
                             SelectHomeHostView()
-                                .environmentObject(router)
                         case .selectroom:
                             SelectRoomHostView()
-                                .environmentObject(router)
-                        case .missionIntro:
-                            MissionIntro()
-                                .environmentObject(router)
+                        case .missionIntro(let mission):
+                            MissionIntro(mission: mission)
                         case .missionMainScreen(let mission):
                             MissionMainScreen(mission: mission)
-                                .environmentObject(router)
                         case .leaderboard:
                             LeaderboardView()
-                                .environmentObject(router)
                         case .firstplace:
                             FirstPlaceView()
-                                .environmentObject(router)
                         case .others:
                             OthersView()
-                                .environmentObject(router)
                         case .takepicture:
                             TakePictureView()
-                                .environmentObject(router)
                         case .captured:
                             CapturedView()
-                                .environmentObject(router)
                         case .idcardoverview:
                             IdCardOverView()
-                                .environmentObject(router)
                         case .credits:
                             CreditsView()
-                                .environmentObject(router)
+                        case .votingScreen:
+                            VotingView()
                         }
                     }
-                    .environmentObject(router)
             }
+            .environmentObject(router)
+
         }
     }
 }

@@ -33,5 +33,17 @@ extension Color {
         public static var LightBlue: Color {
             return Color(.lightBlue)
         }
+        
+        public static var SuccessGreen: Color {
+            return Color(.successGreen)
+        }
+        
+        public static var FailedRed: Color {
+            return Color(.failedRed)
+        }
+        
+        public static var DarkPurple: Color {
+            return Color(.darkPurple)
+        }
     }
 }

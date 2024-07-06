@@ -11,42 +11,14 @@ struct MissionIntro: View {
     @EnvironmentObject var router: Router
     
     @State var isWaiting = false
-    @State var teamProgress = 0.6
     
-    var mission: Int = 0
+    var mission: Int = 3
     
     var body: some View {
         VStack {
             if isWaiting {
-                VStack {
-                    Text("Waiting for all candidates to get ready...")
-                        .foregroundStyle(Color.white)
-                        .font(.custom("JetBrainsMono-Regular", size: 18))
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 52)
-                        .padding(.bottom, 24)
-                    
-                    ZStack {
-                        CircularProgressView(progress: teamProgress)
-                            .frame(width: 100)
-                            .onChange(of: teamProgress) {
-                                if teamProgress == 1 {
-                                    router.navigate(to: .missionMainScreen(mission))
-                                }
-                            }
-                            
-                        
-                        Text("\(teamProgress * 100, specifier: "%.0f")%")
-                            .foregroundStyle(Color.white)
-                            .font(.custom("JetBrainsMono-Regular", size: 24))
-                            .onTapGesture {
-                                teamProgress += 0.2
-                            }
-                    }
-                    
-                }
-                
-                
+                WaitingPlayerView(destination: Router.Destination.missionMainScreen(mission))
+                    .environmentObject(router)
             } else {
                 VStack {
                     ZStack {
@@ -57,12 +29,12 @@ struct MissionIntro: View {
                         VStack {
                             Text("Test \(mission + 1)")
                                 .foregroundStyle(Color.white)
-                                .font(.custom("JetBrainsMono-Regular", size: 24))
+                                .customFont(.bold, 24)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
                             Text(allMission[mission].name)
                                 .foregroundStyle(Color.white)
-                                .font(.custom("JetBrainsMono-Regular", size: 32))
+                                .customFont(.bold, 32)
                                 .fontWeight(.bold)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.top, 24)
@@ -73,7 +45,7 @@ struct MissionIntro: View {
                     
                     Text(allMission[mission].description)
                         .foregroundStyle(Color.white)
-                        .font(.custom("JetBrainsMono-Regular", size: 18))
+                        .customFont(.regular, 18)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding([.top, .horizontal], 34)
                     
@@ -90,7 +62,7 @@ struct MissionIntro: View {
                             Text("20 minutes")
                                 .foregroundStyle(Color.white)
                                 .fontWeight(.bold)
-                                .font(.custom("JetBrainsMono-Regular", size: 18))
+                                .customFont(.regular, 18)
                                 .frame(width: 193, alignment: .leading)
                                 .padding(.leading, 64)
                         }
@@ -107,7 +79,7 @@ struct MissionIntro: View {
                         
                         Text("Are you ready to take the \(allMission[mission].order) Test?")
                             .foregroundStyle(Color.white)
-                            .font(.custom("JetBrainsMono-Regular", size: 18))
+                            .customFont(.regular, 18)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal, 34)
                     }
@@ -122,8 +94,7 @@ struct MissionIntro: View {
                             
                             Text("Proceed")
                                 .foregroundStyle(Color.white)
-                                .fontWeight(.bold)
-                                .font(.custom("JetBrainsMono-Regular", size: 18))
+                                .customFont(.bold, 18)
                         }
                     })
                     .frame(width: 237, height: 81)

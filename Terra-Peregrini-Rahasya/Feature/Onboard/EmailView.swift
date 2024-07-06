@@ -1,5 +1,5 @@
 //
-//  OnboardView.swift
+//  EmailView.swift
 //  Terra-Peregrini-Rahasya
 //
 //  Created by Daffashiddiq on 26/06/24.

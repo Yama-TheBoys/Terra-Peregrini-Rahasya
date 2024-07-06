@@ -37,40 +37,13 @@ struct RoomCompHostView: View {
                     .scaledToFit()
                     .frame(width: 172)
                 
-                ZStack{
-                    Image.InfoCard
-                        .resizable()
-                        .frame(width: 324, height: 300)
-                    
-                    VStack{
-                        Text("Checking Room Compability")
-                            .bold()
-                            .font(.custom("JetBrainsMono-Regular", size: 24))
-                            .foregroundStyle(.white)
-                            .multilineTextAlignment(.leading)
-                            .padding(.horizontal, 64)
-                            .padding(.leading, -64)
-                            .padding()
-                        
-                        HStack{
-                            Text("This test requires ")
-                            + Text("high-tech ")
-                                .bold()
-                            + Text("items installed in your room. To check your ")
-                            + Text("home's compatibility, ")
-                                .bold()
-                            + Text("please connect to the ")
-                            + Text("Test System.")
-                                .bold()
-                        }
-                            .font(.custom("JetBrainsMono-Regular", size: 16))
-                            .foregroundStyle(.white)
-                            .padding(.horizontal, 62)
-                        
-                        
-                    }
-                    .padding(.top, 48)
-                }
+                CardView(
+                    isMission: false,
+                    backgroundColor: .defaults,
+                    title: "Checking Room Compability",
+                    description: "This test requires **high-tech** items installed in your room. To check your **home's compatibility**, please connect to the **Test System**."
+                )
+                .padding(.top, 28)
                 
                 Spacer()
                 

@@ -22,7 +22,7 @@ final class Router: ObservableObject {
         case roomcompjoinee
         case selecthome
         case selectroom
-        case missionIntro
+        case missionIntro(Int)
         case missionMainScreen(Int)
         case leaderboard
         case firstplace
@@ -31,6 +31,7 @@ final class Router: ObservableObject {
         case captured
         case idcardoverview
         case credits
+        case votingScreen
     }
     
     @Published var navPath = NavigationPath()
@@ -47,9 +48,3 @@ final class Router: ObservableObject {
         navPath.removeLast(navPath.count)
     }
 }
-
-//typealias Taperable = Codable & Equatable & Hashable
-//
-//struct Apalah: Taperable {
-//    let name: String
-//}

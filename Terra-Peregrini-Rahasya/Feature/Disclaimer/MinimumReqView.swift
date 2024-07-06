@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MinimumReqView: View {
     @EnvironmentObject var router: Router
-
+    
     var body: some View {
         ZStack{
             Image.DisclaimerScreen
@@ -28,16 +28,11 @@ struct MinimumReqView: View {
                     .foregroundStyle(Color.white)
                 
                 VStack(alignment: .leading){
-                    HStack{
-                        Text("To play this game, ensure you have the following devices installed in your room and connected to your ")
-                        + Text("HomeKit").bold()
-                        + Text(" or ")
-                        + Text("HOME").bold()
-                        + Text(" app:")
-                    }
-                    .font(.customFont(.regular, 18))
-                    .padding(.horizontal, 24)
-                    .foregroundStyle(Color.white)
+                    Text("To play this game, ensure you have the following devices installed in your room and connected to your **HomeKit** or **HOME** app: ")
+                    
+                        .font(.customFont(.regular, 18))
+                        .padding(.horizontal, 24)
+                        .foregroundStyle(Color.white)
                     
                     HStack{
                         Image(systemName: "lightbulb.max.fill")
@@ -75,7 +70,7 @@ struct MinimumReqView: View {
                 Spacer()
                 
                 Button(action: {
-                    router.navigate(to: .missionIntro)
+                    router.navigate(to: .missionIntro(0))
                 }, label: {
                     ZStack{
                         Image.ProceedButton
@@ -86,6 +81,7 @@ struct MinimumReqView: View {
                             .foregroundStyle(Color.white)
                     }
                 })
+                .padding()
             }
         }
         .navigationBarBackButtonHidden()
