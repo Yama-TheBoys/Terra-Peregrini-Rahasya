@@ -18,22 +18,25 @@ struct MissionMainScreen: View {
     
     @State var colorBackground: [Color] = [.red, .blue, .red, .green, .green, .blue]
     
-    @State var isComplete = false
+    @State var isAllGameComplete = false
     
     @State var endingStatus: EndingStatus = .ingame
     
     @State var isHost = false
     
-    @State var point = 100
+    @State var point = 10
 
     @State private var isPopUpActive: Bool = false
+    @State private var isOverlayActive: Bool = false
     
     @State private var isFromVotingScreen: Bool = false
+    @State private var isFirstBlood: Bool = false
     
     @State private var isOtherDeviceDetected: Bool = false
     @State private var instructionMessage: String = Instructions.almostThere.rawValue
     
     var mission: Int
+    
     
     var body: some View {
         ZStack {
@@ -115,7 +118,7 @@ struct MissionMainScreen: View {
                     isMission: true,
                     backgroundColor: endingStatus,
                     title: allMission[mission].tagline,
-                    description: "_Objective:_ \(allMission[mission].objective)"
+                    description: allMission[mission].objective
                 )
                 .onTapGesture {
                     isShowInstruction = !isShowInstruction
@@ -180,7 +183,7 @@ struct MissionMainScreen: View {
                 //                }
                 
                 if mission == 3 {
-                    FinalCodeView(code: $code, isComplete: $isComplete, endingStatus: endingStatus)
+                    FinalCodeView(code: $code, isComplete: $isAllGameComplete, endingStatus: endingStatus)
                         .offset(x: 0, y: -165)
                 }
                 
@@ -209,20 +212,12 @@ struct MissionMainScreen: View {
                 }
             }
             
-            if endingStatus == .success || endingStatus == .failed {
+            if endingStatus == .failed {
                 VStack {
                     Spacer()
                     
                     Button(action: {
-                        if endingStatus == .success {
-                            if mission < 3 {
-                                router.navigate(to: .missionIntro(mission + 1))
-                            } else {
-                                router.navigate(to: .splashscreen)
-                            }
-                        } else {
-                            router.navigate(to: .splashscreen)
-                        }
+                        router.navigate(to: .splashscreen)
                     }, label: {
                         ZStack{
                             Image.ProceedButton
@@ -258,6 +253,23 @@ struct MissionMainScreen: View {
                 )
             }
             
+            if isOverlayActive {
+                PointResultView(
+                    choosenPlayer: "",
+                    isVoting: false,
+                    isFirstBlood: isFirstBlood,
+                    onAction: {
+                        if mission < 3 {
+                            router.navigate(to: .missionIntro(mission + 1))
+                        } else {
+                            router.navigate(to: .splashscreen)
+                        }
+                    }
+                )
+                .environmentObject(router)
+                
+            }
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .navigationBarBackButtonHidden()
@@ -270,7 +282,7 @@ struct MissionMainScreen: View {
                 
                 Text(allMission[mission].clue)
                     .foregroundStyle(Color.white)
-                    .font(.customFont(.regular, 24))
+                    .font(.customFont(.regular, 18))
                     .padding(.top, 16)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
@@ -281,8 +293,15 @@ struct MissionMainScreen: View {
             .presentationBackground(Color.TPRColor.LightBlue)
             .presentationDragIndicator(.visible)
         }
-        .onChange(of: isComplete) {
-            isShowInstruction = isComplete
+        .onChange(of: isAllGameComplete) {
+            isShowInstruction = isAllGameComplete
+        }
+        .onChange(of: endingStatus) {
+            if endingStatus == .success {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    isOverlayActive = true
+                }
+            }
         }
         .onAppear {
             if isFromVotingScreen {

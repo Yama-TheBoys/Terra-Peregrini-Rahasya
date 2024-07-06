@@ -22,6 +22,8 @@
 		62C5ADBF2C385B910093C5E5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADBE2C385B910093C5E5 /* CardView.swift */; };
 		62C5ADC12C3860460093C5E5 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADC02C3860460093C5E5 /* PopUpView.swift */; };
 		62C5ADC32C3884300093C5E5 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADC22C3884300093C5E5 /* Instructions.swift */; };
+		62C5ADC72C39A2FF0093C5E5 /* PointResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADC62C39A2FF0093C5E5 /* PointResultView.swift */; };
+		62EF13832C39BC77001DA6D9 /* ReconnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EF13822C39BC77001DA6D9 /* ReconnectingView.swift */; };
 		7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F772C2D44F700DB1EA4 /* MPCService.swift */; };
 		7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F7E2C2D586900DB1EA4 /* MPCView.swift */; };
 		7B30E2272C355A0B004B0346 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B30E2262C355A0B004B0346 /* ConnectivityManager.swift */; };
@@ -71,6 +73,8 @@
 		62C5ADBE2C385B910093C5E5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		62C5ADC02C3860460093C5E5 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		62C5ADC22C3884300093C5E5 /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
+		62C5ADC62C39A2FF0093C5E5 /* PointResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointResultView.swift; sourceTree = "<group>"; };
+		62EF13822C39BC77001DA6D9 /* ReconnectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconnectingView.swift; sourceTree = "<group>"; };
 		7B245F772C2D44F700DB1EA4 /* MPCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCService.swift; sourceTree = "<group>"; };
 		7B245F7E2C2D586900DB1EA4 /* MPCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCView.swift; sourceTree = "<group>"; };
 		7B30E2262C355A0B004B0346 /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				62C5ADBC2C3855EE0093C5E5 /* ColorBackgroundView.swift */,
 				62C5ADBE2C385B910093C5E5 /* CardView.swift */,
 				62C5ADC02C3860460093C5E5 /* PopUpView.swift */,
+				62C5ADC62C39A2FF0093C5E5 /* PointResultView.swift */,
+				62EF13822C39BC77001DA6D9 /* ReconnectingView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -466,6 +472,7 @@
 				D82182E62C358EF70015C5A9 /* NameCodeView.swift in Sources */,
 				D82182FC2C368AC50015C5A9 /* SelectHomeHostView.swift in Sources */,
 				62C5ADB32C36F5140093C5E5 /* FinalColorView.swift in Sources */,
+				62C5ADC72C39A2FF0093C5E5 /* PointResultView.swift in Sources */,
 				D82182F42C3665DB0015C5A9 /* RoomCompJoineeView.swift in Sources */,
 				62C5ADAF2C367DE20093C5E5 /* MissionDetail.swift in Sources */,
 				62C5ADB72C36F9340093C5E5 /* Util.swift in Sources */,
@@ -483,6 +490,7 @@
 				62C5ADC32C3884300093C5E5 /* Instructions.swift in Sources */,
 				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
 				7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */,
+				62EF13832C39BC77001DA6D9 /* ReconnectingView.swift in Sources */,
 				62C5ADB92C37A6210093C5E5 /* VotingView.swift in Sources */,
 				D82182F22C3663F50015C5A9 /* RoomCompHostView.swift in Sources */,
 				D82182E02C340BB20015C5A9 /* MinimumReqView.swift in Sources */,
@@ -637,7 +645,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 3B2V262XU7;
+				DEVELOPMENT_TEAM = WTU6YK528U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
@@ -676,7 +684,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 3B2V262XU7;
+				DEVELOPMENT_TEAM = WTU6YK528U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";

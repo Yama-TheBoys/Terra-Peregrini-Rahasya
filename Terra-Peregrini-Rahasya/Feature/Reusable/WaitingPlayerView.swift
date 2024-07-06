@@ -23,13 +23,17 @@ struct WaitingPlayerView: View {
                 .padding(.bottom, 24)
             
             ZStack {
-                CircularProgressView(progress: teamProgress)
-                    .frame(width: 100)
-                    .onChange(of: teamProgress) {
-                        if teamProgress == 1 {
-                            router.navigate(to: destination)
-                        }
+                CircularProgressView(
+                    progress: teamProgress,
+                    lineWidth: 20, 
+                    color: Color.TPRColor.LightPurple
+                )
+                .frame(width: 100)
+                .onChange(of: teamProgress) {
+                    if teamProgress == 1 {
+                        router.navigate(to: destination)
                     }
+                }
                     
                 Text("\(teamProgress * 100, specifier: "%.0f")%")
                     .foregroundStyle(Color.white)
