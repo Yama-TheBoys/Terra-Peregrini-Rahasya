@@ -12,7 +12,7 @@ struct VotingView: View {
     
     @State var playerNames : [String] = ["Jul", "Daffa", "Anjar", "Niko"]
     
-    @State var isVotingDone = true
+    @State var isVotingDone = false
     
     @State var choosenPlayer : String = ""
     
