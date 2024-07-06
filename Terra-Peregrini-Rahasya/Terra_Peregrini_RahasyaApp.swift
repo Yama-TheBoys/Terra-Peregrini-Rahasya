@@ -15,7 +15,7 @@ struct Terra_Peregrini_RahasyaApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navPath) {
-                DisclaimerView()
+                LeaderboardView()
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
                         case .minimumreq:
@@ -59,6 +59,27 @@ struct Terra_Peregrini_RahasyaApp: App {
                                 .environmentObject(router)
                         case .missionMainScreen(let mission):
                             MissionMainScreen(mission: mission)
+                                .environmentObject(router)
+                        case .leaderboard:
+                            LeaderboardView()
+                                .environmentObject(router)
+                        case .firstplace:
+                            FirstPlaceView()
+                                .environmentObject(router)
+                        case .others:
+                            OthersView()
+                                .environmentObject(router)
+                        case .takepicture:
+                            TakePictureView()
+                                .environmentObject(router)
+                        case .captured:
+                            CapturedView()
+                                .environmentObject(router)
+                        case .idcardoverview:
+                            IdCardOverView()
+                                .environmentObject(router)
+                        case .credits:
+                            CreditsView()
                                 .environmentObject(router)
                         }
                     }

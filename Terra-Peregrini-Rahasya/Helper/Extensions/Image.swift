@@ -112,4 +112,16 @@ extension Image {
     public static var Phone: Image {
         return Image(.phone)
     }
+    
+    public static var LeaderboardBg: Image {
+        return Image(.leaderboardBg)
+    }
+    
+    public static var Badge: Image {
+        return Image(.badge)
+    }
+    
+    public static var IdCard: Image {
+        return Image(.idCard)
+    }
 }
