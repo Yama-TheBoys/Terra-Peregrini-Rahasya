@@ -9,20 +9,24 @@ import SwiftUI
 
 struct MPCView: View {
     
-    @ObservedObject var mpcSession = MPCService(name: "Jul", teamCode: "1234")
+    @ObservedObject var connectivityManager = ConnectivityManager()
+    
+    @State var name: String = ""
+    @State var teamCode: String = ""
     
     var body: some View {
         VStack(spacing: 25) {
+            TextField("Name", text: $name)
+            TextField("TeamCode", text: $teamCode)
             Button {
-                mpcSession.startBroadcasting()
+                connectivityManager.startConnecting(name: name, teamCode: teamCode)
             } label: {
-                Text("Start")
+                Text("Start MPC")
             }
-            
-//            Button {
-//                mpcSession.stop()
-//            } label: {
-//                Text("Stop")
+//            if !connectivityManager.players.isEmpty {
+//                ForEach(connectivityManager.players.randomElement() ?? ["waitingID" : 9]) { index in
+//                    Text("\(connectivityManager.players[index])")
+//                }
 //            }
         }
     }

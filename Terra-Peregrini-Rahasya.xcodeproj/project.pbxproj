@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F772C2D44F700DB1EA4 /* MPCService.swift */; };
 		7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F7E2C2D586900DB1EA4 /* MPCView.swift */; };
-		7B30E2242C33FBCB004B0346 /* NIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B30E2232C33FBCB004B0346 /* NIService.swift */; };
 		7B30E2272C355A0B004B0346 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B30E2262C355A0B004B0346 /* ConnectivityManager.swift */; };
 		7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354592C2BF0500050EB72 /* Router.swift */; };
 		7BC3545F2C2BF22A0050EB72 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3545E2C2BF22A0050EB72 /* OnboardView.swift */; };
@@ -27,7 +26,6 @@
 		7B245F762C2D44A000DB1EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7B245F772C2D44F700DB1EA4 /* MPCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCService.swift; sourceTree = "<group>"; };
 		7B245F7E2C2D586900DB1EA4 /* MPCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCView.swift; sourceTree = "<group>"; };
-		7B30E2232C33FBCB004B0346 /* NIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIService.swift; sourceTree = "<group>"; };
 		7B30E2262C355A0B004B0346 /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
 		7BC354592C2BF0500050EB72 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7BC3545E2C2BF22A0050EB72 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				7BC354722C2C1E9F0050EB72 /* AVFoundation */,
 				7BC354712C2C1E900050EB72 /* Camera */,
 				7BC3546F2C2C1E7F0050EB72 /* CoreMotion */,
-				7BC3546E2C2C1E740050EB72 /* NearbyInteraction */,
 				7BC3546D2C2C1E680050EB72 /* MultiPeerConnectivity */,
 				7BC354672C2BF73E0050EB72 /* HomeKit */,
 			);
@@ -132,14 +129,6 @@
 				7B245F772C2D44F700DB1EA4 /* MPCService.swift */,
 			);
 			path = MultiPeerConnectivity;
-			sourceTree = "<group>";
-		};
-		7BC3546E2C2C1E740050EB72 /* NearbyInteraction */ = {
-			isa = PBXGroup;
-			children = (
-				7B30E2232C33FBCB004B0346 /* NIService.swift */,
-			);
-			path = NearbyInteraction;
 			sourceTree = "<group>";
 		};
 		7BC3546F2C2C1E7F0050EB72 /* CoreMotion */ = {
@@ -304,7 +293,6 @@
 				7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */,
 				7BC354692C2BF74A0050EB72 /* HomeService.swift in Sources */,
 				7B30E2272C355A0B004B0346 /* ConnectivityManager.swift in Sources */,
-				7B30E2242C33FBCB004B0346 /* NIService.swift in Sources */,
 				D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */,
 				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
 				7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */,
@@ -445,7 +433,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 4GHAAG6R5U;
+				DEVELOPMENT_TEAM = 3B2V262XU7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
@@ -484,7 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 4GHAAG6R5U;
+				DEVELOPMENT_TEAM = 3B2V262XU7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";

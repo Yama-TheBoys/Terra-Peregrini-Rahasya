@@ -4,8 +4,8 @@
 <dict>
 	<key>NSBonjourServices</key>
 	<array>
-		<string>_tapera-peer._tcp</string>
-		<string>_tapera-peer._udp</string>
+		<string>_device-peer._tcp</string>
+		<string>_device-peer._udp</string>
 	</array>
 </dict>
 </plist>
