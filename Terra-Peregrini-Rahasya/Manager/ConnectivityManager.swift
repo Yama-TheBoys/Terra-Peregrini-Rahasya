@@ -6,7 +6,6 @@
 //
 
 import MultipeerConnectivity
-import NearbyInteraction
 
 final class ConnectivityManager: ObservableObject {
     
