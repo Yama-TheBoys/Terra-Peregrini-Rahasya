@@ -25,6 +25,10 @@
 		7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F772C2D44F700DB1EA4 /* MPCService.swift */; };
 		7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F7E2C2D586900DB1EA4 /* MPCView.swift */; };
 		7B30E2272C355A0B004B0346 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B30E2262C355A0B004B0346 /* ConnectivityManager.swift */; };
+		7BA3C33F2C390BEE00B3117E /* CMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA3C33E2C390BEE00B3117E /* CMService.swift */; };
+		7BA3C3412C390F3000B3117E /* MissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA3C3402C390F3000B3117E /* MissionManager.swift */; };
+		7BA3C3432C39108400B3117E /* CMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA3C3422C39108400B3117E /* CMView.swift */; };
+		7BA3C3452C3930A100B3117E /* GAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA3C3442C3930A100B3117E /* GAService.swift */; };
 		7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354592C2BF0500050EB72 /* Router.swift */; };
 		7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3545E2C2BF22A0050EB72 /* EmailView.swift */; };
 		7BC354632C2BF3B80050EB72 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354622C2BF3B80050EB72 /* Image.swift */; };
@@ -74,6 +78,10 @@
 		7B245F772C2D44F700DB1EA4 /* MPCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCService.swift; sourceTree = "<group>"; };
 		7B245F7E2C2D586900DB1EA4 /* MPCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCView.swift; sourceTree = "<group>"; };
 		7B30E2262C355A0B004B0346 /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
+		7BA3C33E2C390BEE00B3117E /* CMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMService.swift; sourceTree = "<group>"; };
+		7BA3C3402C390F3000B3117E /* MissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionManager.swift; sourceTree = "<group>"; };
+		7BA3C3422C39108400B3117E /* CMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMView.swift; sourceTree = "<group>"; };
+		7BA3C3442C3930A100B3117E /* GAService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAService.swift; sourceTree = "<group>"; };
 		7BC354592C2BF0500050EB72 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7BC3545E2C2BF22A0050EB72 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		7BC354622C2BF3B80050EB72 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -173,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				7B245F7E2C2D586900DB1EA4 /* MPCView.swift */,
+				7BA3C3422C39108400B3117E /* CMView.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -181,8 +190,17 @@
 			isa = PBXGroup;
 			children = (
 				7B30E2262C355A0B004B0346 /* ConnectivityManager.swift */,
+				7BA3C3402C390F3000B3117E /* MissionManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		7BA3C33D2C3909FB00B3117E /* GroupActivities */ = {
+			isa = PBXGroup;
+			children = (
+				7BA3C3442C3930A100B3117E /* GAService.swift */,
+			);
+			path = GroupActivities;
 			sourceTree = "<group>";
 		};
 		7BC354582C2BF0420050EB72 /* Router */ = {
@@ -229,6 +247,7 @@
 		7BC354662C2BF7260050EB72 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				7BA3C33D2C3909FB00B3117E /* GroupActivities */,
 				7BC354732C2C1EB30050EB72 /* Torch */,
 				7BC354722C2C1E9F0050EB72 /* AVFoundation */,
 				7BC354712C2C1E900050EB72 /* Camera */,
@@ -259,6 +278,7 @@
 		7BC3546F2C2C1E7F0050EB72 /* CoreMotion */ = {
 			isa = PBXGroup;
 			children = (
+				7BA3C33E2C390BEE00B3117E /* CMService.swift */,
 			);
 			path = CoreMotion;
 			sourceTree = "<group>";
@@ -463,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D82183002C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift in Sources */,
+				7BA3C3412C390F3000B3117E /* MissionManager.swift in Sources */,
 				D82182E62C358EF70015C5A9 /* NameCodeView.swift in Sources */,
 				D82182FC2C368AC50015C5A9 /* SelectHomeHostView.swift in Sources */,
 				62C5ADB32C36F5140093C5E5 /* FinalColorView.swift in Sources */,
@@ -471,6 +492,7 @@
 				62C5ADB72C36F9340093C5E5 /* Util.swift in Sources */,
 				7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
+				7BA3C3432C39108400B3117E /* CMView.swift in Sources */,
 				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
 				62C5ADBF2C385B910093C5E5 /* CardView.swift in Sources */,
 				7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */,
@@ -495,8 +517,10 @@
 				62C5ADB52C36F6580093C5E5 /* EndingStatus.swift in Sources */,
 				62C5ADBD2C3855EE0093C5E5 /* ColorBackgroundView.swift in Sources */,
 				62C5ADC12C3860460093C5E5 /* PopUpView.swift in Sources */,
+				7BA3C33F2C390BEE00B3117E /* CMService.swift in Sources */,
 				62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */,
 				7BC354652C2BF54D0050EB72 /* Color.swift in Sources */,
+				7BA3C3452C3930A100B3117E /* GAService.swift in Sources */,
 				7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */,
 				62C5ADBB2C3854610093C5E5 /* WaitingPlayerView.swift in Sources */,
 				D82182F02C365F1B0015C5A9 /* RoomReqHostView.swift in Sources */,
@@ -645,6 +669,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
+				INFOPLIST_KEY_NSMotionUsageDescription = "This app records your position for better experience";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -684,6 +709,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
+				INFOPLIST_KEY_NSMotionUsageDescription = "This app records your position for better experience";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
