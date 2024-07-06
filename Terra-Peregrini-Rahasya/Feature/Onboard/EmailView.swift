@@ -1,5 +1,5 @@
 //
-//  OnboardView.swift
+//  EmailView.swift
 //  Terra-Peregrini-Rahasya
 //
 //  Created by Daffashiddiq on 26/06/24.
@@ -36,7 +36,7 @@ struct EmailView: View {
                     .padding(.bottom, 10)
                 
                 Button(action: {
-                    router.navigate(to: .splashscreen)
+                    router.navigate(to: .invitation)
                 }, label: {
                     ZStack{
                         Image.ProceedButton

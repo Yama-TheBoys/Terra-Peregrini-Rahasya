@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MinimumReqView: View {
     @EnvironmentObject var router: Router
-
+    
     var body: some View {
         ZStack{
             Image.DisclaimerScreen
@@ -23,22 +23,14 @@ struct MinimumReqView: View {
                     .foregroundStyle(Color(red: 0.85, green: 0.95, blue: 0.99))
                 
                 Text("MINIMUM REQUIREMENTS")
+                    .customFont(.bold, 36)
                     .multilineTextAlignment(.center)
                     .foregroundStyle(Color.white)
-                    .font(.custom("JetBrainsMono-Regular", size: 36))
-                    .font(.title)
-                    .fontWeight(.bold)
                 
                 VStack(alignment: .leading){
+                    Text("To play this game, ensure you have the following devices installed in your room and connected to your **HomeKit** or **HOME** app: ")
                     
-                    HStack{
-                        Text("To play this game, ensure you have the following devices installed in your room and connected to your ")
-                        + Text("HomeKit").bold()
-                        + Text(" or ")
-                        + Text("HOME").bold()
-                        + Text(" app:")
-                    }
-                        .font(.custom("JetBrainsMono-Regular", size: 18))
+                        .font(.customFont(.regular, 18))
                         .padding(.horizontal, 24)
                         .foregroundStyle(Color.white)
                     
@@ -50,10 +42,11 @@ struct MinimumReqView: View {
                             .foregroundStyle(Color(red: 0.85, green: 0.95, blue: 0.99))
                         
                         Text("Smart lamp with RGB support")
+                            .customFont(.regular, 18)
                             .padding(.horizontal, 12)
                             .foregroundStyle(Color.white)
-                            .font(.custom("JetBrainsMono-Regular", size: 18))
                     }
+                    .frame(width: 300, alignment: .center)
                     .padding(.top, 24)
                     
                     HStack{
@@ -64,10 +57,11 @@ struct MinimumReqView: View {
                             .foregroundStyle(Color(red: 0.85, green: 0.95, blue: 0.99))
                         
                         Text("Smart door lock")
+                            .customFont(.regular, 18)
                             .padding(.horizontal, 12)
                             .foregroundStyle(Color.white)
-                            .font(.custom("JetBrainsMono-Regular", size: 18))
                     }
+                    .frame(width: 300, alignment: .center)
                     .padding(.top, 16)
                     
                 }
@@ -76,18 +70,18 @@ struct MinimumReqView: View {
                 Spacer()
                 
                 Button(action: {
-                    router.navigate(to: .splashscreen)
+                    router.navigate(to: .missionIntro(0))
                 }, label: {
                     ZStack{
                         Image.ProceedButton
                             .resizable()
                             .frame(width: 237, height: 81)
                         Text("Proceed")
+                            .customFont(.bold, 18)
                             .foregroundStyle(Color.white)
-                            .fontWeight(.bold)
-                            .font(.custom("JetBrainsMono-Regular", size: 18))
                     }
                 })
+                .padding()
             }
         }
         .navigationBarBackButtonHidden()

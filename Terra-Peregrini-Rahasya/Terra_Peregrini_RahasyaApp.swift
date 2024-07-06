@@ -18,14 +18,51 @@ struct Terra_Peregrini_RahasyaApp: App {
                 DisclaimerView()
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
-                        case .onboard:
-                            EmailView()
-                        case .disclaimer:
-                            DisclaimerView()
                         case .minimumreq:
                             MinimumReqView()
+                                .environmentObject(router)
                         case .splashscreen:
                             SplashView()
+                                .environmentObject(router)
+                        case .email:
+                            EmailView()
+                                .environmentObject(router)
+                        case .invitation:
+                            InvitationView()
+                                .environmentObject(router)
+                        case .namecode:
+                            NameCodeView()
+                                .environmentObject(router)
+                        case .assemble:
+                            AssembleView()
+                                .environmentObject(router)
+                        case .teamassembled:
+                            TeamAssembledView()
+                                .environmentObject(router)
+                        case .roomreqhost:
+                            RoomReqHostView()
+                                .environmentObject(router)
+                        case .roomcomphost:
+                            RoomCompHostView()
+                                .environmentObject(router)
+                        case .roomcompjoinee:
+                            RoomCompJoineeView()
+                                .environmentObject(router)
+                        case .selecthome:
+                            SelectHomeHostView()
+                                .environmentObject(router)
+                        case .selectroom:
+                            SelectRoomHostView()
+                                .environmentObject(router)
+                        case .missionIntro(let mission):
+                            MissionIntro(mission: mission)
+                                .environmentObject(router)
+                        case .missionMainScreen(let mission):
+                            MissionMainScreen(mission: mission)
+                                .environmentObject(router)
+                        case .votingScreen:
+                            VotingView()
+                                .environmentObject(router)
                         }
                     }
                     .environmentObject(router)
