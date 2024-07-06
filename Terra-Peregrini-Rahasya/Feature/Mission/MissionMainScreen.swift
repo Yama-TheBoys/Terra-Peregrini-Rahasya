@@ -115,7 +115,7 @@ struct MissionMainScreen: View {
                     isMission: true,
                     backgroundColor: endingStatus,
                     title: allMission[mission].tagline,
-                    description: "Objective: \(allMission[mission].objective)"
+                    description: "_Objective:_ \(allMission[mission].objective)"
                 )
                 .onTapGesture {
                     isShowInstruction = !isShowInstruction

@@ -7,5 +7,11 @@
 		<string>_device-peer._tcp</string>
 		<string>_device-peer._udp</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>JetBrainsMono-Regular.ttf</string>
+		<string>JetBrainsMono-Bold.ttf</string>
+		<string>JetBrainsMono-Italic.ttf</string>
+	</array>
 </dict>
 </plist>
