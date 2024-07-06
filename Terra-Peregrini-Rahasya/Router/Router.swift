@@ -10,7 +10,21 @@ import SwiftUI
 final class Router: ObservableObject {
     
     public enum Destination: Codable, Hashable {
-        case onboard
+        case minimumreq
+        case splashscreen
+        case email
+        case invitation
+        case namecode
+        case assemble
+        case teamassembled
+        case roomreqhost
+        case roomcomphost
+        case roomcompjoinee
+        case selecthome
+        case selectroom
+        case missionIntro(Int)
+        case missionMainScreen(Int)
+        case votingScreen
     }
     
     @Published var navPath = NavigationPath()
@@ -27,9 +41,3 @@ final class Router: ObservableObject {
         navPath.removeLast(navPath.count)
     }
 }
-
-//typealias Taperable = Codable & Equatable & Hashable
-//
-//struct Apalah: Taperable {
-//    let name: String
-//}

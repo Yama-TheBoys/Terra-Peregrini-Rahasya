@@ -16,38 +16,36 @@ struct SplashView: View {
                 .resizable()
                 .ignoresSafeArea()
             
-            Image.WaveForm
-                .resizable()
-            
             VStack{
+                Spacer()
                 Text("Terra Peregrini Rahasya")
-                    .multilineTextAlignment(.leading)
-                    .padding(.horizontal, 120)
-                    .font(.largeTitle)
+                    .padding(.horizontal, 85)
                     .fontWeight(.bold)
-                    .foregroundStyle(Color.TPRColor.PrimaryBlue)
+                    .font(.custom("JetBrainsMono-Regular", size: 40))
+                    .foregroundStyle(Color.white)
                 
-                Image(systemName: "touchid")
-                    .resizable()
-                    .frame(width: 70, height: 70)
-                    .foregroundStyle(.white)
-                    .offset(y: 210)
-                    .onTapGesture {
-                        router.navigate(to: .onboard)
+                Spacer()
+                
+                Button {
+                    router.navigate(to: .email)
+                } label: {
+                    ZStack{
+                        Image.EnterGameButton
+                            .resizable()
+                            .frame(width: 361, height: 60)
+                        Text("Enter Game")
+                            .foregroundStyle(Color.white)
+                            .fontWeight(.bold)
+                            .font(.custom("JetBrainsMono-Regular", size: 24))
                     }
-                
-                Text("Sign your fingerprint to enter")
-                    .multilineTextAlignment(.center)
-                    .font(.headline)
-                    .fontWeight(.regular)
-                    .foregroundStyle(.white)
-                    .opacity(0.5)
-                    .offset(y: 260)
+                }
+                .padding()
+
             }
         }
+        .navigationBarBackButtonHidden()
     }
     
-    // TODO: Niko create function to wait for 2 seconds then navigate to StartView
 }
 
 #Preview {
