@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Photos
 
 struct IdCardOverView: View {
     @EnvironmentObject var router: Router
     @State private var isShareSheetPresented = false
+    
+    let capturedImage: UIImage
     
     var body: some View {
         ZStack{
@@ -17,18 +20,10 @@ struct IdCardOverView: View {
                 .ignoresSafeArea()
             
             VStack{
-                ZStack{
-                    Image.Badge
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 175)
-                        .padding(.bottom, 125)
-                        
-                    Image.IdCard
-                        .resizable()
-                        .frame(width: 335, height: 551)
-                    
-                }
+                Image(uiImage: capturedImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 335, height: 551)
                 
                 Spacer()
                 
@@ -43,7 +38,9 @@ struct IdCardOverView: View {
                 
                 HStack(spacing: 0){
                     Button(action: {
-                        isShareSheetPresented = true
+                        checkPhotoLibraryPermission {
+                            isShareSheetPresented = true
+                        }
                     }, label: {
                         ZStack{
                             Image.ProceedButton
@@ -54,9 +51,9 @@ struct IdCardOverView: View {
                                 .foregroundStyle(Color.white)
                         }
                     })
-                    .sheet(isPresented: $isShareSheetPresented, content: {
-                                    ActivityView(activityItems: ["Player's ID Card"])
-                                })
+                    .sheet(isPresented: $isShareSheetPresented) {
+                        ActivityView(activityItems: [capturedImage, "Hehe"])
+                    }
                     
                     Button(action: {
                         router.navigate(to: .credits)
@@ -77,6 +74,44 @@ struct IdCardOverView: View {
         }
         .navigationBarBackButtonHidden()
     }
+    
+    func saveImageToPhotoLibrary(image: UIImage) {
+            // Ensure the image is saved as PNG to preserve transparency
+        if let pngData = image.pngData() {
+            if let pngImage = UIImage(data: pngData) {
+                UIImageWriteToSavedPhotosAlbum(pngImage, nil, nil, nil)
+            }
+        }
+    }
+    
+    func checkPhotoLibraryPermission(completion: @escaping () -> Void) {
+        let status = PHPhotoLibrary.authorizationStatus()
+        switch status {
+        case .authorized:
+            // Permission is already granted
+            completion()
+        case .denied, .restricted:
+            // Permission is denied or restricted
+            // Handle this case appropriately in your app
+            print("Photo Library access denied or restricted.")
+        case .notDetermined:
+            // Permission has not been requested yet
+            PHPhotoLibrary.requestAuthorization { newStatus in
+                if newStatus == .authorized {
+                    DispatchQueue.main.async {
+                        completion()
+                    }
+                } else {
+                    print("Photo Library access denied.")
+                }
+            }
+        case .limited:
+            break
+        @unknown default:
+            // Handle future cases
+            print("Unknown authorization status.")
+        }
+    }
 }
 
 struct ActivityView: UIViewControllerRepresentable {
@@ -84,12 +119,66 @@ struct ActivityView: UIViewControllerRepresentable {
     var applicationActivities: [UIActivity]? = nil
 
     func makeUIViewController(context: Context) -> UIActivityViewController {
-        return UIActivityViewController(activityItems: activityItems, applicationActivities: applicationActivities)
+        let customActivity = SaveImageActivity()
+        let controller = UIActivityViewController(activityItems: activityItems, applicationActivities: [customActivity])
+
+        return controller
     }
 
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
+        // No update needed
+    }
 }
 
-#Preview {
-    IdCardOverView()
+import UIKit
+
+class SaveImageActivity: UIActivity {
+    var image: UIImage?
+
+    override var activityTitle: String? {
+        return "Save Image with Transparency"
+    }
+
+    override var activityImage: UIImage? {
+        return UIImage(systemName: "square.and.arrow.down")
+    }
+
+    override var activityType: UIActivity.ActivityType? {
+        return UIActivity.ActivityType("com.yourapp.saveImage")
+    }
+
+    override class var activityCategory: UIActivity.Category {
+        return .action
+    }
+
+    override func canPerform(withActivityItems activityItems: [Any]) -> Bool {
+        for item in activityItems {
+            if item is UIImage {
+                return true
+            }
+        }
+        return false
+    }
+
+    override func prepare(withActivityItems activityItems: [Any]) {
+        for item in activityItems {
+            if let image = item as? UIImage {
+                self.image = image
+            }
+        }
+    }
+
+    override func perform() {
+        guard let image = image else { return }
+
+        if let pngData = image.pngData() {
+            UIImageWriteToSavedPhotosAlbum(UIImage(data: pngData)!, nil, nil, nil)
+        }
+
+        activityDidFinish(true)
+    }
 }
+
+//#Preview {
+//    IdCardOverView()
+//}

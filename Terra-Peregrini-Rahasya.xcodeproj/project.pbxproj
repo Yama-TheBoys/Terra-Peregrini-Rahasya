@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		620E3B532C3AC6E9002D5032 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B522C3AC6E9002D5032 /* CameraModel.swift */; };
+		620E3B752C3AFB82002D5032 /* Orbitron-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 620E3B742C3AFA1C002D5032 /* Orbitron-Medium.ttf */; };
 		62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */; };
 		62C5ADA62C3644300093C5E5 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */; };
 		62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */; };
@@ -47,6 +49,9 @@
 		D82182FA2C3682180015C5A9 /* JetBrainsMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D82182F92C3682180015C5A9 /* JetBrainsMono-Italic.ttf */; };
 		D82182FC2C368AC50015C5A9 /* SelectHomeHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FB2C368AC50015C5A9 /* SelectHomeHostView.swift */; };
 		D82182FE2C368FDE0015C5A9 /* SelectRoomHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FD2C368FDE0015C5A9 /* SelectRoomHostView.swift */; };
+		D82183002C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FF2C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift */; };
+		D82183022C370AF70015C5A9 /* RoomCompSuccessHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183012C370AF70015C5A9 /* RoomCompSuccessHostView.swift */; };
+		D82183042C37C4E40015C5A9 /* HomeNotFoundHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183032C37C4E40015C5A9 /* HomeNotFoundHostView.swift */; };
 		D82183072C37E1650015C5A9 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183062C37E1650015C5A9 /* LeaderboardView.swift */; };
 		D82183092C37F5A70015C5A9 /* FirstPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183082C37F5A70015C5A9 /* FirstPlaceView.swift */; };
 		D821830B2C37F95F0015C5A9 /* OthersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D821830A2C37F95F0015C5A9 /* OthersView.swift */; };
@@ -55,9 +60,6 @@
 		D82183222C3906BF0015C5A9 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183212C3906BF0015C5A9 /* CameraView.swift */; };
 		D82183282C3914430015C5A9 /* CapturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183272C3914430015C5A9 /* CapturedView.swift */; };
 		D821832A2C3916390015C5A9 /* IdCardOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183292C3916390015C5A9 /* IdCardOverView.swift */; };
-		D82183002C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FF2C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift */; };
-		D82183022C370AF70015C5A9 /* RoomCompSuccessHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183012C370AF70015C5A9 /* RoomCompSuccessHostView.swift */; };
-		D82183042C37C4E40015C5A9 /* HomeNotFoundHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183032C37C4E40015C5A9 /* HomeNotFoundHostView.swift */; };
 		D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */; };
 		D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */; };
 		D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */; };
@@ -66,6 +68,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		620E3B522C3AC6E9002D5032 /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraModel.swift; path = "Terra-Peregrini-Rahasya/Feature/Reusable/CameraModel.swift"; sourceTree = SOURCE_ROOT; };
+		620E3B742C3AFA1C002D5032 /* Orbitron-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Medium.ttf"; sourceTree = "<group>"; };
 		62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionIntro.swift; sourceTree = "<group>"; };
 		62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionMainScreen.swift; sourceTree = "<group>"; };
@@ -108,6 +112,9 @@
 		D82182F92C3682180015C5A9 /* JetBrainsMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Italic.ttf"; sourceTree = "<group>"; };
 		D82182FB2C368AC50015C5A9 /* SelectHomeHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHomeHostView.swift; sourceTree = "<group>"; };
 		D82182FD2C368FDE0015C5A9 /* SelectRoomHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomHostView.swift; sourceTree = "<group>"; };
+		D82182FF2C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCompSuccessJoineeView.swift; sourceTree = "<group>"; };
+		D82183012C370AF70015C5A9 /* RoomCompSuccessHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCompSuccessHostView.swift; sourceTree = "<group>"; };
+		D82183032C37C4E40015C5A9 /* HomeNotFoundHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNotFoundHostView.swift; sourceTree = "<group>"; };
 		D82183062C37E1650015C5A9 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		D82183082C37F5A70015C5A9 /* FirstPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPlaceView.swift; sourceTree = "<group>"; };
 		D821830A2C37F95F0015C5A9 /* OthersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersView.swift; sourceTree = "<group>"; };
@@ -116,9 +123,6 @@
 		D82183212C3906BF0015C5A9 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D82183272C3914430015C5A9 /* CapturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedView.swift; sourceTree = "<group>"; };
 		D82183292C3916390015C5A9 /* IdCardOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdCardOverView.swift; sourceTree = "<group>"; };
-		D82182FF2C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCompSuccessJoineeView.swift; sourceTree = "<group>"; };
-		D82183012C370AF70015C5A9 /* RoomCompSuccessHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCompSuccessHostView.swift; sourceTree = "<group>"; };
-		D82183032C37C4E40015C5A9 /* HomeNotFoundHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNotFoundHostView.swift; sourceTree = "<group>"; };
 		D84F10D62C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terra-Peregrini-Rahasya.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terra_Peregrini_RahasyaApp.swift; sourceTree = "<group>"; };
 		D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 		7BC354712C2C1E900050EB72 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				620E3B522C3AC6E9002D5032 /* CameraModel.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 		D82182D72C33FF7B0015C5A9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				620E3B742C3AFA1C002D5032 /* Orbitron-Medium.ttf */,
 				D82182F92C3682180015C5A9 /* JetBrainsMono-Italic.ttf */,
 				D82182E72C359EEE0015C5A9 /* JetBrainsMono-Bold.ttf */,
 				D82182E32C358A540015C5A9 /* JetBrainsMono-Regular.ttf */,
@@ -487,6 +493,7 @@
 			files = (
 				D82182FA2C3682180015C5A9 /* JetBrainsMono-Italic.ttf in Resources */,
 				D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */,
+				620E3B752C3AFB82002D5032 /* Orbitron-Medium.ttf in Resources */,
 				D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */,
 				D82182E42C358A540015C5A9 /* JetBrainsMono-Regular.ttf in Resources */,
 				D82182E82C359EEE0015C5A9 /* JetBrainsMono-Bold.ttf in Resources */,
@@ -506,6 +513,7 @@
 				D82182FC2C368AC50015C5A9 /* SelectHomeHostView.swift in Sources */,
 				62C5ADB32C36F5140093C5E5 /* FinalColorView.swift in Sources */,
 				62C5ADC72C39A2FF0093C5E5 /* PointResultView.swift in Sources */,
+				620E3B532C3AC6E9002D5032 /* CameraModel.swift in Sources */,
 				D82182F42C3665DB0015C5A9 /* RoomCompJoineeView.swift in Sources */,
 				62C5ADAF2C367DE20093C5E5 /* MissionDetail.swift in Sources */,
 				D821830D2C383B8A0015C5A9 /* CreditsView.swift in Sources */,
@@ -697,8 +705,8 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to use the camera for taking photos.";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need your permission to access photo library for saving photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -738,8 +746,8 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to use the camera for taking photos.";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need your permission to access photo library for saving photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

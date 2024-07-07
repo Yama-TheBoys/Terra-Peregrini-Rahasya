@@ -15,7 +15,7 @@ struct Terra_Peregrini_RahasyaApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navPath) {
-                DisclaimerView()
+                LeaderboardView()
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
                         case .minimumreq:
@@ -60,10 +60,10 @@ struct Terra_Peregrini_RahasyaApp: App {
                             OthersView()
                         case .takepicture:
                             TakePictureView()
-                        case .captured:
-                            CapturedView()
-                        case .idcardoverview:
-                            IdCardOverView()
+                        case .captured(let photo):
+                            CapturedView(capturedImage: photo)
+                        case .idcardoverview(let photo):
+                            IdCardOverView(capturedImage: photo)
                         case .credits:
                             CreditsView()
                         case .votingScreen:
