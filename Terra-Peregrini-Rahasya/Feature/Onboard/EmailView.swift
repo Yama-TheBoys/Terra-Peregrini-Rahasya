@@ -26,7 +26,7 @@ struct EmailView: View {
                 Spacer()
                 
                 Text("You have 1 new message.")
-                    .font(.custom("JetBrainsMono-Regular", size: 18))
+                    .customFont(.regular, 18)
                     .foregroundStyle(.white)
                     .background(
                         Image.Message
@@ -44,8 +44,7 @@ struct EmailView: View {
                             .frame(width: 237, height: 81)
                         Text("Open Message")
                             .foregroundStyle(Color.white)
-                            .fontWeight(.bold)
-                            .font(.custom("JetBrainsMono-Regular", size: 18))
+                            .customFont(.bold, 18)
                     }
                 })
                 .padding()

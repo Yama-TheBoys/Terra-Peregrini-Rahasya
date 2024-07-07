@@ -118,8 +118,9 @@ struct SelectRoomHostView: View {
 //                Spacer()
                 Spacer()
                 
+                // if success as host
                 Button(action: {
-                    router.navigate(to: .teamassembled)
+                    router.navigate(to: .roomsuccesshost)
                 }, label: {
                     ZStack{
                         Image(selectedRoom == nil ? "DisableButton" : "ProceedButton")

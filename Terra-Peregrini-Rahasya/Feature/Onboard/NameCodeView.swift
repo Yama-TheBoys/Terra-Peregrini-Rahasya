@@ -10,6 +10,9 @@ import SwiftUI
 struct NameCodeView: View {
     @EnvironmentObject var router: Router
     @EnvironmentObject var connectivityManager: ConnectivityManager
+
+    @State private var candidateName: String = ""
+    @State private var teamCode: String = ""
     
     var body: some View {
         ZStack{
@@ -18,72 +21,87 @@ struct NameCodeView: View {
             
             VStack{
                 Text("Create a 4-digit team code. All candidates in the room should enter the same code.")
-                    .font(.custom("JetBrainsMono-Regular", size: 18))
+                    .customFont(.regular, 18)
                     .foregroundStyle(.white)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16)
                     .background(
                         Image.Message
                             .resizable()
-                            .frame(width: 442, height: 121)
+                            .frame(width: 442, height: 144)
                     )
                     .padding()
                 
-                Spacer()
+//                Spacer()
                 
-                ZStack{
-                    Image.TitleBackground
-                        .padding(.trailing, 100)
-                    
-                    // Text Field belum dicoba
-                    Image.InputField
-                        .resizable()
-                        .frame(width: 240, height: 50)
-                        .padding(.leading, 120)
-                    
-                    Text("Candidate Name")
-                        .font(.custom("JetBrainsMono-Regular", size: 16))
-                        .foregroundStyle(.white)
-                        .padding(.trailing, 200)
-                }
-                
-                ZStack{
-                    Image.TitleBackground
-                        .padding(.trailing, 100)
-                    
-                    // Text Field belum dicoba
-                    Image.InputField
-                        .resizable()
-                        .frame(width: 240, height: 50)
-                        .padding(.leading, 120)
-                    
-                    Text("Team Code")
-                        .font(.custom("JetBrainsMono-Regular", size: 16))
-                        .foregroundStyle(.white)
-                        .padding(.trailing, 250)
-                    
-                }
-                
-                Spacer()
-                Spacer()
-                Spacer()
-                
-                Button(action: {
-                    router.navigate(to: .assemble)
-                }, label: {
+                ScrollView{
                     ZStack{
-                        Image.ProceedButton
+                        Image.TitleBackground
+                            .padding(.trailing, 100)
+                        
+                        Image.InputField
                             .resizable()
-                            .frame(width: 237, height: 81)
-                        Text("Proceed")
-                            .foregroundStyle(Color.white)
-                            .fontWeight(.bold)
-                            .font(.custom("JetBrainsMono-Regular", size: 18))
+                            .frame(width: 240, height: 50)
+                            .padding(.leading, 120)
+                        
+                        Text("Candidate Name")
+                            .customFont(.regular, 16)
+                            .foregroundStyle(.white)
+                            .padding(.trailing, 200)
+                            .overlay(
+                                TextField("", text: $candidateName) // belom bisa passing
+                                    .font(.customFont(.regular, 16))
+                                    .foregroundStyle(.black)
+                                    .multilineTextAlignment(.center)
+                                    .frame(width: 200)
+                                    .keyboardType(.namePhonePad)
+                                    .padding(.leading, 150)
+                            )
                     }
-                })
-                .padding()
                     
+                    ZStack{
+                        Image.TitleBackground
+                            .padding(.trailing, 100)
+                        
+                        Image.InputField
+                            .resizable()
+                            .frame(width: 240, height: 50)
+                            .padding(.leading, 120)
+                        
+                        Text("Team Code")
+                            .customFont(.regular, 16)
+                            .foregroundStyle(.white)
+                            .padding(.trailing, 250)
+                            .overlay(
+                                TextField("", text: $teamCode)
+                                    .font(.customFont(.regular, 16))
+                                    .foregroundStyle(.black)
+                                    .multilineTextAlignment(.center)
+                                    .frame(width: 200)
+                                    .keyboardType(.numbersAndPunctuation)
+                                    .padding(.leading, 150)
+                            )
+                    }
+                    .padding(.bottom, 300)
+                    
+                    Button(action: { // button nya belom ke disable klo belom ada input
+                        router.navigate(to: .assemble(candidateName: candidateName))
+                    }, label: {
+                        ZStack{
+                            Image.ProceedButton
+                                .resizable()
+                                .frame(width: 237, height: 81)
+                            Text("Proceed")
+                                .customFont(.bold, 18)
+                                .foregroundStyle(Color.white)
+                        }
+                    })
+                    .padding()
+                }
+                .padding(.top, 64)
+                .scrollIndicators(.hidden)
             }
+            
         }
         .navigationBarBackButtonHidden()
     }

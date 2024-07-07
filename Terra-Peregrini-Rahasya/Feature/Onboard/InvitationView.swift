@@ -23,42 +23,34 @@ struct InvitationView: View {
                     .offset(y: -100)
                 
                 VStack{
-                    Spacer()
                     Text("Online Recruitment Test Invitation\n")
-                        .font(.custom("JetBrainsMono-Regular", size: 24))
-                        .bold()
+                        .customFont(.bold, 24)
                         .multilineTextAlignment(.center)
                         .foregroundStyle(.white)
-                        .padding()
+                        .padding(.top, 48)
                     
-                    HStack{
-                        Text("Hi Candidate, \n")
-                        + Text("\nCongratulations!\n")
-                        + Text("We’re pleased to inform you that you’re qualified for the final activity in our Agent Recruitment Test.\n")
-                        + Text("\nPlease team up with 4 other candidates in one room to proceed.\n")
-                        + Text("\nRegards,")
-                    }
-                    .font(.custom("JetBrainsMono-Regular", size: 18))
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 60)
-                    
-                    Button(action: {
-                        router.navigate(to: .namecode)
-                    }, label: {
-                        ZStack{
-                            Image.ProceedButton
-                                .resizable()
-                                .frame(width: 237, height: 81)
-                            Text("Open Message")
-                                .foregroundStyle(Color.white)
-                                .fontWeight(.bold)
-                                .font(.custom("JetBrainsMono-Regular", size: 18))
-                        }
-                    })
-                    .padding(.top, 100)
+                    Text("Hi Candidate, \n\nCongratulations! \n\nWe’re pleased to inform you that you’re qualified for the final activity in our Agent Recruitment Test. \n\nPlease team up with 4 other candidates in one room to proceed. Each of you will start with 10 points. Compete to achieve the highest score and earn a special badge from Peregrini. \n\nRegards,")
+                        .customFont(.regular, 18)
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 60)
                     Spacer()
                 }
-            }.ignoresSafeArea()
+                .offset(y: -36)
+                
+                Button(action: {
+                    router.navigate(to: .namecode)
+                }, label: {
+                    ZStack{
+                        Image.ProceedButton
+                            .resizable()
+                            .frame(width: 237, height: 81)
+                        Text("Take the Test")
+                            .customFont(.bold, 18)
+                            .foregroundStyle(Color.white)
+                    }
+                })
+                .offset(y: 286)
+            }
         }.navigationBarBackButtonHidden()
     }
 }

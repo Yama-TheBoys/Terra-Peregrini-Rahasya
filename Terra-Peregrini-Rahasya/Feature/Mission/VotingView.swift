@@ -69,56 +69,15 @@ struct VotingView: View {
             }
             
             if isVotingDone {
-                
-                Color(.black)
-                    .opacity(0.7)
-                    .ignoresSafeArea()
-                
-                VStack {
-                    Spacer()
-                    
-                    Text(choosenPlayer.uppercased())
-                        .foregroundStyle(.white)
-                        .customFont(.bold, 64)
-                        .shadow(color: .blue, radius: 15)
-                    
-                    Text("has been voted to lose points.")
-                        .foregroundStyle(.white)
-                        .customFont(.bold, 20)
-                        .frame(width: UIScreen.main.bounds.size.width * 0.5)
-                        .multilineTextAlignment(.center)
-                        .shadow(color: .blue, radius: 10)
-                        
-                    
-                    Text("-10 pts")
-                        .foregroundStyle(.white)
-                        .customFont(.bold, 50)
-                        .padding(.top, 20)
-                        .shadow(color: .red, radius: 15)
-                    
-                    Spacer()
-                    
-                    Button(action: {
+                PointResultView(
+                    choosenPlayer: choosenPlayer,
+                    isVoting: true,
+                    isFirstBlood: false,
+                    onAction: {
                         router.navigateBack()
-                    }, label: {
-                        ZStack{
-                            Image.ProceedButton
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                            
-                            Text("See Clues Now")
-                                .foregroundStyle(Color.white)
-                                .customFont(.bold, 18)
-                        }
-                    })
-                    .frame(width: 237, height: 81)
-                    .offset(y: -15)
-                }
+                    }
+                )
             }
-//            Text("Hello, World!")
-//                .onTapGesture {
-//                    router.navigateBack()
-//                }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.TPRColor.PrimaryPurple)

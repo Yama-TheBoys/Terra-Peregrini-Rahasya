@@ -43,10 +43,30 @@ struct Terra_Peregrini_RahasyaApp: App {
                             SelectHomeHostView()
                         case .selectroom:
                             SelectRoomHostView()
+                        case .roomsuccesshost:
+                            RoomCompSuccessHostView()
+                        case .roomsuccessjoinee:
+                            RoomCompSuccessJoineeView()
+                        case .homenotfound:
+                            HomeNotFoundHostView()
                         case .missionIntro(let mission):
                             MissionIntro(mission: mission)
                         case .missionMainScreen(let mission):
                             MissionMainScreen(mission: mission)
+                        case .leaderboard:
+                            LeaderboardView()
+                        case .firstplace:
+                            FirstPlaceView()
+                        case .others:
+                            OthersView()
+                        case .takepicture:
+                            TakePictureView()
+                        case .captured:
+                            CapturedView()
+                        case .idcardoverview:
+                            IdCardOverView()
+                        case .credits:
+                            CreditsView()
                         case .votingScreen:
                             VotingView()
                         }
