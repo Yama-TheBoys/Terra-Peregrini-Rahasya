@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		620E3B532C3AC6E9002D5032 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B522C3AC6E9002D5032 /* CameraModel.swift */; };
-		620E3B752C3AFB82002D5032 /* Orbitron-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 620E3B742C3AFA1C002D5032 /* Orbitron-Medium.ttf */; };
+		620E3B772C3B08B2002D5032 /* Orbitron-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 620E3B742C3AFA1C002D5032 /* Orbitron-Medium.ttf */; };
 		62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */; };
 		62C5ADA62C3644300093C5E5 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */; };
 		62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */; };
@@ -514,7 +514,7 @@
 				D82182FA2C3682180015C5A9 /* JetBrainsMono-Italic.ttf in Resources */,
 				D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */,
 				D8CE19742C3B071B00E28316 /* Point-Earned.wav in Resources */,
-				620E3B752C3AFB82002D5032 /* Orbitron-Medium.ttf in Resources */,
+				620E3B772C3B08B2002D5032 /* Orbitron-Medium.ttf in Resources */,
 				D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */,
 				D8CE19732C3B071B00E28316 /* Opening_Dystopian.wav in Resources */,
 				D8CE19782C3B0BDF00E28316 /* button-clicked.wav in Resources */,
