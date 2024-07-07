@@ -104,6 +104,7 @@ struct AssembleView: View {
                     )
                 
                 Button(action: {
+                    playButtonClickSound()
                     router.navigate(to: .teamassembled)
                 }, label: {
                     ZStack{

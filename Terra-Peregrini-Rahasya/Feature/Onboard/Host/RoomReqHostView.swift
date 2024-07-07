@@ -43,6 +43,7 @@ struct RoomReqHostView: View {
                     )
                 
                 Button(action: {
+                    playButtonClickSound()
                     router.navigate(to: .roomcomphost)
                 }, label: {
                     ZStack{

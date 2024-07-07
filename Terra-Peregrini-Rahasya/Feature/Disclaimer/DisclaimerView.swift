@@ -95,6 +95,7 @@ struct DisclaimerView: View {
                 Spacer()
                 
                 Button {
+                    playButtonClickSound()
                     router.navigate(to: .minimumreq)
                 } label: {
                     ZStack{

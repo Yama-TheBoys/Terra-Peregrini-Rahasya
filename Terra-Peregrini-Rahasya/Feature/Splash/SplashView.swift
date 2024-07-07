@@ -27,6 +27,7 @@ struct SplashView: View {
                 Spacer()
                 
                 Button {
+                    playButtonClickSound()
                     router.navigate(to: .email)
                 } label: {
                     ZStack{
