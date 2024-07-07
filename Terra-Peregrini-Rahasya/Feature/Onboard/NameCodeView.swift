@@ -83,6 +83,7 @@ struct NameCodeView: View {
                     .padding(.bottom, 300)
                     
                     Button(action: { // button nya belom ke disable klo belom ada input
+                        playButtonClickSound()
                         router.navigate(to: .assemble(candidateName: candidateName))
                     }, label: {
                         ZStack{

@@ -267,7 +267,9 @@ struct MissionMainScreen: View {
                     }
                 )
                 .environmentObject(router)
-                
+                .onAppear{
+                    playPointEarnedSound()
+                }
             }
             
         }

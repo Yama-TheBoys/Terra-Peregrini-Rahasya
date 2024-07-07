@@ -65,6 +65,10 @@
 		D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */; };
 		D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10EB2C27F39700D8AAB9 /* SplashView.swift */; };
 		D84F110C2C33EFBE00D8AAB9 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F110B2C33EFBE00D8AAB9 /* DisclaimerView.swift */; };
+		D8CE19732C3B071B00E28316 /* Opening_Dystopian.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19712C3B071B00E28316 /* Opening_Dystopian.wav */; };
+		D8CE19742C3B071B00E28316 /* Point-Earned.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19722C3B071B00E28316 /* Point-Earned.wav */; };
+		D8CE19762C3B094E00E28316 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE19752C3B094E00E28316 /* Sound.swift */; };
+		D8CE19782C3B0BDF00E28316 /* button-clicked.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19772C3B0BDF00E28316 /* button-clicked.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +133,10 @@
 		D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D84F10EB2C27F39700D8AAB9 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		D84F110B2C33EFBE00D8AAB9 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
+		D8CE19712C3B071B00E28316 /* Opening_Dystopian.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Opening_Dystopian.wav; sourceTree = "<group>"; };
+		D8CE19722C3B071B00E28316 /* Point-Earned.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Point-Earned.wav"; sourceTree = "<group>"; };
+		D8CE19752C3B094E00E28316 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		D8CE19772C3B0BDF00E28316 /* button-clicked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "button-clicked.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +189,7 @@
 		62C5ADAC2C367D6D0093C5E5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D8CE19702C3B06FD00E28316 /* Sounds */,
 				62C5ADAB2C367CFA0093C5E5 /* Enums */,
 				62C5ADAD2C367DA10093C5E5 /* Model */,
 			);
@@ -248,6 +257,7 @@
 				7BC354642C2BF54D0050EB72 /* Color.swift */,
 				D82182DD2C3402260015C5A9 /* Font.swift */,
 				62C5ADB62C36F9340093C5E5 /* Util.swift */,
+				D8CE19752C3B094E00E28316 /* Sound.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -433,6 +443,16 @@
 			path = Disclaimer;
 			sourceTree = "<group>";
 		};
+		D8CE19702C3B06FD00E28316 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D8CE19772C3B0BDF00E28316 /* button-clicked.wav */,
+				D8CE19712C3B071B00E28316 /* Opening_Dystopian.wav */,
+				D8CE19722C3B071B00E28316 /* Point-Earned.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -493,8 +513,11 @@
 			files = (
 				D82182FA2C3682180015C5A9 /* JetBrainsMono-Italic.ttf in Resources */,
 				D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */,
+				D8CE19742C3B071B00E28316 /* Point-Earned.wav in Resources */,
 				620E3B752C3AFB82002D5032 /* Orbitron-Medium.ttf in Resources */,
 				D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */,
+				D8CE19732C3B071B00E28316 /* Opening_Dystopian.wav in Resources */,
+				D8CE19782C3B0BDF00E28316 /* button-clicked.wav in Resources */,
 				D82182E42C358A540015C5A9 /* JetBrainsMono-Regular.ttf in Resources */,
 				D82182E82C359EEE0015C5A9 /* JetBrainsMono-Bold.ttf in Resources */,
 			);
@@ -520,6 +543,7 @@
 				7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
 				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
+				D8CE19762C3B094E00E28316 /* Sound.swift in Sources */,
 				D821830B2C37F95F0015C5A9 /* OthersView.swift in Sources */,
 				62C5ADB72C36F9340093C5E5 /* Util.swift in Sources */,
 				7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */,

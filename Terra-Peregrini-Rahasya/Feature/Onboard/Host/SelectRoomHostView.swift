@@ -120,6 +120,7 @@ struct SelectRoomHostView: View {
                 
                 // if success as host
                 Button(action: {
+                    playButtonClickSound()
                     router.navigate(to: .roomsuccesshost)
                 }, label: {
                     ZStack{

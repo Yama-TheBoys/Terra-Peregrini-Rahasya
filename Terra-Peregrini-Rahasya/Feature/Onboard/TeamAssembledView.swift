@@ -99,6 +99,7 @@ struct TeamAssembledView: View {
                     )
                 
                 Button(action: {
+                    playButtonClickSound()
                     router.navigate(to: .roomreqhost)
                 }, label: {
                     ZStack{
