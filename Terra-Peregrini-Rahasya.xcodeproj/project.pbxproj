@@ -35,6 +35,7 @@
 		7BC354652C2BF54D0050EB72 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354642C2BF54D0050EB72 /* Color.swift */; };
 		7BC354692C2BF74A0050EB72 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354682C2BF74A0050EB72 /* HomeService.swift */; };
 		7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3546B2C2C031B0050EB72 /* HomeService+Delegate.swift */; };
+		7BC5DDD72C39B4B5007149D8 /* GAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC5DDD62C39B4B5007149D8 /* GAView.swift */; };
 		D82182DE2C3402260015C5A9 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182DD2C3402260015C5A9 /* Font.swift */; };
 		D82182E02C340BB20015C5A9 /* MinimumReqView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182DF2C340BB20015C5A9 /* MinimumReqView.swift */; };
 		D82182E22C357ECA0015C5A9 /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182E12C357ECA0015C5A9 /* InvitationView.swift */; };
@@ -89,6 +90,7 @@
 		7BC354682C2BF74A0050EB72 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		7BC3546A2C2BF83C0050EB72 /* Terra-Peregrini-Rahasya.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Terra-Peregrini-Rahasya.entitlements"; sourceTree = "<group>"; };
 		7BC3546B2C2C031B0050EB72 /* HomeService+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeService+Delegate.swift"; sourceTree = "<group>"; };
+		7BC5DDD62C39B4B5007149D8 /* GAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAView.swift; sourceTree = "<group>"; };
 		D82182DC2C34004F0015C5A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D82182DD2C3402260015C5A9 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		D82182DF2C340BB20015C5A9 /* MinimumReqView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumReqView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				7B245F7E2C2D586900DB1EA4 /* MPCView.swift */,
 				7BA3C3422C39108400B3117E /* CMView.swift */,
+				7BC5DDD62C39B4B5007149D8 /* GAView.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */,
 				62C5ADC32C3884300093C5E5 /* Instructions.swift in Sources */,
 				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
+				7BC5DDD72C39B4B5007149D8 /* GAView.swift in Sources */,
 				7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */,
 				62C5ADB92C37A6210093C5E5 /* VotingView.swift in Sources */,
 				D82182F22C3663F50015C5A9 /* RoomCompHostView.swift in Sources */,

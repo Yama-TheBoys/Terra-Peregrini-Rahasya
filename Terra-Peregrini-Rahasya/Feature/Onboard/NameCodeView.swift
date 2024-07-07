@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NameCodeView: View {
     @EnvironmentObject var router: Router
+    @EnvironmentObject var connectivityManager: ConnectivityManager
     
     var body: some View {
         ZStack{
