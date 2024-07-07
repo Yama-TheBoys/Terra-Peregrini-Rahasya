@@ -29,7 +29,6 @@ struct MinimumReqView: View {
                 
                 VStack(alignment: .leading){
                     Text("To play this game, ensure you have the following devices installed in your room and connected to your **HomeKit** or **HOME** app: ")
-                    
                         .font(.customFont(.regular, 18))
                         .padding(.horizontal, 24)
                         .foregroundStyle(Color.white)
@@ -70,7 +69,7 @@ struct MinimumReqView: View {
                 Spacer()
                 
                 Button(action: {
-                    router.navigate(to: .missionIntro(0))
+                    router.navigate(to: .splashscreen)
                 }, label: {
                     ZStack{
                         Image.ProceedButton

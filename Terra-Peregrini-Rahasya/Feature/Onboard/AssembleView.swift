@@ -23,8 +23,8 @@ struct AssembleView: View {
                         .frame(width: 400, height: 100)
                         .padding(.trailing, 100)
                     
-                    Text("Candidate 1 \nName: Daffa")
-                        .font(.custom("JetBrainsMono-Regular", size: 18))
+                    Text("Candidate 1 \nName: ") // should be pass the candidate name from NameCodeView
+                        .customFont(.regular, 18)
                         .foregroundStyle(.white)
                         .padding(.top, 20)
                         .padding(.trailing, 225)
@@ -39,7 +39,7 @@ struct AssembleView: View {
                         .opacity(0.4)
                     
                     Text("Candidate 2 \nName: ....")
-                        .font(.custom("JetBrainsMono-Regular", size: 18))
+                        .customFont(.regular, 18)
                         .foregroundStyle(.white)
                         .padding(.top, 20)
                         .padding(.trailing, 225)
@@ -54,7 +54,7 @@ struct AssembleView: View {
                         .opacity(0.4)
                     
                     Text("Candidate 3 \nName: ....")
-                        .font(.custom("JetBrainsMono-Regular", size: 18))
+                        .customFont(.regular, 18)
                         .foregroundStyle(.white)
                         .padding(.top, 20)
                         .padding(.trailing, 225)
@@ -69,7 +69,7 @@ struct AssembleView: View {
                         .opacity(0.4)
                     
                     Text("Candidate 4 \nName: ....")
-                        .font(.custom("JetBrainsMono-Regular", size: 18))
+                        .customFont(.regular, 18)
                         .foregroundStyle(.white)
                         .padding(.top, 20)
                         .padding(.trailing, 225)
@@ -84,7 +84,7 @@ struct AssembleView: View {
                         .opacity(0.4)
                     
                     Text("Candidate 5 \nName: ....")
-                        .font(.custom("JetBrainsMono-Regular", size: 18))
+                        .customFont(.regular, 18)
                         .foregroundStyle(.white)
                         .padding(.top, 20)
                         .padding(.trailing, 225)
@@ -107,13 +107,12 @@ struct AssembleView: View {
                     router.navigate(to: .teamassembled)
                 }, label: {
                     ZStack{
-                        Image.DisableButton
+                        Image.DisableButton // make if statement
                             .resizable()
                             .frame(width: 237, height: 81)
                         Text("Proceed")
+                            .customFont(.bold, 18)
                             .foregroundStyle(Color.white)
-                            .fontWeight(.bold)
-                            .font(.custom("JetBrainsMono-Regular", size: 18))
                     }
                 })
                 
@@ -125,15 +124,14 @@ struct AssembleView: View {
                             .resizable()
                             .frame(width: 103, height: 37)
                         Text("Help")
+                            .customFont(.bold, 18)
                             .foregroundStyle(Color.white)
-                            .fontWeight(.bold)
-                            .font(.custom("JetBrainsMono-Regular", size: 18))
                     }
                 })
                 .offset(y: -10)
                 .sheet(isPresented: $showModal) {
                     HelpModalView()
-                        .presentationDetents([.fraction(0.25), .fraction(1.0)])
+                        .presentationDetents([.fraction(0.25), .fraction(0.5)])
                         .presentationDragIndicator(.visible)
                 }
             }
@@ -145,14 +143,13 @@ struct AssembleView: View {
 struct HelpModalView: View {
     var body: some View{
         ZStack {
-            Color.TPRColor.PrimaryBlue
+            Color.TPRColor.LightBlue
                 .ignoresSafeArea()
             
             Text("To start the game, ensure there are exactly five players. This number is crucial for the game mechanics and optimal experience. Without five players, the game cannot begin.")
+                .customFont(.bold, 18)
                 .padding(.top, 24)
                 .padding(.horizontal, 24)
-                .font(.custom("JetBrainsMono-Regular", size: 18))
-                .bold()
                 .foregroundColor(.white)
                 .cornerRadius(16)
         }
