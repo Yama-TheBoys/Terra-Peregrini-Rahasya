@@ -127,6 +127,7 @@ extension Image {
     
     public static var IdCard: Image {
         return Image(.idCard)
+    }
 
     public static var Alert: Image {
         return Image(.alert)

@@ -15,13 +15,16 @@ final class Router: ObservableObject {
         case email
         case invitation
         case namecode
-        case assemble
+        case assemble(candidateName: String)
         case teamassembled
         case roomreqhost
         case roomcomphost
         case roomcompjoinee
         case selecthome
         case selectroom
+        case roomsuccesshost
+        case roomsuccessjoinee
+        case homenotfound
         case missionIntro(Int)
         case missionMainScreen(Int)
         case leaderboard

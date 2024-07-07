@@ -296,5 +296,5 @@ struct MissionMainScreen: View {
 }
 
 #Preview {
-    MissionMainScreen(mission: 1)
+    MissionMainScreen(mission: 3)
 }
