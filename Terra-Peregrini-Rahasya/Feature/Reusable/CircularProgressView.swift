@@ -35,8 +35,12 @@ struct CircularProgressView: View {
                         )
                     )
                     .rotationEffect(Angle(degrees: isAnimating ? 360 : 0))
-                    .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
-                    .shadow(color: color ,radius: 10)
+                    .animation(
+                        Animation.linear(duration: 1).repeatForever(autoreverses: false),
+                        value: isAnimating
+                    )
+//                    .shadow(color: color ,radius: 10)
+                    .blur(radius: 2)
             } else {
                 Circle()
                     .trim(from: 0, to: progress)
@@ -60,5 +64,7 @@ struct CircularProgressView: View {
 }
 
 #Preview {
-    CircularProgressView(progress: 0.5, isRepeating: true, lineWidth: 20, color: Color.TPRColor.LightPurple)
+    CircularProgressView(progress: 0.5, isRepeating: true, lineWidth: 15, color: Color.TPRColor.LightPurple)
+        .scaledToFit()
+        .frame(width: 100)
 }
