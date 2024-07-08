@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RoomCompSuccessHostView: View {
     @EnvironmentObject var router: Router
+    @EnvironmentObject var connectivityManager: ConnectivityManager
     
     var body: some View {
         ZStack{
@@ -74,6 +75,7 @@ struct RoomCompSuccessHostView: View {
                     )
                 
                 Button(action: {
+                    connectivityManager.sendMessageToStartFirstMission()
                     router.navigate(to: .missionIntro(0))
                 }, label: {
                     ZStack{

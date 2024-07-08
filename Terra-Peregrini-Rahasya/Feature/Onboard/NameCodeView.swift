@@ -31,9 +31,7 @@ struct NameCodeView: View {
                             .frame(width: 442, height: 144)
                     )
                     .padding()
-                
-//                Spacer()
-                
+                                
                 ScrollView{
                     ZStack{
                         Image.TitleBackground
@@ -85,7 +83,8 @@ struct NameCodeView: View {
                     .padding(.bottom, 300)
                     
                     Button(action: { // button nya belom ke disable klo belom ada input
-                        router.navigate(to: .assemble(candidateName: candidateName))
+                        connectivityManager.startConnecting(name: candidateName, teamCode: teamCode)
+                        router.navigate(to: .assemble(candidateName))
                     }, label: {
                         ZStack{
                             Image.ProceedButton

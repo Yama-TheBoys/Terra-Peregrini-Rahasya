@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RoomReqHostView: View {
     @EnvironmentObject var router: Router
+    @EnvironmentObject var connectivityManager: ConnectivityManager
     
     var body: some View {
         ZStack{
@@ -44,6 +45,7 @@ struct RoomReqHostView: View {
                 
                 Button(action: {
                     router.navigate(to: .roomcomphost)
+                    connectivityManager.startSetupHomeAsHost()
                 }, label: {
                     ZStack{
                         Image.ProceedButton
@@ -59,6 +61,15 @@ struct RoomReqHostView: View {
             }
         }
         .navigationBarBackButtonHidden()
+        .onChange(of: connectivityManager.isHostChosen) {
+            listenToMessageReceived()
+        }
+    }
+    
+    func listenToMessageReceived() {
+        if connectivityManager.isHostChosen {
+            router.navigate(to: .roomcompjoinee)
+        }
     }
 }
 

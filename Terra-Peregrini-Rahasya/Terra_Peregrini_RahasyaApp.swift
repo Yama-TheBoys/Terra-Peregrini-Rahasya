@@ -29,8 +29,8 @@ struct Terra_Peregrini_RahasyaApp: App {
                             InvitationView()
                         case .namecode:
                             NameCodeView()
-                        case .assemble:
-                            AssembleView()
+                        case .assemble(let candidateName):
+                            AssembleView(candidateName: candidateName)
                         case .teamassembled:
                             TeamAssembledView()
                         case .roomreqhost:
@@ -69,6 +69,8 @@ struct Terra_Peregrini_RahasyaApp: App {
                             CreditsView()
                         case .votingScreen:
                             VotingView()
+                        case .waitingPlayerView(let destination):
+                            WaitingPlayerView(destination: destination)
                         }
                     }
             }

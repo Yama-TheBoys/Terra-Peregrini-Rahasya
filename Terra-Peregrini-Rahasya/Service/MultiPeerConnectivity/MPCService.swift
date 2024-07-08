@@ -7,11 +7,20 @@
 
 import MultipeerConnectivity
 
+enum SendState: String {
+    case assembled = "assembled"
+    case setupHome = "setup-home"
+    case navigateBack = "navigate-back"
+    case successSetupHome = "success-setup-home"
+    case startFirstMission = "start-first-mission"
+    case playerQueued = "player-queue"
+    case unknown
+}
+
 protocol MPCServiceDelegate: AnyObject {
-    func didCompleteConnecting(connectedPeers: [MCPeerID])
-    func didReceiveData(_ data: Data, fromPeer peerId: MCPeerID)
-    
+    func didReceiveData(_ state: SendState, fromPeer peerId: MCPeerID)
     func didConnectedToPeer(_ peer: MCPeerID)
+    func didDisconnectedFromPeer(_ peer: MCPeerID)
 }
 
 final class MPCService: NSObject {
@@ -20,7 +29,7 @@ final class MPCService: NSObject {
     let peerSession: MCSession
     let browserSession: MCNearbyServiceBrowser
     let advertiserSession: MCNearbyServiceAdvertiser
-    let maxNumberPeers = 1
+    let maxNumberPeers = 4
     
     weak var delegate: MPCServiceDelegate?
     
@@ -51,12 +60,12 @@ final class MPCService: NSObject {
         self.advertiserSession.stopAdvertisingPeer()
     }
     
-    private func sendConfirmationReadyToPeers() {
+    func sendMessageToPeers(_ message: SendState) {
         do {
-            let data = "confirmed".data(using: .utf8)!
+            let data = message.rawValue.data(using: .utf8)!
             try peerSession.send(data, toPeers: peerSession.connectedPeers, with: .reliable)
         } catch(let error) {
-            print("Error sendConfirmationReadyToPeers: \(error.localizedDescription)")
+            print("Error sendMessageSetupHomeToPeers: \(error.localizedDescription)")
         }
     }
     
@@ -69,6 +78,18 @@ final class MPCService: NSObject {
         }
     }
     
+    func peerDisconnected(peerId: MCPeerID) {
+        delegate?.didDisconnectedFromPeer(peerId)
+        
+        self.startBroadcasting()
+    }
+    
+    func peerDidShareMessage(_ data: Data, from peer: MCPeerID) {
+        if let message = String(data: data, encoding: .utf8) {
+            delegate?.didReceiveData(SendState(rawValue: message) ?? .unknown, fromPeer: peer)
+        }
+    }
+    
 }
 
 extension MPCService: MCSessionDelegate {
@@ -77,7 +98,7 @@ extension MPCService: MCSessionDelegate {
         
         switch state {
         case .notConnected:
-            break
+            peerDisconnected(peerId: peerID)
         case .connecting:
             break
         case .connected:
@@ -91,7 +112,8 @@ extension MPCService: MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         print("MPCService didReceive: \(data), from: \(peerID)")
         
-        delegate?.didReceiveData(data, fromPeer: peerID)
+        peerDidShareMessage(data, from: peerID)
+//        delegate?.didReceiveData(data, fromPeer: peerID)
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {

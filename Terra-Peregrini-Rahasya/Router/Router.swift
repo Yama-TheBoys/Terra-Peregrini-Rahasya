@@ -9,13 +9,13 @@ import SwiftUI
 
 final class Router: ObservableObject {
     
-    public enum Destination: Codable, Hashable {
+    public indirect enum Destination: Codable, Hashable {
         case minimumreq
         case splashscreen
         case email
         case invitation
         case namecode
-        case assemble(candidateName: String)
+        case assemble(String)
         case teamassembled
         case roomreqhost
         case roomcomphost
@@ -35,6 +35,7 @@ final class Router: ObservableObject {
         case idcardoverview
         case credits
         case votingScreen
+        case waitingPlayerView(Destination)
     }
     
     @Published var navPath = NavigationPath()

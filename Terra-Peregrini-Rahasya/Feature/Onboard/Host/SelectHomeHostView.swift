@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SelectHomeHostView: View {
     @EnvironmentObject var router: Router
+    @EnvironmentObject var connectivityManager: ConnectivityManager
     @State private var selectedRoom: String? = nil
     
     var body: some View {
@@ -44,23 +45,14 @@ struct SelectHomeHostView: View {
                     )
                 Spacer()
                 
-                HomeButton(title: "RUMAH", isSelected: selectedRoom == "RUMAH")
-                    .onTapGesture {
-                        selectedRoom = "RUMAH"
-                        router.navigate(to: .selectroom)
-                    }
-                
-                HomeButton(title: "KOSAN", isSelected: selectedRoom == "KOSAN")
-                    .onTapGesture {
-                        selectedRoom = "KOSAN"
-                        router.navigate(to: .selectroom)
-                    }
-                
-                HomeButton(title: "RUSUN", isSelected: selectedRoom == "RUSUN")
-                    .onTapGesture {
-                        selectedRoom = "RUSUN"
-                        router.navigate(to: .selectroom)
-                    }
+                ForEach(0..<connectivityManager.homes.count) { index in
+                    HomeButton(title: connectivityManager.homes[index].name, isSelected: selectedRoom == connectivityManager.homes[index].name)
+                        .onTapGesture {
+                            selectedRoom = connectivityManager.homes[index].name
+                            connectivityManager.selectHomeFromIndex(index)
+                            router.navigate(to: .selectroom)
+                        }
+                }
                 
                 Spacer()
                 Spacer()
@@ -70,6 +62,9 @@ struct SelectHomeHostView: View {
             
         }
         .navigationBarBackButtonHidden()
+        .onAppear {
+            print(connectivityManager.homes)
+        }
     }
 }
 

@@ -9,7 +9,10 @@ import SwiftUI
 
 struct AssembleView: View {
     @EnvironmentObject var router: Router
+    @EnvironmentObject var connectivityManager: ConnectivityManager
     @State private var showModal = false
+
+    var candidateName: String
     
     var body: some View {
         ZStack{
@@ -23,7 +26,7 @@ struct AssembleView: View {
                         .frame(width: 400, height: 100)
                         .padding(.trailing, 100)
                     
-                    Text("Candidate 1 \nName: ") // should be pass the candidate name from NameCodeView
+                    Text("Candidate 1 \nName: \(candidateName)")
                         .customFont(.regular, 18)
                         .foregroundStyle(.white)
                         .padding(.top, 20)
@@ -31,68 +34,26 @@ struct AssembleView: View {
                 }
                 .padding(.bottom, -15)
                 
-                ZStack{
-                    Image.Candidate
-                        .resizable()
-                        .frame(width: 400, height: 100)
-                        .padding(.trailing, 100)
-                        .opacity(0.4)
-                    
-                    Text("Candidate 2 \nName: ....")
-                        .customFont(.regular, 18)
-                        .foregroundStyle(.white)
-                        .padding(.top, 20)
-                        .padding(.trailing, 225)
-                }
-                .padding(.bottom, -15)
-                
-                ZStack{
-                    Image.Candidate
-                        .resizable()
-                        .frame(width: 400, height: 100)
-                        .padding(.trailing, 100)
-                        .opacity(0.4)
-                    
-                    Text("Candidate 3 \nName: ....")
-                        .customFont(.regular, 18)
-                        .foregroundStyle(.white)
-                        .padding(.top, 20)
-                        .padding(.trailing, 225)
-                }
-                .padding(.bottom, -15)
-                
-                ZStack{
-                    Image.Candidate
-                        .resizable()
-                        .frame(width: 400, height: 100)
-                        .padding(.trailing, 100)
-                        .opacity(0.4)
-                    
-                    Text("Candidate 4 \nName: ....")
-                        .customFont(.regular, 18)
-                        .foregroundStyle(.white)
-                        .padding(.top, 20)
-                        .padding(.trailing, 225)
-                }
-                .padding(.bottom, -15)
-                
-                ZStack{
-                    Image.Candidate
-                        .resizable()
-                        .frame(width: 400, height: 100)
-                        .padding(.trailing, 100)
-                        .opacity(0.4)
-                    
-                    Text("Candidate 5 \nName: ....")
-                        .customFont(.regular, 18)
-                        .foregroundStyle(.white)
-                        .padding(.top, 20)
-                        .padding(.trailing, 225)
+                ForEach(0 ..< 4, id: \.self) { index in
+                    ZStack{
+                        Image.Candidate
+                            .resizable()
+                            .frame(width: 400, height: 100)
+                            .padding(.trailing, 100)
+                            .opacity(isCandidateExist(index) ? 1 : 0.4)
+                        
+                        Text("Candidate \(index+2) \nName: \(isCandidateExist(index))")
+                            .customFont(.regular, 18)
+                            .foregroundStyle(.white)
+                            .padding(.top, 20)
+                            .padding(.trailing, 225)
+                    }
+                    .padding(.bottom, -15)
                 }
                 
                 Spacer()
                 
-                Text("Assembling with your team, please wait for other candidates.")
+                Text(isAssembled() ? "The team has been assembeled." : "Assembling with your team, please wait for other candidates.")
                     .padding(.horizontal, 72)
                     .multilineTextAlignment(.center)
                     .font(.custom("JetBrainsMono-Regular", size: 18))
@@ -104,17 +65,26 @@ struct AssembleView: View {
                     )
                 
                 Button(action: {
-                    router.navigate(to: .teamassembled)
+                    connectivityManager.proceedToHomeOnboard()
+                    router.navigate(to: .roomreqhost)
                 }, label: {
                     ZStack{
+                        
+                        isAssembled() ?
+                        Image.ProceedButton // make if statement
+                            .resizable()
+                            .frame(width: 237, height: 81)
+                        :
                         Image.DisableButton // make if statement
                             .resizable()
                             .frame(width: 237, height: 81)
+                        
                         Text("Proceed")
                             .customFont(.bold, 18)
                             .foregroundStyle(Color.white)
                     }
                 })
+                .disabled(!isAssembled())
                 
                 Button(action: {
                     showModal = true
@@ -137,6 +107,27 @@ struct AssembleView: View {
             }
         }
         .navigationBarBackButtonHidden()
+        .onChange(of: connectivityManager.isAssembledDone) {
+            isEveryoneReady()
+        }
+    }
+    
+    func isAssembled() -> Bool {
+        connectivityManager.connectedPeers.count == 4
+    }
+    
+    func isCandidateExist(_ index: Int) -> String {
+        connectivityManager.connectedPeers.count > index ? connectivityManager.connectedPeers[index].displayName : "..."
+    }
+    
+    func isCandidateExist(_ index: Int) -> Bool {
+        connectivityManager.connectedPeers.count > index
+    }
+    
+    func isEveryoneReady() {
+        if connectivityManager.isAssembledDone {
+            router.navigate(to: .roomreqhost)
+        }
     }
 }
 
@@ -157,5 +148,5 @@ struct HelpModalView: View {
 }
 
 #Preview {
-    AssembleView()
+    AssembleView(candidateName: "Daf")
 }

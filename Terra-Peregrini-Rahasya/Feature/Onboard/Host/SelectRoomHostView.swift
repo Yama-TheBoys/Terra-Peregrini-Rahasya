@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SelectRoomHostView: View {
     @EnvironmentObject var router: Router
+    @EnvironmentObject var connectivityManager: ConnectivityManager
+    
     @State private var selectedRoom: String? = nil
     @State private var isRGBChecked = false
     @State private var isDoorLockChecked = false
@@ -37,7 +39,7 @@ struct SelectRoomHostView: View {
                 .padding(.bottom, 60)
                 
                 HStack{
-                    Text("RUMAH ")
+                    Text("\(connectivityManager.selectedHome?.name ?? "RUMAH") ")
                         .foregroundStyle(Color.TPRColor.PrimaryBlue)
                     + Text("selected.\n Now, select your room!")
                 }
@@ -53,86 +55,50 @@ struct SelectRoomHostView: View {
                 
                 
                 VStack {
-                    RoomButton(title: "BEDROOM", isSelected: selectedRoom == "BEDROOM")
-                        .onTapGesture {
-                            selectedRoom = "BEDROOM"
+                    ForEach(0..<connectivityManager.rooms.count) { index in
+                        RoomButton(title: connectivityManager.rooms[index].name, isSelected: selectedRoom == connectivityManager.rooms[index].name)
+                            .onTapGesture {
+                                selectedRoom = connectivityManager.rooms[index].name
+                                connectivityManager.checkRoomAvailabilityFromIndex(index) { isRGBAvailable, isDoorLockAvailable in
+                                    self.isRGBChecked = isRGBAvailable
+                                    self.isDoorLockChecked = isDoorLockAvailable
+                                }
+                            }
+                        
+                        if selectedRoom == connectivityManager.rooms[index].name {
+                            VStack(alignment: .leading) {
+                                Text("Checking...")
+                                    .customFont(.regular, 16)
+                                    .padding(.horizontal, 32)
+                                    .foregroundColor(.white)
+                                CustomCheckbox(isChecked: $isRGBChecked, label: "Lamp with RGB")
+                                    .padding(.top, -20)
+                                CustomCheckbox(isChecked: $isDoorLockChecked, label: "Smart Door Lock")
+                                    .padding(.top, -30)
+                            }
+                            .padding(.horizontal)
                         }
-                    
-                    if selectedRoom == "BEDROOM"{
-                        VStack(alignment: .leading) {
-                            Text("Checking...")
-                                .customFont(.regular, 16)
-                                .padding(.horizontal, 32)
-                                .foregroundColor(.white)
-                            CustomCheckbox(isChecked: $isRGBChecked, label: "Lamp with RGB")
-                                .padding(.top, -20)
-                            CustomCheckbox(isChecked: $isDoorLockChecked, label: "Smart Door Lock")
-                                .padding(.top, -30)
-                        }
-                        .padding(.horizontal)
-                    }
-                    
-                    RoomButton(title: "KITCHEN", isSelected: selectedRoom == "KITCHEN")
-                        .onTapGesture {
-                            selectedRoom = "KITCHEN"
-                        }
-                    
-                    if selectedRoom == "KITCHEN"{
-                        VStack(alignment: .leading) {
-                            Text("Checking...")
-                                .customFont(.regular, 16)
-                                .padding(.horizontal, 32)
-                                .foregroundColor(.white)
-                            CustomCheckbox(isChecked: $isRGBChecked, label: "Lamp with RGB")
-                                .padding(.top, -20)
-                            CustomCheckbox(isChecked: $isDoorLockChecked, label: "Smart Door Lock")
-                                .padding(.top, -30)
-                        }
-                        .padding(.horizontal)
-                    }
-                    
-                    RoomButton(title: "LIVING ROOM", isSelected: selectedRoom == "LIVING ROOM")
-                        .onTapGesture {
-                            selectedRoom = "LIVING ROOM"
-                        }
-                    
-                    if selectedRoom == "LIVING ROOM"{
-                        VStack(alignment: .leading) {
-                            Text("Checking...")
-                                .customFont(.regular, 16)
-                                .padding(.horizontal, 32)
-                                .foregroundColor(.white)
-                            CustomCheckbox(isChecked: $isRGBChecked, label: "Lamp with RGB")
-                                .padding(.top, -20)
-                            CustomCheckbox(isChecked: $isDoorLockChecked, label: "Smart Door Lock")
-                                .padding(.top, -30)
-                        }
-                        .padding(.horizontal)
                     }
                 }
                 .offset(y: 75)
                     
-//                Spacer()
-//                Spacer()
-//                Spacer()
-//                Spacer()
                 Spacer()
                 
-                // if success as host
                 Button(action: {
+                    connectivityManager.sendMessageSuccessHomeSetup()
                     router.navigate(to: .roomsuccesshost)
                 }, label: {
                     ZStack{
-                        Image(selectedRoom == nil ? "DisableButton" : "ProceedButton")
+                        Image(isRGBChecked && isDoorLockChecked ? "ProceedButton" : "DisableButton")
                             .resizable()
                             .frame(width: 237, height: 81)
                         Text("Proceed")
-                            .foregroundStyle(selectedRoom == nil ? .gray : .white)
+                            .foregroundStyle(isRGBChecked && isDoorLockChecked ? .white : .gray)
                             .fontWeight(.bold)
                             .font(.custom("JetBrainsMono-Regular", size: 18))
                     }
                 })
-                .disabled(selectedRoom == nil)
+                .disabled(!isRGBChecked || !isDoorLockChecked)
             }
             
         }
@@ -216,7 +182,7 @@ struct LoadingProgressView: View {
                     )
                 )
                 .rotationEffect(.degrees(-90))
-                .animation(.easeOut(duration: 4), value: progress)
+                .animation(.easeOut(duration: 2), value: progress)
         }
     }
 }

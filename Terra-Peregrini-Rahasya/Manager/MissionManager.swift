@@ -7,7 +7,9 @@
 
 import Foundation
 
-class MissionManager {
+class MissionManager: ObservableObject {
+    
+    @Published var playerPoints = 10
     
     let cmService = CMService()
     

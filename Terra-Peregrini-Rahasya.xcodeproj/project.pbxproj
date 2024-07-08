@@ -36,7 +36,6 @@
 		7BC354632C2BF3B80050EB72 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354622C2BF3B80050EB72 /* Image.swift */; };
 		7BC354652C2BF54D0050EB72 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354642C2BF54D0050EB72 /* Color.swift */; };
 		7BC354692C2BF74A0050EB72 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC354682C2BF74A0050EB72 /* HomeService.swift */; };
-		7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3546B2C2C031B0050EB72 /* HomeService+Delegate.swift */; };
 		7BC5DDD72C39B4B5007149D8 /* GAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC5DDD62C39B4B5007149D8 /* GAView.swift */; };
 		D82182DE2C3402260015C5A9 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182DD2C3402260015C5A9 /* Font.swift */; };
 		D82182E02C340BB20015C5A9 /* MinimumReqView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182DF2C340BB20015C5A9 /* MinimumReqView.swift */; };
@@ -52,6 +51,9 @@
 		D82182FA2C3682180015C5A9 /* JetBrainsMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D82182F92C3682180015C5A9 /* JetBrainsMono-Italic.ttf */; };
 		D82182FC2C368AC50015C5A9 /* SelectHomeHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FB2C368AC50015C5A9 /* SelectHomeHostView.swift */; };
 		D82182FE2C368FDE0015C5A9 /* SelectRoomHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FD2C368FDE0015C5A9 /* SelectRoomHostView.swift */; };
+		D82183002C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FF2C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift */; };
+		D82183022C370AF70015C5A9 /* RoomCompSuccessHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183012C370AF70015C5A9 /* RoomCompSuccessHostView.swift */; };
+		D82183042C37C4E40015C5A9 /* HomeNotFoundHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183032C37C4E40015C5A9 /* HomeNotFoundHostView.swift */; };
 		D82183072C37E1650015C5A9 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183062C37E1650015C5A9 /* LeaderboardView.swift */; };
 		D82183092C37F5A70015C5A9 /* FirstPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183082C37F5A70015C5A9 /* FirstPlaceView.swift */; };
 		D821830B2C37F95F0015C5A9 /* OthersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D821830A2C37F95F0015C5A9 /* OthersView.swift */; };
@@ -60,9 +62,6 @@
 		D82183222C3906BF0015C5A9 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183212C3906BF0015C5A9 /* CameraView.swift */; };
 		D82183282C3914430015C5A9 /* CapturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183272C3914430015C5A9 /* CapturedView.swift */; };
 		D821832A2C3916390015C5A9 /* IdCardOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183292C3916390015C5A9 /* IdCardOverView.swift */; };
-		D82183002C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82182FF2C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift */; };
-		D82183022C370AF70015C5A9 /* RoomCompSuccessHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183012C370AF70015C5A9 /* RoomCompSuccessHostView.swift */; };
-		D82183042C37C4E40015C5A9 /* HomeNotFoundHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82183032C37C4E40015C5A9 /* HomeNotFoundHostView.swift */; };
 		D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */; };
 		D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */; };
 		D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */; };
@@ -101,7 +100,6 @@
 		7BC354642C2BF54D0050EB72 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7BC354682C2BF74A0050EB72 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		7BC3546A2C2BF83C0050EB72 /* Terra-Peregrini-Rahasya.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Terra-Peregrini-Rahasya.entitlements"; sourceTree = "<group>"; };
-		7BC3546B2C2C031B0050EB72 /* HomeService+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeService+Delegate.swift"; sourceTree = "<group>"; };
 		7BC5DDD62C39B4B5007149D8 /* GAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAView.swift; sourceTree = "<group>"; };
 		D82182DC2C34004F0015C5A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D82182DD2C3402260015C5A9 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -118,6 +116,9 @@
 		D82182F92C3682180015C5A9 /* JetBrainsMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Italic.ttf"; sourceTree = "<group>"; };
 		D82182FB2C368AC50015C5A9 /* SelectHomeHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHomeHostView.swift; sourceTree = "<group>"; };
 		D82182FD2C368FDE0015C5A9 /* SelectRoomHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomHostView.swift; sourceTree = "<group>"; };
+		D82182FF2C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCompSuccessJoineeView.swift; sourceTree = "<group>"; };
+		D82183012C370AF70015C5A9 /* RoomCompSuccessHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCompSuccessHostView.swift; sourceTree = "<group>"; };
+		D82183032C37C4E40015C5A9 /* HomeNotFoundHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNotFoundHostView.swift; sourceTree = "<group>"; };
 		D82183062C37E1650015C5A9 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		D82183082C37F5A70015C5A9 /* FirstPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPlaceView.swift; sourceTree = "<group>"; };
 		D821830A2C37F95F0015C5A9 /* OthersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersView.swift; sourceTree = "<group>"; };
@@ -126,9 +127,6 @@
 		D82183212C3906BF0015C5A9 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D82183272C3914430015C5A9 /* CapturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedView.swift; sourceTree = "<group>"; };
 		D82183292C3916390015C5A9 /* IdCardOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdCardOverView.swift; sourceTree = "<group>"; };
-		D82182FF2C3705D90015C5A9 /* RoomCompSuccessJoineeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCompSuccessJoineeView.swift; sourceTree = "<group>"; };
-		D82183012C370AF70015C5A9 /* RoomCompSuccessHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCompSuccessHostView.swift; sourceTree = "<group>"; };
-		D82183032C37C4E40015C5A9 /* HomeNotFoundHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNotFoundHostView.swift; sourceTree = "<group>"; };
 		D84F10D62C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terra-Peregrini-Rahasya.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84F10D92C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terra_Peregrini_RahasyaApp.swift; sourceTree = "<group>"; };
 		D84F10DD2C27E52D00D8AAB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -287,7 +285,6 @@
 			isa = PBXGroup;
 			children = (
 				7BC354682C2BF74A0050EB72 /* HomeService.swift */,
-				7BC3546B2C2C031B0050EB72 /* HomeService+Delegate.swift */,
 			);
 			path = HomeKit;
 			sourceTree = "<group>";
@@ -556,7 +553,6 @@
 				D82183042C37C4E40015C5A9 /* HomeNotFoundHostView.swift in Sources */,
 				62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */,
 				62C5ADC32C3884300093C5E5 /* Instructions.swift in Sources */,
-				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
 				7BC5DDD72C39B4B5007149D8 /* GAView.swift in Sources */,
 				7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */,
 				62EF13832C39BC77001DA6D9 /* ReconnectingView.swift in Sources */,
@@ -717,7 +713,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = WTU6YK528U;
+				DEVELOPMENT_TEAM = 3B2V262XU7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
@@ -725,14 +721,15 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to use the camera for taking photos.";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
 				INFOPLIST_KEY_NSMotionUsageDescription = "This app records your position for better experience";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -759,7 +756,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = WTU6YK528U;
+				DEVELOPMENT_TEAM = 3B2V262XU7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
@@ -767,14 +764,15 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to use the camera for taking photos.";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
 				INFOPLIST_KEY_NSMotionUsageDescription = "This app records your position for better experience";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

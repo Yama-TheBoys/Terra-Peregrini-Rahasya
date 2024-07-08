@@ -9,7 +9,9 @@ import SwiftUI
 
 struct WaitingPlayerView: View {
     @EnvironmentObject var router: Router
-    @State var teamProgress = 0.6
+    @EnvironmentObject var connectivityManager: ConnectivityManager
+    
+    @State var teamProgress = 0.2
     
     let destination: Router.Destination
     
@@ -29,11 +31,6 @@ struct WaitingPlayerView: View {
                     color: Color.TPRColor.LightPurple
                 )
                 .frame(width: 100)
-                .onChange(of: teamProgress) {
-                    if teamProgress == 1 {
-                        router.navigate(to: destination)
-                    }
-                }
                     
                 Text("\(teamProgress * 100, specifier: "%.0f")%")
                     .foregroundStyle(Color.white)
@@ -42,7 +39,19 @@ struct WaitingPlayerView: View {
                         teamProgress += 0.2
                     }
             }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.TPRColor.PrimaryPurple)
+        .navigationBarBackButtonHidden()
+        .onAppear {
+            connectivityManager.sendMessagePlayerQueued()
+        }
+        .onChange(of: connectivityManager.playersQueued) {
+            self.teamProgress = Double((connectivityManager.playersQueued.count + 1 ) / 5)
             
+            if connectivityManager.playersQueued.count == 4 {
+                router.navigate(to: destination)
+            }
         }
     }
 }
