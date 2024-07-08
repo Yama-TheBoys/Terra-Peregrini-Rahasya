@@ -13,8 +13,7 @@ struct ActivityView: UIViewControllerRepresentable {
     var applicationActivities: [UIActivity]? = nil
 
     func makeUIViewController(context: Context) -> UIActivityViewController {
-        let customActivity = SaveImageActivity()
-        let controller = UIActivityViewController(activityItems: activityItems, applicationActivities: [customActivity])
+        let controller = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
 
         return controller
     }
