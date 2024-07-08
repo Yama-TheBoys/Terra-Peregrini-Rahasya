@@ -12,6 +12,7 @@ struct CircularProgressView: View {
     var isRepeating: Bool = false
     var lineWidth: CGFloat
     var color: Color
+    var duration: TimeInterval = 3
     
     @State private var isAnimating: Bool = false
     
@@ -47,12 +48,12 @@ struct CircularProgressView: View {
                     .stroke(
                         color,
                         style: StrokeStyle(
-                            lineWidth: 20,
+                            lineWidth: lineWidth,
                             lineCap: .round
                         )
                     )
                     .rotationEffect(.degrees(-90))
-                    .animation(.easeOut, value: progress)
+                    .animation(.easeOut(duration: duration), value: progress)
                     .shadow(color: color ,radius: 10)
             }
             

@@ -26,12 +26,15 @@ struct WaitingPlayerView: View {
                 CircularProgressView(
                     progress: teamProgress,
                     lineWidth: 20, 
-                    color: Color.TPRColor.LightPurple
+                    color: Color.TPRColor.LightPurple,
+                    duration: 1
                 )
                 .frame(width: 100)
                 .onChange(of: teamProgress) {
                     if teamProgress == 1 {
-                        router.navigate(to: destination)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            router.navigate(to: destination)
+                        }
                     }
                 }
                     

@@ -96,7 +96,7 @@ struct LeaderboardView: View {
                 .padding()
             }
         }
-        
+        .navigationBarBackButtonHidden()
     }
 }
 
