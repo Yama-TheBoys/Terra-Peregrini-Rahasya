@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		620E3B532C3AC6E9002D5032 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B522C3AC6E9002D5032 /* CameraModel.swift */; };
+		620E3B772C3B08B2002D5032 /* Orbitron-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 620E3B742C3AFA1C002D5032 /* Orbitron-Medium.ttf */; };
+		620E3B7A2C3B6EB1002D5032 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B792C3B6EB1002D5032 /* UIImage.swift */; };
+		620E3B7D2C3B6F55002D5032 /* SaveImageActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B7C2C3B6F55002D5032 /* SaveImageActivity.swift */; };
+		620E3B7F2C3B6FD7002D5032 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B7E2C3B6FD7002D5032 /* ActivityView.swift */; };
+		620E3B812C3B717E002D5032 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B802C3B717E002D5032 /* Util.swift */; };
+		620E3B832C3B7E60002D5032 /* CountdownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B822C3B7E60002D5032 /* CountdownTimerView.swift */; };
 		62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */; };
 		62C5ADA62C3644300093C5E5 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */; };
 		62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */; };
@@ -15,7 +22,6 @@
 		62C5ADB12C36ECCF0093C5E5 /* FinalCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB02C36ECCF0093C5E5 /* FinalCodeView.swift */; };
 		62C5ADB32C36F5140093C5E5 /* FinalColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB22C36F5140093C5E5 /* FinalColorView.swift */; };
 		62C5ADB52C36F6580093C5E5 /* EndingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB42C36F6580093C5E5 /* EndingStatus.swift */; };
-		62C5ADB72C36F9340093C5E5 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB62C36F9340093C5E5 /* Util.swift */; };
 		62C5ADB92C37A6210093C5E5 /* VotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB82C37A6210093C5E5 /* VotingView.swift */; };
 		62C5ADBB2C3854610093C5E5 /* WaitingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADBA2C3854610093C5E5 /* WaitingPlayerView.swift */; };
 		62C5ADBD2C3855EE0093C5E5 /* ColorBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADBC2C3855EE0093C5E5 /* ColorBackgroundView.swift */; };
@@ -67,9 +73,20 @@
 		D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */; };
 		D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10EB2C27F39700D8AAB9 /* SplashView.swift */; };
 		D84F110C2C33EFBE00D8AAB9 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F110B2C33EFBE00D8AAB9 /* DisclaimerView.swift */; };
+		D8CE19732C3B071B00E28316 /* Opening_Dystopian.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19712C3B071B00E28316 /* Opening_Dystopian.wav */; };
+		D8CE19742C3B071B00E28316 /* Point-Earned.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19722C3B071B00E28316 /* Point-Earned.wav */; };
+		D8CE19762C3B094E00E28316 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE19752C3B094E00E28316 /* Sound.swift */; };
+		D8CE19782C3B0BDF00E28316 /* button-clicked.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19772C3B0BDF00E28316 /* button-clicked.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		620E3B522C3AC6E9002D5032 /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraModel.swift; path = "Terra-Peregrini-Rahasya/Feature/Reusable/CameraModel.swift"; sourceTree = SOURCE_ROOT; };
+		620E3B742C3AFA1C002D5032 /* Orbitron-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Medium.ttf"; sourceTree = "<group>"; };
+		620E3B792C3B6EB1002D5032 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		620E3B7C2C3B6F55002D5032 /* SaveImageActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageActivity.swift; sourceTree = "<group>"; };
+		620E3B7E2C3B6FD7002D5032 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		620E3B802C3B717E002D5032 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		620E3B822C3B7E60002D5032 /* CountdownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerView.swift; sourceTree = "<group>"; };
 		62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionIntro.swift; sourceTree = "<group>"; };
 		62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionMainScreen.swift; sourceTree = "<group>"; };
@@ -78,7 +95,6 @@
 		62C5ADB02C36ECCF0093C5E5 /* FinalCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCodeView.swift; sourceTree = "<group>"; };
 		62C5ADB22C36F5140093C5E5 /* FinalColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalColorView.swift; sourceTree = "<group>"; };
 		62C5ADB42C36F6580093C5E5 /* EndingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingStatus.swift; sourceTree = "<group>"; };
-		62C5ADB62C36F9340093C5E5 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		62C5ADB82C37A6210093C5E5 /* VotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingView.swift; sourceTree = "<group>"; };
 		62C5ADBA2C3854610093C5E5 /* WaitingPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPlayerView.swift; sourceTree = "<group>"; };
 		62C5ADBC2C3855EE0093C5E5 /* ColorBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBackgroundView.swift; sourceTree = "<group>"; };
@@ -133,6 +149,10 @@
 		D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D84F10EB2C27F39700D8AAB9 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		D84F110B2C33EFBE00D8AAB9 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
+		D8CE19712C3B071B00E28316 /* Opening_Dystopian.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Opening_Dystopian.wav; sourceTree = "<group>"; };
+		D8CE19722C3B071B00E28316 /* Point-Earned.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Point-Earned.wav"; sourceTree = "<group>"; };
+		D8CE19752C3B094E00E28316 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		D8CE19772C3B0BDF00E28316 /* button-clicked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "button-clicked.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +166,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		620E3B7B2C3B6F13002D5032 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				620E3B7C2C3B6F55002D5032 /* SaveImageActivity.swift */,
+				620E3B802C3B717E002D5032 /* Util.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		62C5ADA12C3590700093C5E5 /* Mission */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +197,8 @@
 				62C5ADC02C3860460093C5E5 /* PopUpView.swift */,
 				62C5ADC62C39A2FF0093C5E5 /* PointResultView.swift */,
 				62EF13822C39BC77001DA6D9 /* ReconnectingView.swift */,
+				620E3B7E2C3B6FD7002D5032 /* ActivityView.swift */,
+				620E3B822C3B7E60002D5032 /* CountdownTimerView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -185,6 +216,7 @@
 		62C5ADAC2C367D6D0093C5E5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D8CE19702C3B06FD00E28316 /* Sounds */,
 				62C5ADAB2C367CFA0093C5E5 /* Enums */,
 				62C5ADAD2C367DA10093C5E5 /* Model */,
 			);
@@ -251,6 +283,7 @@
 		7BC354602C2BF39E0050EB72 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				620E3B7B2C3B6F13002D5032 /* Util */,
 				7BC354612C2BF3A90050EB72 /* Extensions */,
 			);
 			path = Helper;
@@ -262,7 +295,8 @@
 				7BC354622C2BF3B80050EB72 /* Image.swift */,
 				7BC354642C2BF54D0050EB72 /* Color.swift */,
 				D82182DD2C3402260015C5A9 /* Font.swift */,
-				62C5ADB62C36F9340093C5E5 /* Util.swift */,
+				D8CE19752C3B094E00E28316 /* Sound.swift */,
+				620E3B792C3B6EB1002D5032 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +342,7 @@
 		7BC354712C2C1E900050EB72 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				620E3B522C3AC6E9002D5032 /* CameraModel.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -329,6 +364,7 @@
 		D82182D72C33FF7B0015C5A9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				620E3B742C3AFA1C002D5032 /* Orbitron-Medium.ttf */,
 				D82182F92C3682180015C5A9 /* JetBrainsMono-Italic.ttf */,
 				D82182E72C359EEE0015C5A9 /* JetBrainsMono-Bold.ttf */,
 				D82182E32C358A540015C5A9 /* JetBrainsMono-Regular.ttf */,
@@ -447,6 +483,16 @@
 			path = Disclaimer;
 			sourceTree = "<group>";
 		};
+		D8CE19702C3B06FD00E28316 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D8CE19772C3B0BDF00E28316 /* button-clicked.wav */,
+				D8CE19712C3B071B00E28316 /* Opening_Dystopian.wav */,
+				D8CE19722C3B071B00E28316 /* Point-Earned.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -507,7 +553,11 @@
 			files = (
 				D82182FA2C3682180015C5A9 /* JetBrainsMono-Italic.ttf in Resources */,
 				D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */,
+				D8CE19742C3B071B00E28316 /* Point-Earned.wav in Resources */,
+				620E3B772C3B08B2002D5032 /* Orbitron-Medium.ttf in Resources */,
 				D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */,
+				D8CE19732C3B071B00E28316 /* Opening_Dystopian.wav in Resources */,
+				D8CE19782C3B0BDF00E28316 /* button-clicked.wav in Resources */,
 				D82182E42C358A540015C5A9 /* JetBrainsMono-Regular.ttf in Resources */,
 				D82182E82C359EEE0015C5A9 /* JetBrainsMono-Bold.ttf in Resources */,
 			);
@@ -527,14 +577,16 @@
 				D82182FC2C368AC50015C5A9 /* SelectHomeHostView.swift in Sources */,
 				62C5ADB32C36F5140093C5E5 /* FinalColorView.swift in Sources */,
 				62C5ADC72C39A2FF0093C5E5 /* PointResultView.swift in Sources */,
+				620E3B532C3AC6E9002D5032 /* CameraModel.swift in Sources */,
+				620E3B812C3B717E002D5032 /* Util.swift in Sources */,
 				D82182F42C3665DB0015C5A9 /* RoomCompJoineeView.swift in Sources */,
 				62C5ADAF2C367DE20093C5E5 /* MissionDetail.swift in Sources */,
 				D821830D2C383B8A0015C5A9 /* CreditsView.swift in Sources */,
 				7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
 				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
+				D8CE19762C3B094E00E28316 /* Sound.swift in Sources */,
 				D821830B2C37F95F0015C5A9 /* OthersView.swift in Sources */,
-				62C5ADB72C36F9340093C5E5 /* Util.swift in Sources */,
 				7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
 				7BA3C3432C39108400B3117E /* CMView.swift in Sources */,
@@ -554,6 +606,9 @@
 				62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */,
 				62C5ADC32C3884300093C5E5 /* Instructions.swift in Sources */,
 				7BC5DDD72C39B4B5007149D8 /* GAView.swift in Sources */,
+				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
+				620E3B7F2C3B6FD7002D5032 /* ActivityView.swift in Sources */,
+				620E3B7D2C3B6F55002D5032 /* SaveImageActivity.swift in Sources */,
 				7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */,
 				62EF13832C39BC77001DA6D9 /* ReconnectingView.swift in Sources */,
 				62C5ADB92C37A6210093C5E5 /* VotingView.swift in Sources */,
@@ -572,11 +627,13 @@
 				62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */,
 				7BC354652C2BF54D0050EB72 /* Color.swift in Sources */,
 				7BA3C3452C3930A100B3117E /* GAService.swift in Sources */,
+				620E3B832C3B7E60002D5032 /* CountdownTimerView.swift in Sources */,
 				7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */,
 				62C5ADBB2C3854610093C5E5 /* WaitingPlayerView.swift in Sources */,
 				D82182F02C365F1B0015C5A9 /* RoomReqHostView.swift in Sources */,
 				62C5ADAA2C367B710093C5E5 /* Mission.swift in Sources */,
 				D821832A2C3916390015C5A9 /* IdCardOverView.swift in Sources */,
+				620E3B7A2C3B6EB1002D5032 /* UIImage.swift in Sources */,
 				D82183022C370AF70015C5A9 /* RoomCompSuccessHostView.swift in Sources */,
 				D82182E22C357ECA0015C5A9 /* InvitationView.swift in Sources */,
 			);
@@ -723,7 +780,7 @@
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
 				INFOPLIST_KEY_NSMotionUsageDescription = "This app records your position for better experience";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need your permission to access photo library for saving photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -766,7 +823,7 @@
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
 				INFOPLIST_KEY_NSMotionUsageDescription = "This app records your position for better experience";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need your permission to access photo library for saving photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -14,6 +14,8 @@ enum SendState: String {
     case successSetupHome = "success-setup-home"
     case startFirstMission = "start-first-mission"
     case playerQueued = "player-queue"
+    case correctFirtMission = "correct-first-mission"
+    case wrongFirstMission = "wrong-first-mission"
     case unknown
 }
 
@@ -99,6 +101,9 @@ extension MPCService: MCSessionDelegate {
         switch state {
         case .notConnected:
             peerDisconnected(peerId: peerID)
+            if session.connectedPeers.isEmpty {
+                self.startBroadcasting()
+            }
         case .connecting:
             break
         case .connected:

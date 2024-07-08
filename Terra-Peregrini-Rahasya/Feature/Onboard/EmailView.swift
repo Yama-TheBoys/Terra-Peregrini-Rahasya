@@ -36,6 +36,7 @@ struct EmailView: View {
                     .padding(.bottom, 10)
                 
                 Button(action: {
+                    playButtonClickSound()
                     router.navigate(to: .invitation)
                 }, label: {
                     ZStack{

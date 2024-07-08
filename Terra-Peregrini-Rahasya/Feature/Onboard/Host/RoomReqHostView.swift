@@ -44,6 +44,7 @@ struct RoomReqHostView: View {
                     )
                 
                 Button(action: {
+                    playButtonClickSound()
                     router.navigate(to: .roomcomphost)
                     connectivityManager.startSetupHomeAsHost()
                 }, label: {

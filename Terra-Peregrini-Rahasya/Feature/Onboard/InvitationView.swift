@@ -38,6 +38,7 @@ struct InvitationView: View {
                 .offset(y: -36)
                 
                 Button(action: {
+                    playButtonClickSound()
                     router.navigate(to: .namecode)
                 }, label: {
                     ZStack{

@@ -69,6 +69,8 @@ struct MinimumReqView: View {
                 Spacer()
                 
                 Button(action: {
+                    playButtonClickSound()
+                    playOpeningSound()
                     router.navigate(to: .splashscreen)
                 }, label: {
                     ZStack{

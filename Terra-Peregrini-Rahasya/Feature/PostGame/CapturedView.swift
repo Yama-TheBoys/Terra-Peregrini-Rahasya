@@ -10,24 +10,18 @@ import SwiftUI
 struct CapturedView: View {
     @EnvironmentObject var router: Router
     
+    let capturedImage: UIImage
+    
     var body: some View {
         ZStack{
             Color.TPRColor.PrimaryPurple
                 .ignoresSafeArea()
             
             VStack{
-                ZStack{
-                    Image.Badge
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200)
-                        .padding(.bottom, 150)
-                        
-                    Image.IdCard
-                        .resizable()
-                        .frame(width: 393, height: 650)
-                    
-                }
+                Image(uiImage: capturedImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 393, height: 650)
                 
                 Spacer()
                 
@@ -45,7 +39,7 @@ struct CapturedView: View {
                         }
                     })
                     Button(action: {
-                        router.navigate(to: .idcardoverview)
+                        router.navigate(to: .idcardoverview(capturedImage))
                     }, label: {
                         ZStack{
                             Image.ProceedButton
@@ -65,8 +59,4 @@ struct CapturedView: View {
         }
         .navigationBarBackButtonHidden()
     }
-}
-
-#Preview {
-    CapturedView()
 }

@@ -67,6 +67,7 @@ struct AssembleView: View {
                 Button(action: {
                     connectivityManager.proceedToHomeOnboard()
                     router.navigate(to: .roomreqhost)
+                    playButtonClickSound()
                 }, label: {
                     ZStack{
                         

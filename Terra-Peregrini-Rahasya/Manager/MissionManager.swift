@@ -10,6 +10,7 @@ import Foundation
 class MissionManager: ObservableObject {
     
     @Published var playerPoints = 10
+    @Published var isFirstMissionDone = false
     
     let cmService = CMService()
     
@@ -24,6 +25,14 @@ class MissionManager: ObservableObject {
 
                 if pitchEqualToZero && rollEqualToZero && yawEqualToZero {
                     print("device placed down")
+                    DispatchQueue.main.async {
+                        self.isFirstMissionDone = true
+                    }
+                } else {
+                    print("device not in right position")
+                    DispatchQueue.main.async {
+                        self.isFirstMissionDone = false
+                    }
                 }
             }
         }

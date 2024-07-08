@@ -62,6 +62,7 @@ struct RoomCompHostView: View {
                 
                 Button(action: {
                     navigateToNextScreen()
+                    playButtonClickSound()
                 }, label: {
                     ZStack{
                         Image.ProceedButton

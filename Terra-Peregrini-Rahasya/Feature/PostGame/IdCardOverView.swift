@@ -11,24 +11,18 @@ struct IdCardOverView: View {
     @EnvironmentObject var router: Router
     @State private var isShareSheetPresented = false
     
+    let capturedImage: UIImage
+    
     var body: some View {
         ZStack{
             Color.TPRColor.PrimaryPurple
                 .ignoresSafeArea()
             
             VStack{
-                ZStack{
-                    Image.Badge
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 175)
-                        .padding(.bottom, 125)
-                        
-                    Image.IdCard
-                        .resizable()
-                        .frame(width: 335, height: 551)
-                    
-                }
+                Image(uiImage: capturedImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 335, height: 551)
                 
                 Spacer()
                 
@@ -43,7 +37,9 @@ struct IdCardOverView: View {
                 
                 HStack(spacing: 0){
                     Button(action: {
-                        isShareSheetPresented = true
+                        checkPhotoLibraryPermission {
+                            isShareSheetPresented = true
+                        }
                     }, label: {
                         ZStack{
                             Image.ProceedButton
@@ -54,9 +50,9 @@ struct IdCardOverView: View {
                                 .foregroundStyle(Color.white)
                         }
                     })
-                    .sheet(isPresented: $isShareSheetPresented, content: {
-                                    ActivityView(activityItems: ["Player's ID Card"])
-                                })
+                    .sheet(isPresented: $isShareSheetPresented) {
+                        ActivityView(activityItems: [capturedImage.pngData(), "Congratulations, you are now official TAPERA agents. This is your Agent's ID Card"])
+                    }
                     
                     Button(action: {
                         router.navigate(to: .credits)
@@ -77,19 +73,4 @@ struct IdCardOverView: View {
         }
         .navigationBarBackButtonHidden()
     }
-}
-
-struct ActivityView: UIViewControllerRepresentable {
-    var activityItems: [Any]
-    var applicationActivities: [UIActivity]? = nil
-
-    func makeUIViewController(context: Context) -> UIActivityViewController {
-        return UIActivityViewController(activityItems: activityItems, applicationActivities: applicationActivities)
-    }
-
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
-}
-
-#Preview {
-    IdCardOverView()
 }

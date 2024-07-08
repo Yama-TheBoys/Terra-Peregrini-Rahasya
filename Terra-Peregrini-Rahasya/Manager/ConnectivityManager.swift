@@ -7,32 +7,50 @@
 
 import MultipeerConnectivity
 import HomeKit
+import SwiftUI
 
 final class ConnectivityManager: ObservableObject {
     
     var mpcService: MPCService?
     var homeService: HomeService?
     
+    @AppStorage("candidateName") private var candidateName = ""
+    @AppStorage("teamCode") private var teamCode = ""
+    
     @Published var connectedPeers = [MCPeerID]()
     @Published var homes = [HMHome]()
     @Published var rooms = [HMRoom]()
     @Published var selectedHome: HMHome?
 
+    // Onboarding
     @Published var isAssembledDone = false
     @Published var isHostChosen = false
     @Published var isHostCancelled = false
     @Published var isHostSuccess = false
     @Published var isHostStarted = false
+    
+    // Waiting Room
     @Published var isPlayersReady = false
     @Published var playersQueued = [MCPeerID]()
+    
+    // For mission manager
+    @Published var isAllPlayerCorrectFirstMission = false
+    @Published var isSelfCorrectFirstMission = false
+    @Published var playersCorrectFirstMission = [MCPeerID : Bool]()
         
     init(mpcService: MPCService? = nil) {
         self.mpcService = mpcService
     }
     
+    func getCandidateName() -> String {
+        candidateName
+    }
+    
     // Call this func first
     func startConnecting(name: String, teamCode: String) {
         self.mpcService = MPCService(name: name, teamCode: teamCode)
+        self.candidateName = name
+        self.teamCode = teamCode
         self.mpcService?.delegate = self
                 
         self.mpcService?.startBroadcasting()
@@ -94,6 +112,11 @@ final class ConnectivityManager: ObservableObject {
         }
     }
     
+    func sendMessageCorrectFirstMission(correct: Bool) {
+        self.isSelfCorrectFirstMission = correct
+        self.mpcService?.sendMessageToPeers(correct ? .correctFirtMission : .wrongFirstMission)
+    }
+    
 }
 
 extension ConnectivityManager: MPCServiceDelegate {
@@ -125,6 +148,21 @@ extension ConnectivityManager: MPCServiceDelegate {
                 if self.playersQueued.count == 4 {
                     self.isPlayersReady.toggle()
                 }
+            }
+        case .correctFirtMission:
+            DispatchQueue.main.async {
+                self.playersCorrectFirstMission[peerId] = true
+                
+                if !self.playersCorrectFirstMission.values.contains(where: { $0 == false }),
+                    self.isSelfCorrectFirstMission,
+                    self.playersCorrectFirstMission.count == 4 {
+                    self.isAllPlayerCorrectFirstMission = true
+                }
+                
+            }
+        case .wrongFirstMission:
+            DispatchQueue.main.async {
+                self.playersCorrectFirstMission[peerId] = false
             }
         case .unknown:
             break

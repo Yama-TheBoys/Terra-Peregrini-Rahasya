@@ -35,9 +35,6 @@ struct WaitingPlayerView: View {
                 Text("\(teamProgress * 100, specifier: "%.0f")%")
                     .foregroundStyle(Color.white)
                     .customFont(.bold, 24)
-                    .onTapGesture {
-                        teamProgress += 0.2
-                    }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -45,11 +42,18 @@ struct WaitingPlayerView: View {
         .navigationBarBackButtonHidden()
         .onAppear {
             connectivityManager.sendMessagePlayerQueued()
+            waitForOtherPlayer()
         }
         .onChange(of: connectivityManager.playersQueued) {
-            self.teamProgress = Double((connectivityManager.playersQueued.count + 1 ) / 5)
-            
-            if connectivityManager.playersQueued.count == 4 {
+            waitForOtherPlayer()
+        }
+    }
+    
+    func waitForOtherPlayer() {
+        teamProgress = Double((connectivityManager.playersQueued.count + 1 )) / 5.0
+        print(self.teamProgress)
+        if connectivityManager.playersQueued.count == 4 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 router.navigate(to: destination)
             }
         }

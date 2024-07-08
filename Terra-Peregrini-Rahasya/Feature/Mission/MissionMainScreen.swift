@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MissionMainScreen: View {
     @EnvironmentObject var router: Router
+    @EnvironmentObject var connectivityManager: ConnectivityManager
+    @EnvironmentObject var missionManager: MissionManager
     
     @State var isShowInstruction = false
     @State var isClueClicked = false
@@ -35,8 +37,9 @@ struct MissionMainScreen: View {
     @State private var isOtherDeviceDetected: Bool = false
     @State private var instructionMessage: String = Instructions.almostThere.rawValue
     
-    var mission: Int
+    @State private var isTimesUp: Bool = false
     
+    var mission: Int
     
     var body: some View {
         ZStack {
@@ -75,22 +78,10 @@ struct MissionMainScreen: View {
                 isOtherDeviceDetected = !isOtherDeviceDetected
             }
             
-            ZStack {
-                Color.TPRColor.DarkPurple
-                    .frame(width: 112, height: 47)
-                    .blur(radius: 10)
-                
-                Image.Time
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 112, alignment: .leading)
-                
-                Text("20:00")
-                    .foregroundStyle(Color.white)
-                    .customFont(.bold, 18)
-                    .frame(width: 112, alignment: .leading)
-                    .offset(x: 48)
-            }
+            CountdownTimerView(
+                initialTime: 1200,
+                isTimesUp: $isTimesUp
+            )
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .onTapGesture {
                 isHost = !isHost
@@ -163,25 +154,6 @@ struct MissionMainScreen: View {
                     
                 }
                 
-                //                if mission == 2 {
-                //                    if isHost {
-                //                        FinalColorView(colorCode: $colorCode)
-                //                            .offset(x: 0, y: 245)
-                //                    } else {
-                //                        Image.DistanceCode
-                //                            .resizable()
-                //                            .scaledToFit()
-                //                            .frame(width: 163)
-                //                            .overlay(alignment: .center) {
-                //                                Text("2")
-                //                                    .foregroundStyle(Color.white)
-                //                                    .customFont(.regular, 72)
-                //                                    .multilineTextAlignment(.center)
-                //                            }
-                //                            .offset(x: 0, y: -194)
-                //                    }
-                //                }
-                
                 if mission == 3 {
                     FinalCodeView(code: $code, isComplete: $isAllGameComplete, endingStatus: endingStatus)
                         .offset(x: 0, y: -165)
@@ -204,12 +176,6 @@ struct MissionMainScreen: View {
                 }
                 .padding(.bottom, 81)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                .onTapGesture {
-                    endingStatus = EndingStatus.allCases.randomElement() ?? .ingame
-                    if endingStatus == .success || endingStatus == .failed {
-                        isOtherDeviceDetected = false
-                    }
-                }
             }
             
             if endingStatus == .failed {
@@ -240,12 +206,7 @@ struct MissionMainScreen: View {
                     isActive: $isPopUpActive,
                     message: "Are you sure you need extra clues?",
                     onYes: {
-                        print("User selected Yes")
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            isFromVotingScreen = true
-                            router.navigate(to: .votingScreen)
-                        }
-                        
+                        moveToVoting()
                     },
                     onNo: {
                         print("User selected No")
@@ -262,14 +223,15 @@ struct MissionMainScreen: View {
                         if mission < 3 {
                             router.navigate(to: .missionIntro(mission + 1))
                         } else {
-                            router.navigate(to: .splashscreen)
+                            router.navigate(to: .leaderboard)
                         }
                     }
                 )
                 .environmentObject(router)
-                
+                .onAppear{
+                    playPointEarnedSound()
+                }
             }
-            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .navigationBarBackButtonHidden()
@@ -297,19 +259,81 @@ struct MissionMainScreen: View {
             isShowInstruction = isAllGameComplete
         }
         .onChange(of: endingStatus) {
-            if endingStatus == .success {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    isOverlayActive = true
-                }
-            }
+            showOverlayAfterMissionSuccess()
         }
         .onAppear {
-            if isFromVotingScreen {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    isClueClicked = true
-                    isFromVotingScreen = false
-                }
+            backFromVoting()
+        }
+        .onAppear {
+            startMission()
+        }
+        .onChange(of: missionManager.isFirstMissionDone) {
+            firstMissionCorrect()
+        }
+        .onChange(of: connectivityManager.isAllPlayerCorrectFirstMission) {
+            firstMissionComplete()
+        }
+        .onChange(of: isTimesUp) {
+            missionTimesUp()
+        }
+    }
+    
+    func missionTimesUp() {
+        if isTimesUp {
+            self.endingStatus = .failed
+        }
+    }
+    
+    func moveToVoting() {
+        print("User selected Yes")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            isFromVotingScreen = true
+            router.navigate(to: .votingScreen)
+        }
+        
+    }
+    
+    func backFromVoting() {
+        if isFromVotingScreen {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                isClueClicked = true
+                isFromVotingScreen = false
             }
+        }
+    }
+    
+    func startMission() {
+        connectivityManager.sendMessagePlayerStartMission()
+        if mission == 0 {
+            missionManager.startFirstMission()
+        }
+    }
+    
+    func showOverlayAfterMissionSuccess() {
+        if endingStatus == .success {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                isOverlayActive = true
+            }
+        }
+    }
+    
+    func firstMissionCorrect() {
+        if missionManager.isFirstMissionDone {
+            DispatchQueue.main.async {
+                self.isShowInstruction = true
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.isShowInstruction = false
+            }
+        }
+        connectivityManager.sendMessageCorrectFirstMission(correct: missionManager.isFirstMissionDone)
+    }
+    
+    func firstMissionComplete() {
+        if connectivityManager.isAllPlayerCorrectFirstMission {
+            missionManager.endFirstMission()
+            self.endingStatus = .success
         }
     }
 }

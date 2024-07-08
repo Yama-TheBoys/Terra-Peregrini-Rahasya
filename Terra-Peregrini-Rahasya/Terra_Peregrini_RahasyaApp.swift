@@ -12,11 +12,14 @@ struct Terra_Peregrini_RahasyaApp: App {
     
     @ObservedObject var router = Router()
     @ObservedObject var connectivityManager = ConnectivityManager()
+    @ObservedObject var missionManager = MissionManager()
     
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navPath) {
-                DisclaimerView()
+//                DisclaimerView()
+                NameCodeView()
+//                MissionMainScreen(mission: 0)
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
                         case .minimumreq:
@@ -61,10 +64,10 @@ struct Terra_Peregrini_RahasyaApp: App {
                             OthersView()
                         case .takepicture:
                             TakePictureView()
-                        case .captured:
-                            CapturedView()
-                        case .idcardoverview:
-                            IdCardOverView()
+                        case .captured(let photo):
+                            CapturedView(capturedImage: photo)
+                        case .idcardoverview(let photo):
+                            IdCardOverView(capturedImage: photo)
                         case .credits:
                             CreditsView()
                         case .votingScreen:
@@ -76,6 +79,7 @@ struct Terra_Peregrini_RahasyaApp: App {
             }
             .environmentObject(router)
             .environmentObject(connectivityManager)
+            .environmentObject(missionManager)
         }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 final class Router: ObservableObject {
     
-    public indirect enum Destination: Codable, Hashable {
+    public indirect enum Destination: Hashable {
         case minimumreq
         case splashscreen
         case email
@@ -31,8 +31,8 @@ final class Router: ObservableObject {
         case firstplace
         case others
         case takepicture
-        case captured
-        case idcardoverview
+        case captured(UIImage)
+        case idcardoverview(UIImage)
         case credits
         case votingScreen
         case waitingPlayerView(Destination)
