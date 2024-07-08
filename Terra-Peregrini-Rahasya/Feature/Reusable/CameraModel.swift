@@ -11,6 +11,7 @@ import AVFoundation
 class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
     @Published var capturedPhoto: UIImage? = nil
     @Published var isAuthorized: Bool = false
+    @Published var isSessionRunning: Bool = false
     var session: AVCaptureSession?
     
     private var output = AVCapturePhotoOutput()
@@ -75,15 +76,12 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
         if session.canAddOutput(output) {
             session.addOutput(output)
             
-            // Configure photo output settings
             if #available(iOS 16.0, *) {
                 if let supportedDimensions = camera.activeFormat.supportedMaxPhotoDimensions.first {
                     output.maxPhotoDimensions = supportedDimensions
                 } else {
                     print("No supported dimensions found")
                 }
-            } else {
-                output.isHighResolutionCaptureEnabled = true
             }
         } else {
             print("Failed to add photo output to session")
@@ -93,9 +91,16 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
         
         session.commitConfiguration()
         self.session = session
+    }
+    
+    func startSession() {
+        guard let session = session, !session.isRunning else { return }
         
         DispatchQueue.global(qos: .background).async {
             session.startRunning()
+            DispatchQueue.main.async {
+                self.isSessionRunning = true
+            }
         }
     }
     
@@ -115,7 +120,6 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
             return
         }
         
-        // Flip the image horizontally if needed
         let flippedImage = image.flippedHorizontally()
         
         DispatchQueue.main.async {

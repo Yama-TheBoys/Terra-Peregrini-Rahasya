@@ -82,7 +82,7 @@ struct PointResultView: View {
                             .aspectRatio(contentMode: .fit)
                         
                         Text(
-                            isVoting ? "See Clues Now" : "Okay"
+                            isVoting ? "See Clues Now" : "Continue"
                         )
                             .foregroundStyle(Color.white)
                             .customFont(.bold, 18)

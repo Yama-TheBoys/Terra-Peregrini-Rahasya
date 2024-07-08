@@ -37,7 +37,6 @@ struct MissionMainScreen: View {
     
     var mission: Int
     
-    
     var body: some View {
         ZStack {
             
@@ -163,25 +162,6 @@ struct MissionMainScreen: View {
                     
                 }
                 
-                //                if mission == 2 {
-                //                    if isHost {
-                //                        FinalColorView(colorCode: $colorCode)
-                //                            .offset(x: 0, y: 245)
-                //                    } else {
-                //                        Image.DistanceCode
-                //                            .resizable()
-                //                            .scaledToFit()
-                //                            .frame(width: 163)
-                //                            .overlay(alignment: .center) {
-                //                                Text("2")
-                //                                    .foregroundStyle(Color.white)
-                //                                    .customFont(.regular, 72)
-                //                                    .multilineTextAlignment(.center)
-                //                            }
-                //                            .offset(x: 0, y: -194)
-                //                    }
-                //                }
-                
                 if mission == 3 {
                     FinalCodeView(code: $code, isComplete: $isAllGameComplete, endingStatus: endingStatus)
                         .offset(x: 0, y: -165)
@@ -262,7 +242,7 @@ struct MissionMainScreen: View {
                         if mission < 3 {
                             router.navigate(to: .missionIntro(mission + 1))
                         } else {
-                            router.navigate(to: .splashscreen)
+                            router.navigate(to: .leaderboard)
                         }
                     }
                 )

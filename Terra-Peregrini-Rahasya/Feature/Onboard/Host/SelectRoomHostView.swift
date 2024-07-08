@@ -9,7 +9,10 @@ import SwiftUI
 
 struct SelectRoomHostView: View {
     @EnvironmentObject var router: Router
-    @State private var selectedRoom: String? = nil
+    @State private var selectedRoom: String = ""
+    
+    private var rooms = ["Bedroom", "Kitchen", "Living Room"]
+    
     @State private var isRGBChecked = false
     @State private var isDoorLockChecked = false
     
@@ -53,69 +56,23 @@ struct SelectRoomHostView: View {
                 
                 
                 VStack {
-                    RoomButton(title: "BEDROOM", isSelected: selectedRoom == "BEDROOM")
+                    ForEach(rooms, id: \.self) { room in
+                        RoomButton(
+                            title: room,
+                            selectedRoom: selectedRoom,
+                            isRGBChecked: $isRGBChecked,
+                            isDoorLockChecked: $isDoorLockChecked
+                        )
                         .onTapGesture {
-                            selectedRoom = "BEDROOM"
+                            selectedRoom = room
+                            isRGBChecked = false
+                            isDoorLockChecked = false
                         }
-                    
-                    if selectedRoom == "BEDROOM"{
-                        VStack(alignment: .leading) {
-                            Text("Checking...")
-                                .customFont(.regular, 16)
-                                .padding(.horizontal, 32)
-                                .foregroundColor(.white)
-                            CustomCheckbox(isChecked: $isRGBChecked, label: "Lamp with RGB")
-                                .padding(.top, -20)
-                            CustomCheckbox(isChecked: $isDoorLockChecked, label: "Smart Door Lock")
-                                .padding(.top, -30)
-                        }
-                        .padding(.horizontal)
                     }
-                    
-                    RoomButton(title: "KITCHEN", isSelected: selectedRoom == "KITCHEN")
-                        .onTapGesture {
-                            selectedRoom = "KITCHEN"
-                        }
-                    
-                    if selectedRoom == "KITCHEN"{
-                        VStack(alignment: .leading) {
-                            Text("Checking...")
-                                .customFont(.regular, 16)
-                                .padding(.horizontal, 32)
-                                .foregroundColor(.white)
-                            CustomCheckbox(isChecked: $isRGBChecked, label: "Lamp with RGB")
-                                .padding(.top, -20)
-                            CustomCheckbox(isChecked: $isDoorLockChecked, label: "Smart Door Lock")
-                                .padding(.top, -30)
-                        }
-                        .padding(.horizontal)
-                    }
-                    
-                    RoomButton(title: "LIVING ROOM", isSelected: selectedRoom == "LIVING ROOM")
-                        .onTapGesture {
-                            selectedRoom = "LIVING ROOM"
-                        }
-                    
-                    if selectedRoom == "LIVING ROOM"{
-                        VStack(alignment: .leading) {
-                            Text("Checking...")
-                                .customFont(.regular, 16)
-                                .padding(.horizontal, 32)
-                                .foregroundColor(.white)
-                            CustomCheckbox(isChecked: $isRGBChecked, label: "Lamp with RGB")
-                                .padding(.top, -20)
-                            CustomCheckbox(isChecked: $isDoorLockChecked, label: "Smart Door Lock")
-                                .padding(.top, -30)
-                        }
-                        .padding(.horizontal)
-                    }
+
                 }
                 .offset(y: 75)
                     
-//                Spacer()
-//                Spacer()
-//                Spacer()
-//                Spacer()
                 Spacer()
                 
                 // if success as host
@@ -124,16 +81,16 @@ struct SelectRoomHostView: View {
                     router.navigate(to: .roomsuccesshost)
                 }, label: {
                     ZStack{
-                        Image(selectedRoom == nil ? "DisableButton" : "ProceedButton")
+                        Image(selectedRoom == "" ? "DisableButton" : "ProceedButton")
                             .resizable()
                             .frame(width: 237, height: 81)
                         Text("Proceed")
-                            .foregroundStyle(selectedRoom == nil ? .gray : .white)
+                            .foregroundStyle(selectedRoom == "" ? .gray : .white)
                             .fontWeight(.bold)
                             .font(.custom("JetBrainsMono-Regular", size: 18))
                     }
                 })
-                .disabled(selectedRoom == nil)
+                .disabled(selectedRoom == "")
             }
             
         }
@@ -142,22 +99,44 @@ struct SelectRoomHostView: View {
 }
 
 struct RoomButton: View {
-    var title: String
-    var isSelected: Bool
+    let title: String
+    let selectedRoom: String
+    
+    @Binding var isRGBChecked : Bool
+    @Binding var isDoorLockChecked : Bool
+    
+    @State var isClicked: Bool = false
+    
     
     var body: some View {
-        ZStack{
-            Image(isSelected ? "SelectedHomeButton" : "SelectHomeButton")
-                .resizable()
-                .frame(width: 319, height: 64)
-            Text(title)
-                .customFont(.bold, 18)
-                .padding()
-                .frame(width: 319, height: 64, alignment: .leading)
-                .multilineTextAlignment(.leading)
-                .foregroundStyle(.white)
+        VStack {
+            ZStack{
+                Image(title == selectedRoom ? "SelectedHomeButton" : "SelectHomeButton")
+                    .resizable()
+                    .frame(width: 319, height: 64)
+                Text(title.uppercased())
+                    .customFont(.bold, 18)
+                    .padding()
+                    .frame(width: 319, height: 64, alignment: .leading)
+                    .multilineTextAlignment(.leading)
+                    .foregroundStyle(.white)
+            }
+            .padding(.bottom, 15)
+            
+            if title == selectedRoom {
+                VStack(alignment: .leading) {
+                    Text("Checking...")
+                        .customFont(.regular, 16)
+                        .padding(.horizontal, 32)
+                        .foregroundColor(.white)
+                    CustomCheckbox(isChecked: $isRGBChecked, label: "Lamp with RGB")
+                        .padding(.top, -20)
+                    CustomCheckbox(isChecked: $isDoorLockChecked, label: "Smart Door Lock")
+                        .padding(.top, -30)
+                }
+                .padding(.horizontal, 24)
+            }
         }
-        .padding(.bottom, 15)
     }
 }
 
@@ -165,7 +144,8 @@ struct CustomCheckbox: View {
     @Binding var isChecked: Bool
     var label: String
     
-    @State var isShowCheckMark = false
+    @State var isShowMarkResult = false
+    @State var isProgress = false
     
     var body: some View {
         HStack {
@@ -175,49 +155,26 @@ struct CustomCheckbox: View {
                 .padding(.horizontal, 16)
             Spacer()
             
-            if isChecked  && isShowCheckMark {
-                Image(systemName: "checkmark.square")
-                    .foregroundColor(.white)
+            if isShowMarkResult {
+                if isChecked {
+                    Image(systemName: "checkmark.square")
+                        .foregroundColor(.white)
+                } else {
+                    Image(systemName: "x.square")
+                        .foregroundColor(.red)
+                }
+                
             } else {
-                LoadingProgressView(progress: isChecked ? 1.0 : 0.0)
+                CircularProgressView(progress: isProgress ? 1.0 : 0.0, isRepeating: false, lineWidth: 4, color: .white)
                     .frame(width: 18, height: 17)
-                    .onTapGesture {
-                        withAnimation {
-                            isChecked.toggle()
-                        }
-                    }
             }
         }
         .padding()
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                isShowCheckMark = true
+            isProgress.toggle()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                isShowMarkResult = true
             }
-        }
-    }
-}
-
-struct LoadingProgressView: View {
-    let progress: Double
-    
-    var body: some View {
-        ZStack {
-            Circle()
-                .stroke(
-                    Color.gray.opacity(0.5),
-                    lineWidth: 2
-                )
-            Circle()
-                .trim(from: 0, to: progress)
-                .stroke(
-                    Color.white,
-                    style: StrokeStyle(
-                        lineWidth: 2,
-                        lineCap: .round
-                    )
-                )
-                .rotationEffect(.degrees(-90))
-                .animation(.easeOut(duration: 4), value: progress)
         }
     }
 }

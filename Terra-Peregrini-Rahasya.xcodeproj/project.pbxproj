@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		620E3B532C3AC6E9002D5032 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B522C3AC6E9002D5032 /* CameraModel.swift */; };
 		620E3B772C3B08B2002D5032 /* Orbitron-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 620E3B742C3AFA1C002D5032 /* Orbitron-Medium.ttf */; };
+		620E3B7A2C3B6EB1002D5032 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B792C3B6EB1002D5032 /* UIImage.swift */; };
+		620E3B7D2C3B6F55002D5032 /* SaveImageActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B7C2C3B6F55002D5032 /* SaveImageActivity.swift */; };
+		620E3B7F2C3B6FD7002D5032 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B7E2C3B6FD7002D5032 /* ActivityView.swift */; };
+		620E3B812C3B717E002D5032 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B802C3B717E002D5032 /* Util.swift */; };
 		62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */; };
 		62C5ADA62C3644300093C5E5 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */; };
 		62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */; };
@@ -17,7 +21,6 @@
 		62C5ADB12C36ECCF0093C5E5 /* FinalCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB02C36ECCF0093C5E5 /* FinalCodeView.swift */; };
 		62C5ADB32C36F5140093C5E5 /* FinalColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB22C36F5140093C5E5 /* FinalColorView.swift */; };
 		62C5ADB52C36F6580093C5E5 /* EndingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB42C36F6580093C5E5 /* EndingStatus.swift */; };
-		62C5ADB72C36F9340093C5E5 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB62C36F9340093C5E5 /* Util.swift */; };
 		62C5ADB92C37A6210093C5E5 /* VotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADB82C37A6210093C5E5 /* VotingView.swift */; };
 		62C5ADBB2C3854610093C5E5 /* WaitingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADBA2C3854610093C5E5 /* WaitingPlayerView.swift */; };
 		62C5ADBD2C3855EE0093C5E5 /* ColorBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADBC2C3855EE0093C5E5 /* ColorBackgroundView.swift */; };
@@ -74,6 +77,10 @@
 /* Begin PBXFileReference section */
 		620E3B522C3AC6E9002D5032 /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraModel.swift; path = "Terra-Peregrini-Rahasya/Feature/Reusable/CameraModel.swift"; sourceTree = SOURCE_ROOT; };
 		620E3B742C3AFA1C002D5032 /* Orbitron-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Medium.ttf"; sourceTree = "<group>"; };
+		620E3B792C3B6EB1002D5032 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		620E3B7C2C3B6F55002D5032 /* SaveImageActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageActivity.swift; sourceTree = "<group>"; };
+		620E3B7E2C3B6FD7002D5032 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		620E3B802C3B717E002D5032 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionIntro.swift; sourceTree = "<group>"; };
 		62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionMainScreen.swift; sourceTree = "<group>"; };
@@ -82,7 +89,6 @@
 		62C5ADB02C36ECCF0093C5E5 /* FinalCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCodeView.swift; sourceTree = "<group>"; };
 		62C5ADB22C36F5140093C5E5 /* FinalColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalColorView.swift; sourceTree = "<group>"; };
 		62C5ADB42C36F6580093C5E5 /* EndingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingStatus.swift; sourceTree = "<group>"; };
-		62C5ADB62C36F9340093C5E5 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		62C5ADB82C37A6210093C5E5 /* VotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingView.swift; sourceTree = "<group>"; };
 		62C5ADBA2C3854610093C5E5 /* WaitingPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPlayerView.swift; sourceTree = "<group>"; };
 		62C5ADBC2C3855EE0093C5E5 /* ColorBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBackgroundView.swift; sourceTree = "<group>"; };
@@ -150,6 +156,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		620E3B7B2C3B6F13002D5032 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				620E3B7C2C3B6F55002D5032 /* SaveImageActivity.swift */,
+				620E3B802C3B717E002D5032 /* Util.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		62C5ADA12C3590700093C5E5 /* Mission */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +187,7 @@
 				62C5ADC02C3860460093C5E5 /* PopUpView.swift */,
 				62C5ADC62C39A2FF0093C5E5 /* PointResultView.swift */,
 				62EF13822C39BC77001DA6D9 /* ReconnectingView.swift */,
+				620E3B7E2C3B6FD7002D5032 /* ActivityView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -245,6 +261,7 @@
 		7BC354602C2BF39E0050EB72 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				620E3B7B2C3B6F13002D5032 /* Util */,
 				7BC354612C2BF3A90050EB72 /* Extensions */,
 			);
 			path = Helper;
@@ -256,8 +273,8 @@
 				7BC354622C2BF3B80050EB72 /* Image.swift */,
 				7BC354642C2BF54D0050EB72 /* Color.swift */,
 				D82182DD2C3402260015C5A9 /* Font.swift */,
-				62C5ADB62C36F9340093C5E5 /* Util.swift */,
 				D8CE19752C3B094E00E28316 /* Sound.swift */,
+				620E3B792C3B6EB1002D5032 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -537,6 +554,7 @@
 				62C5ADB32C36F5140093C5E5 /* FinalColorView.swift in Sources */,
 				62C5ADC72C39A2FF0093C5E5 /* PointResultView.swift in Sources */,
 				620E3B532C3AC6E9002D5032 /* CameraModel.swift in Sources */,
+				620E3B812C3B717E002D5032 /* Util.swift in Sources */,
 				D82182F42C3665DB0015C5A9 /* RoomCompJoineeView.swift in Sources */,
 				62C5ADAF2C367DE20093C5E5 /* MissionDetail.swift in Sources */,
 				D821830D2C383B8A0015C5A9 /* CreditsView.swift in Sources */,
@@ -545,7 +563,6 @@
 				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
 				D8CE19762C3B094E00E28316 /* Sound.swift in Sources */,
 				D821830B2C37F95F0015C5A9 /* OthersView.swift in Sources */,
-				62C5ADB72C36F9340093C5E5 /* Util.swift in Sources */,
 				7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
 				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
@@ -564,6 +581,8 @@
 				62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */,
 				62C5ADC32C3884300093C5E5 /* Instructions.swift in Sources */,
 				7BC3546C2C2C031B0050EB72 /* HomeService+Delegate.swift in Sources */,
+				620E3B7F2C3B6FD7002D5032 /* ActivityView.swift in Sources */,
+				620E3B7D2C3B6F55002D5032 /* SaveImageActivity.swift in Sources */,
 				7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */,
 				62EF13832C39BC77001DA6D9 /* ReconnectingView.swift in Sources */,
 				62C5ADB92C37A6210093C5E5 /* VotingView.swift in Sources */,
@@ -585,6 +604,7 @@
 				D82182F02C365F1B0015C5A9 /* RoomReqHostView.swift in Sources */,
 				62C5ADAA2C367B710093C5E5 /* Mission.swift in Sources */,
 				D821832A2C3916390015C5A9 /* IdCardOverView.swift in Sources */,
+				620E3B7A2C3B6EB1002D5032 /* UIImage.swift in Sources */,
 				D82183022C370AF70015C5A9 /* RoomCompSuccessHostView.swift in Sources */,
 				D82182E22C357ECA0015C5A9 /* InvitationView.swift in Sources */,
 			);
