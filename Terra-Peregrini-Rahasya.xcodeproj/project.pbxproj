@@ -13,6 +13,7 @@
 		620E3B7D2C3B6F55002D5032 /* SaveImageActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B7C2C3B6F55002D5032 /* SaveImageActivity.swift */; };
 		620E3B7F2C3B6FD7002D5032 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B7E2C3B6FD7002D5032 /* ActivityView.swift */; };
 		620E3B812C3B717E002D5032 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B802C3B717E002D5032 /* Util.swift */; };
+		620E3B832C3B7E60002D5032 /* CountdownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B822C3B7E60002D5032 /* CountdownTimerView.swift */; };
 		62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */; };
 		62C5ADA62C3644300093C5E5 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */; };
 		62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */; };
@@ -81,6 +82,7 @@
 		620E3B7C2C3B6F55002D5032 /* SaveImageActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageActivity.swift; sourceTree = "<group>"; };
 		620E3B7E2C3B6FD7002D5032 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		620E3B802C3B717E002D5032 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		620E3B822C3B7E60002D5032 /* CountdownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerView.swift; sourceTree = "<group>"; };
 		62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionIntro.swift; sourceTree = "<group>"; };
 		62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionMainScreen.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				62C5ADC62C39A2FF0093C5E5 /* PointResultView.swift */,
 				62EF13822C39BC77001DA6D9 /* ReconnectingView.swift */,
 				620E3B7E2C3B6FD7002D5032 /* ActivityView.swift */,
+				620E3B822C3B7E60002D5032 /* CountdownTimerView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				62C5ADC12C3860460093C5E5 /* PopUpView.swift in Sources */,
 				62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */,
 				7BC354652C2BF54D0050EB72 /* Color.swift in Sources */,
+				620E3B832C3B7E60002D5032 /* CountdownTimerView.swift in Sources */,
 				7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */,
 				62C5ADBB2C3854610093C5E5 /* WaitingPlayerView.swift in Sources */,
 				D82182F02C365F1B0015C5A9 /* RoomReqHostView.swift in Sources */,
