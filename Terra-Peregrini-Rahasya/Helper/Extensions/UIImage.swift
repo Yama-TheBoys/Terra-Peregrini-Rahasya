@@ -15,7 +15,7 @@ extension UIImage {
         image.draw(in: CGRect(origin: CGPoint(x: 0, y: 0), size: self.size))
         let combinedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return combinedImage!.combineImageAndText(text: "ANJAR", fontName: "Orbitron-Medium")
+        return combinedImage!.combineImageAndText(text: "ANJAR", fontName: "Orbitron-Medium").resizeImage()
     }
     
     func combineImageAndText(text: String, fontName: String) -> UIImage {
@@ -64,5 +64,29 @@ extension UIImage {
         }
 
         return img
+    }
+    
+    func resizeImage() -> UIImage {
+        let size = self.size
+
+        let widthRatio  = 1024  / size.width
+        let heightRatio = 1024 / size.height
+
+        // Determine the scale factor that preserves aspect ratio
+        let scaleFactor = min(widthRatio, heightRatio)
+
+        // Compute the new image size that preserves aspect ratio
+        let scaledImageSize = CGSize(
+            width: size.width * scaleFactor,
+            height: size.height * scaleFactor
+        )
+
+        // Create a graphics context and draw the scaled image
+        let renderer = UIGraphicsImageRenderer(size: scaledImageSize)
+        let resizedImage = renderer.image { _ in
+            self.draw(in: CGRect(origin: .zero, size: scaledImageSize))
+        }
+
+        return resizedImage
     }
 }

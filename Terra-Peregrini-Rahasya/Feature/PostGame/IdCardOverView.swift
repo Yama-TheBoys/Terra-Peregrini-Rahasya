@@ -51,7 +51,7 @@ struct IdCardOverView: View {
                         }
                     })
                     .sheet(isPresented: $isShareSheetPresented) {
-                        ActivityView(activityItems: [capturedImage, "Hehe"])
+                        ActivityView(activityItems: [capturedImage.pngData(), "Congratulations, you are now official TAPERA agents. This is your Agent's ID Card"])
                     }
                     
                     Button(action: {
