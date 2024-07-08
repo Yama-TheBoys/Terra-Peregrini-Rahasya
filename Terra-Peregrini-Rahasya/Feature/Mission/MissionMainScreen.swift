@@ -95,6 +95,7 @@ struct MissionMainScreen: View {
                     .frame(height: 47)
             }
             .onTapGesture {
+                playClueSound()
                 isPopUpActive = true
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
@@ -117,7 +118,7 @@ struct MissionMainScreen: View {
                         
                         HStack(spacing: 0) {
                             Button(action: {
-                                
+                                playButtonClickSound()
                             }, label: {
                                 ZStack{
                                     Image.ProceedButton
@@ -131,7 +132,7 @@ struct MissionMainScreen: View {
                             .frame(width: 153, height: 81)
                             
                             Button(action: {
-                                
+                                playButtonClickSound()
                             }, label: {
                                 ZStack{
                                     Image.ProceedButton
@@ -184,6 +185,8 @@ struct MissionMainScreen: View {
                     Spacer()
                     
                     Button(action: {
+                        playButtonClickSound()
+                        playOpeningSound()
                         router.navigate(to: .splashscreen)
                     }, label: {
                         ZStack{
@@ -226,9 +229,11 @@ struct MissionMainScreen: View {
                     isVoting: false,
                     isFirstBlood: isFirstBlood,
                     onAction: {
+                        playButtonClickSound()
                         if mission < 3 {
                             router.navigate(to: .missionIntro(mission + 1))
                         } else {
+                            playEndingSound()
                             router.navigate(to: .leaderboard)
                         }
                     }
@@ -236,6 +241,9 @@ struct MissionMainScreen: View {
                 .environmentObject(router)
                 .onAppear{
                     playPointEarnedSound()
+                    if mission == 3 {
+                        stopSound()
+                    }
                 }
             }
         }
@@ -283,5 +291,5 @@ struct MissionMainScreen: View {
 }
 
 #Preview {
-    MissionMainScreen(mission: 3)
+    MissionMainScreen(mission: 1)
 }
