@@ -74,22 +74,9 @@ struct MissionMainScreen: View {
                 isOtherDeviceDetected = !isOtherDeviceDetected
             }
             
-            ZStack {
-                Color.TPRColor.DarkPurple
-                    .frame(width: 112, height: 47)
-                    .blur(radius: 10)
-                
-                Image.Time
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 112, alignment: .leading)
-                
-                Text("20:00")
-                    .foregroundStyle(Color.white)
-                    .customFont(.bold, 18)
-                    .frame(width: 112, alignment: .leading)
-                    .offset(x: 48)
-            }
+            CountdownTimerView(
+                initialTime: 1200
+            )
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .onTapGesture {
                 isHost = !isHost
@@ -251,7 +238,6 @@ struct MissionMainScreen: View {
                     playPointEarnedSound()
                 }
             }
-            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .navigationBarBackButtonHidden()

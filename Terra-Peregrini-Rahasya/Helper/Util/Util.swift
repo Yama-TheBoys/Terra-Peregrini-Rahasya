@@ -66,6 +66,10 @@ func checkPhotoLibraryPermission(completion: @escaping () -> Void) {
     }
 }
 
-func processingCapturedImage() {
-    
+func timerBackground(timerIsRunning: Bool) -> Color {
+    return timerIsRunning ? Color.TPRColor.DarkPurple : Color.TPRColor.DarkRed
+}
+
+func clockColor(timerIsRunning: Bool) -> Color {
+    return timerIsRunning ? Color.TPRColor.PrimaryBlue : Color.TPRColor.FailedRed
 }
