@@ -37,6 +37,7 @@ struct IdCardOverView: View {
                 
                 HStack(spacing: 0){
                     Button(action: {
+                        playButtonClickSound()
                         checkPhotoLibraryPermission {
                             isShareSheetPresented = true
                         }
@@ -55,6 +56,7 @@ struct IdCardOverView: View {
                     }
                     
                     Button(action: {
+                        playButtonClickSound()
                         router.navigate(to: .credits)
                     }, label: {
                         ZStack{

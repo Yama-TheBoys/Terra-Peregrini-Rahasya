@@ -45,6 +45,7 @@ struct VotingView: View {
                 Spacer()
                 
                 Button(action: {
+                    playButtonClickSound()
                     isVotingDone = true
                 }, label: {
                     ZStack{
@@ -74,6 +75,7 @@ struct VotingView: View {
                     isVoting: true,
                     isFirstBlood: false,
                     onAction: {
+                        playButtonClickSound()
                         router.navigateBack()
                     }
                 )

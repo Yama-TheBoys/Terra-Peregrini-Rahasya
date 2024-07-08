@@ -27,6 +27,7 @@ struct CapturedView: View {
                 
                 HStack(spacing: 0){
                     Button(action: {
+                        playButtonClickSound()
                         router.navigate(to: .takepicture)
                     }, label: {
                         ZStack{
@@ -39,6 +40,7 @@ struct CapturedView: View {
                         }
                     })
                     Button(action: {
+                        playButtonClickSound()
                         router.navigate(to: .idcardoverview(capturedImage))
                     }, label: {
                         ZStack{

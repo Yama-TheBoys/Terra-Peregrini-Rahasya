@@ -85,6 +85,7 @@ struct MissionIntro: View {
                     }
                     
                     Button(action: {
+                        playButtonClickSound()
                         isWaiting = true
                     }, label: {
                         ZStack{
