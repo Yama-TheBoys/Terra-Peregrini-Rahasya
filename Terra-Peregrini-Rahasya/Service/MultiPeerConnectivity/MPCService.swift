@@ -21,6 +21,7 @@ enum SendState: String {
 
 protocol MPCServiceDelegate: AnyObject {
     func didReceiveData(_ state: SendState, fromPeer peerId: MCPeerID)
+    func didReceiveTimeStamp(_ timestamp: Double, fromPeer peerId: MCPeerID)
     func didConnectedToPeer(_ peer: MCPeerID)
     func didDisconnectedFromPeer(_ peer: MCPeerID)
 }
@@ -28,6 +29,7 @@ protocol MPCServiceDelegate: AnyObject {
 final class MPCService: NSObject {
     
     let serviceType = "device-peer"
+    let localPeerId: MCPeerID
     let peerSession: MCSession
     let browserSession: MCNearbyServiceBrowser
     let advertiserSession: MCNearbyServiceAdvertiser
@@ -38,11 +40,11 @@ final class MPCService: NSObject {
     var confirmationFromPeers = [MCPeerID]()
     
     init(name: String, teamCode: String) {
-        let peerId = MCPeerID(displayName: name)
+        self.localPeerId = MCPeerID(displayName: name)
         
-        self.peerSession = MCSession(peer: peerId)
-        self.browserSession = MCNearbyServiceBrowser(peer: peerId, serviceType: serviceType)
-        self.advertiserSession = MCNearbyServiceAdvertiser(peer: peerId,
+        self.peerSession = MCSession(peer: localPeerId)
+        self.browserSession = MCNearbyServiceBrowser(peer: localPeerId, serviceType: serviceType)
+        self.advertiserSession = MCNearbyServiceAdvertiser(peer: localPeerId,
                                                            discoveryInfo: ["team_code" : teamCode, "timestamp": String(Date().timeIntervalSince1970)],
                                                            serviceType: serviceType)
         super.init()
@@ -71,6 +73,19 @@ final class MPCService: NSObject {
         }
     }
     
+    func sendTimestampToPeers(_ timestamp: TimeInterval) {
+        do {
+            let data = Data(from: timestamp)
+            try peerSession.send(data, toPeers: peerSession.connectedPeers, with: .reliable)
+        } catch(let error) {
+            print("Error sendMessageSetupHomeToPeers: \(error.localizedDescription)")
+        }
+    }
+    
+    func sendVoteToPeers(vote: String) {
+        
+    }
+    
     func peerConnected(peerId: MCPeerID) {
         delegate?.didConnectedToPeer(peerId)
         
@@ -89,9 +104,11 @@ final class MPCService: NSObject {
     func peerDidShareMessage(_ data: Data, from peer: MCPeerID) {
         if let message = String(data: data, encoding: .utf8) {
             delegate?.didReceiveData(SendState(rawValue: message) ?? .unknown, fromPeer: peer)
+        } else if let timestamp = data.to(type: Double.self) {
+            delegate?.didReceiveTimeStamp(timestamp, fromPeer: peer)
         }
     }
-    
+        
 }
 
 extension MPCService: MCSessionDelegate {

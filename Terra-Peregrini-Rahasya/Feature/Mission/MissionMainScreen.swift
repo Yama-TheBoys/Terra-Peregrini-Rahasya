@@ -26,13 +26,10 @@ struct MissionMainScreen: View {
     
     @State var isHost = false
     
-    @State var point = 10
-
     @State private var isPopUpActive: Bool = false
     @State private var isOverlayActive: Bool = false
     
     @State private var isFromVotingScreen: Bool = false
-    @State private var isFirstBlood: Bool = false
     
     @State private var isOtherDeviceDetected: Bool = false
     @State private var instructionMessage: String = Instructions.almostThere.rawValue
@@ -66,7 +63,7 @@ struct MissionMainScreen: View {
                         .padding(.leading, 40)
                         .foregroundStyle(Color.TPRColor.PrimaryBlue)
                     
-                    Text("\(point) pts")
+                    Text("\(missionManager.playerPoints) pts")
                         .foregroundStyle(Color.white)
                         .customFont(.bold, 16)
                         .frame(width: 43)
@@ -218,16 +215,11 @@ struct MissionMainScreen: View {
                 PointResultView(
                     choosenPlayer: "",
                     isVoting: false,
-                    isFirstBlood: isFirstBlood,
+                    isFirstBlood: connectivityManager.isSelfFirstBlood,
                     onAction: {
-                        if mission < 3 {
-                            router.navigate(to: .missionIntro(mission + 1))
-                        } else {
-                            router.navigate(to: .leaderboard)
-                        }
+                        overlayAfterMissionSucceed()
                     }
                 )
-                .environmentObject(router)
                 .onAppear{
                     playPointEarnedSound()
                 }
@@ -276,11 +268,15 @@ struct MissionMainScreen: View {
         .onChange(of: isTimesUp) {
             missionTimesUp()
         }
+        .onChange(of: missionManager.doneTimeStamp) {
+            assignSelfTimeStamp()
+        }
     }
     
     func missionTimesUp() {
         if isTimesUp {
             self.endingStatus = .failed
+            missionManager.endFirstMission()
         }
     }
     
@@ -299,6 +295,28 @@ struct MissionMainScreen: View {
                 isClueClicked = true
                 isFromVotingScreen = false
             }
+        }
+    }
+    
+    func assignSelfTimeStamp() {
+        if let timestamp = missionManager.doneTimeStamp {
+            connectivityManager.selfTimeStamp = timestamp
+            connectivityManager.sendTimeStamp(timestamp: timestamp)
+        }
+    }
+    
+    func overlayAfterMissionSucceed() {
+        if connectivityManager.isSelfFirstBlood {
+            missionManager.playerPoints += 25
+        } else {
+            missionManager.playerPoints += 10
+        }
+        
+        connectivityManager.resetStatus()
+        if mission < 3 {
+            router.navigate(to: .missionIntro(mission + 1))
+        } else {
+            router.navigate(to: .leaderboard)
         }
     }
     
@@ -333,6 +351,7 @@ struct MissionMainScreen: View {
     func firstMissionComplete() {
         if connectivityManager.isAllPlayerCorrectFirstMission {
             missionManager.endFirstMission()
+            
             self.endingStatus = .success
         }
     }

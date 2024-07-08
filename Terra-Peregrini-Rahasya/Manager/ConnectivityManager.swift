@@ -33,10 +33,20 @@ final class ConnectivityManager: ObservableObject {
     @Published var isPlayersReady = false
     @Published var playersQueued = [MCPeerID]()
     
-    // For mission manager
+    // For first mission manager
     @Published var isAllPlayerCorrectFirstMission = false
     @Published var isSelfCorrectFirstMission = false
     @Published var playersCorrectFirstMission = [MCPeerID : Bool]()
+    
+    // For first blood
+    @Published var isSelfFirstBlood = false
+    
+    // For timestamp
+    @Published var playersTimeStamp = [MCPeerID : Double]()
+    @Published var selfTimeStamp = 0.0
+    
+    // For Voting
+    @Published var playersVote = [MCPeerID : MCPeerID]()
         
     init(mpcService: MPCService? = nil) {
         self.mpcService = mpcService
@@ -113,13 +123,44 @@ final class ConnectivityManager: ObservableObject {
     }
     
     func sendMessageCorrectFirstMission(correct: Bool) {
+        if !self.playersCorrectFirstMission.values.contains(where: { $0 == false }),
+           correct,
+           self.playersCorrectFirstMission.count == 4 {
+            DispatchQueue.main.async {
+                self.isAllPlayerCorrectFirstMission = true
+            }
+        }
+        
         self.isSelfCorrectFirstMission = correct
         self.mpcService?.sendMessageToPeers(correct ? .correctFirtMission : .wrongFirstMission)
+    }
+    
+    func sendTimeStamp(timestamp: TimeInterval) {
+        self.mpcService?.sendTimestampToPeers(timestamp)
+    }
+    
+    func resetStatus() {
+        self.isSelfFirstBlood = false
+        self.playersTimeStamp.removeAll()
+        self.selfTimeStamp = 0.0
+    }
+    
+    func sendVoteWithPeerIdToPeers(_ chosen: MCPeerID) {
+        guard let localPeerId = mpcService?.localPeerId else { return }
+        self.playersVote[localPeerId] = chosen
+        
+        
     }
     
 }
 
 extension ConnectivityManager: MPCServiceDelegate {
+    func didReceiveTimeStamp(_ timestamp: Double, fromPeer peerId: MCPeerID) {
+        DispatchQueue.main.async {
+            self.playersTimeStamp[peerId] = timestamp
+        }
+    }
+    
     func didReceiveData(_ state: SendState, fromPeer peerId: MCPeerID) {
         switch state {
         case .setupHome:
@@ -157,6 +198,10 @@ extension ConnectivityManager: MPCServiceDelegate {
                     self.isSelfCorrectFirstMission,
                     self.playersCorrectFirstMission.count == 4 {
                     self.isAllPlayerCorrectFirstMission = true
+                    
+                    if !self.playersTimeStamp.values.contains(where: { $0 < self.selfTimeStamp}) {
+                        self.isSelfFirstBlood = true
+                    }
                 }
                 
             }

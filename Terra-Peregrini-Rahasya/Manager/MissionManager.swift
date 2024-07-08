@@ -11,6 +11,7 @@ class MissionManager: ObservableObject {
     
     @Published var playerPoints = 10
     @Published var isFirstMissionDone = false
+    @Published var doneTimeStamp: TimeInterval?
     
     let cmService = CMService()
     
@@ -27,6 +28,9 @@ class MissionManager: ObservableObject {
                     print("device placed down")
                     DispatchQueue.main.async {
                         self.isFirstMissionDone = true
+                        if self.doneTimeStamp == nil {
+                            self.doneTimeStamp = Date.now.timeIntervalSince1970
+                        }
                     }
                 } else {
                     print("device not in right position")
@@ -39,6 +43,7 @@ class MissionManager: ObservableObject {
     }
     
     func endFirstMission() {
+        self.doneTimeStamp = nil
         cmService.endMotion()
     }
     

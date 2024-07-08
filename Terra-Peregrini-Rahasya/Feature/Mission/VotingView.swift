@@ -9,8 +9,10 @@ import SwiftUI
 
 struct VotingView: View {
     @EnvironmentObject var router: Router
+    @EnvironmentObject var connectivityManager: ConnectivityManager
+    @EnvironmentObject var missionManager: MissionManager
     
-    @State var playerNames : [String] = ["Jul", "Daffa", "Anjar", "Niko"]
+//    @State var playerNames : [String] = ["Jul", "Daffa", "Anjar", "Niko"]
     
     @State var isVotingDone = false
     
@@ -35,10 +37,10 @@ struct VotingView: View {
                 .padding(.top, 80)
                 .padding(.bottom, 40)
                 
-                ForEach(playerNames, id: \.self) { name in
-                    HomeButton(title: name.uppercased(), isSelected: choosenPlayer == name)
+                ForEach(0..<connectivityManager.connectedPeers.count) { index in
+                    HomeButton(title: connectivityManager.connectedPeers[index].displayName.uppercased(), isSelected: choosenPlayer == connectivityManager.connectedPeers[index].displayName)
                         .onTapGesture {
-                            choosenPlayer = name
+                            choosenPlayer = connectivityManager.connectedPeers[index].displayName
                         }
                 }
                 
