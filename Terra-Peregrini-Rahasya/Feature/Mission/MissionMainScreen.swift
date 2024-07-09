@@ -97,6 +97,7 @@ struct MissionMainScreen: View {
                     .frame(height: 47)
             }
             .onTapGesture {
+                playClueSound()
                 isPopUpActive = true
                 connectivityManager.sendRequestForClue()
             }
@@ -120,7 +121,7 @@ struct MissionMainScreen: View {
                         
                         HStack(spacing: 0) {
                             Button(action: {
-                                
+                                playButtonClickSound()
                             }, label: {
                                 ZStack{
                                     Image.ProceedButton
@@ -134,7 +135,7 @@ struct MissionMainScreen: View {
                             .frame(width: 153, height: 81)
                             
                             Button(action: {
-                                
+                                playButtonClickSound()
                             }, label: {
                                 ZStack{
                                     Image.ProceedButton
@@ -181,6 +182,8 @@ struct MissionMainScreen: View {
                     Spacer()
                     
                     Button(action: {
+                        playButtonClickSound()
+                        playOpeningSound()
                         router.navigate(to: .splashscreen)
                     }, label: {
                         ZStack{
@@ -219,10 +222,14 @@ struct MissionMainScreen: View {
                     isFirstBlood: connectivityManager.isSelfFirstBlood,
                     onAction: {
                         overlayAfterMissionSucceed()
+                        playButtonClickSound()
                     }
                 )
                 .onAppear{
                     playPointEarnedSound()
+                    if mission == 3 {
+                        stopSound()
+                    }
                 }
             }
         }
@@ -323,11 +330,12 @@ struct MissionMainScreen: View {
         }
         
         connectivityManager.resetStatusMission()
-        if mission < 3 {
-            router.navigate(to: .missionIntro(mission + 1))
-        } else {
-            router.navigate(to: .leaderboard)
-        }
+        router.navigate(to: .leaderboard)
+//        if mission < 3 {
+//            router.navigate(to: .missionIntro(mission + 1))
+//        } else {
+//            router.navigate(to: .leaderboard)
+//        }
     }
     
     func showOverlayAfterMissionSuccess() {
@@ -361,5 +369,5 @@ struct MissionMainScreen: View {
 }
 
 #Preview {
-    MissionMainScreen(mission: 3)
+    MissionMainScreen(mission: 1)
 }

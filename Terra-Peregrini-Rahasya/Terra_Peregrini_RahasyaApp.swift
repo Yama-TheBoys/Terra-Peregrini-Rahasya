@@ -17,8 +17,8 @@ struct Terra_Peregrini_RahasyaApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navPath) {
-//                DisclaimerView()
-                NameCodeView()
+                DisclaimerView()
+//                NameCodeView()
 //                MissionMainScreen(mission: 0)
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {

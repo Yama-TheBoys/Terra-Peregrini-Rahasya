@@ -79,6 +79,7 @@ struct MissionIntro: View {
                 }
                 
                 Button(action: {
+                    playButtonClickSound()
                     moveToWaitingRoom()
                 }, label: {
                     ZStack{
@@ -93,6 +94,7 @@ struct MissionIntro: View {
                 })
                 .frame(width: 237, height: 81)
                 .offset(y: -15)
+
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

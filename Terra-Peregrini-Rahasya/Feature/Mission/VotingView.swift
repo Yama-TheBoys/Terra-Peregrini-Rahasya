@@ -47,6 +47,7 @@ struct VotingView: View {
                 Button(action: {
                     connectivityManager.sendVoteWithPeerIdToPeers(choosenPlayer)
                     router.navigate(to: .waitingVoteView)
+                    playButtonClickSound()
                 }, label: {
                     ZStack{
                         if choosenPlayer.isEmpty {
@@ -75,6 +76,7 @@ struct VotingView: View {
                     isVoting: true,
                     isFirstBlood: false,
                     onAction: {
+                        playButtonClickSound()
                         router.navigateBack()
                     }
                 )

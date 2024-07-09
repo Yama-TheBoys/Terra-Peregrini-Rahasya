@@ -77,6 +77,7 @@ struct RoomCompSuccessHostView: View {
                 Button(action: {
                     connectivityManager.sendMessageToStartFirstMission()
                     playButtonClickSound()
+                    playMissionStartSound()
                     router.navigate(to: .missionIntro(0))
                 }, label: {
                     ZStack{

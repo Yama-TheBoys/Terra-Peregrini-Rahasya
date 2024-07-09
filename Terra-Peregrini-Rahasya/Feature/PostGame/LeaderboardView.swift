@@ -18,6 +18,8 @@ struct LeaderboardView: View {
         ("5th", "NIKO", 60),
     ]
     
+    @State private var animate = false
+    
     var body: some View {
         ZStack{
             Color.TPRColor.PrimaryPurple
@@ -28,10 +30,14 @@ struct LeaderboardView: View {
                     .customFont(.bold, 36)
                     .foregroundStyle(.white)
                     .padding()
+                    .opacity(animate ? 1 : 0)
+                    .scaleEffect(animate ? 1 : 0.5)
+                    .animation(.easeOut(duration: 0.5).delay(0.1), value: animate)
                 
                 Spacer()
                 
-                ForEach(players, id: \.name) { player in
+                ForEach(players.indices, id: \.self) { index in
+                    let player = players[index]
                     HStack{
                         VStack{
                             Text(player.rank.prefix(1))
@@ -52,7 +58,7 @@ struct LeaderboardView: View {
                         Text(player.name)
                             .foregroundStyle(.white)
                             .padding()
-                            .frame(width: 100, height: 90, alignment: .topLeading)
+                            .frame(width: 150, height: 90, alignment: .topLeading)
                         
                         Spacer()
                         
@@ -68,20 +74,22 @@ struct LeaderboardView: View {
                         .frame(width: 110, height: 60, alignment: .topLeading)
 
                     }
-                    .offset(x: -15)
+                    .offset(x: animate ? 0 : -300)
                     .background(
                         Image.LeaderboardBg
                             .resizable()
-                            .frame(width: 350, height: 78)
+                            .frame(width: 425, height: 78)
                     )
+                    .animation(.easeOut(duration: 0.5).delay(0.1 * Double(index)), value: animate)
                 }
                 .font(.customFont(.bold, 18))
                 .frame(width: 300, height: 80)
-               
+                
                 Spacer()
                 Spacer()
                 
                 Button(action: {
+                    playButtonClickSound()
                     router.navigate(to: .firstplace)
                 }, label: {
                     ZStack{
@@ -94,11 +102,19 @@ struct LeaderboardView: View {
                     }
                 })
                 .padding()
+                .opacity(animate ? 1 : 0)
+                .animation(.easeOut(duration: 0.5).delay(0.5), value: animate)
+            }
+            .onAppear {
+                withAnimation {
+                    animate = true
+                }
             }
         }
         .navigationBarBackButtonHidden()
     }
 }
+
 
 #Preview {
     LeaderboardView()

@@ -54,6 +54,7 @@ struct OthersView: View {
                     .padding()
                 
                 Button(action: {
+                    playButtonClickSound()
                     router.navigate(to: .takepicture)
                 }, label: {
                     ZStack{

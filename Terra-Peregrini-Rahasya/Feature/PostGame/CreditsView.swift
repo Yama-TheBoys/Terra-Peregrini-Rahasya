@@ -70,6 +70,8 @@ struct CreditsView: View {
                     .padding()
                 
                 Button(action: {
+                    playButtonClickSound()
+                    playOpeningSound()
                     router.navigate(to: .splashscreen)
                 }, label: {
                     ZStack{
