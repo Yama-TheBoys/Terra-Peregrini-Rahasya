@@ -30,9 +30,11 @@
 		62C5ADC32C3884300093C5E5 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADC22C3884300093C5E5 /* Instructions.swift */; };
 		62C5ADC72C39A2FF0093C5E5 /* PointResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADC62C39A2FF0093C5E5 /* PointResultView.swift */; };
 		62EF13832C39BC77001DA6D9 /* ReconnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EF13822C39BC77001DA6D9 /* ReconnectingView.swift */; };
+		7B0B24152C3C977800EC3F2D /* WaitingVoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0B24142C3C977800EC3F2D /* WaitingVoteView.swift */; };
 		7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F772C2D44F700DB1EA4 /* MPCService.swift */; };
 		7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F7E2C2D586900DB1EA4 /* MPCView.swift */; };
 		7B30E2272C355A0B004B0346 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B30E2262C355A0B004B0346 /* ConnectivityManager.swift */; };
+		7B6DE9522C3CF12E00D9FC62 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6DE9512C3CF12E00D9FC62 /* String.swift */; };
 		7BA3C33F2C390BEE00B3117E /* CMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA3C33E2C390BEE00B3117E /* CMService.swift */; };
 		7BA3C3412C390F3000B3117E /* MissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA3C3402C390F3000B3117E /* MissionManager.swift */; };
 		7BA3C3432C39108400B3117E /* CMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA3C3422C39108400B3117E /* CMView.swift */; };
@@ -104,9 +106,11 @@
 		62C5ADC22C3884300093C5E5 /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
 		62C5ADC62C39A2FF0093C5E5 /* PointResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointResultView.swift; sourceTree = "<group>"; };
 		62EF13822C39BC77001DA6D9 /* ReconnectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconnectingView.swift; sourceTree = "<group>"; };
+		7B0B24142C3C977800EC3F2D /* WaitingVoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingVoteView.swift; sourceTree = "<group>"; };
 		7B245F772C2D44F700DB1EA4 /* MPCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCService.swift; sourceTree = "<group>"; };
 		7B245F7E2C2D586900DB1EA4 /* MPCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCView.swift; sourceTree = "<group>"; };
 		7B30E2262C355A0B004B0346 /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
+		7B6DE9512C3CF12E00D9FC62 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7BA3C33E2C390BEE00B3117E /* CMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMService.swift; sourceTree = "<group>"; };
 		7BA3C3402C390F3000B3117E /* MissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionManager.swift; sourceTree = "<group>"; };
 		7BA3C3422C39108400B3117E /* CMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMView.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 				62C5ADB02C36ECCF0093C5E5 /* FinalCodeView.swift */,
 				62C5ADB22C36F5140093C5E5 /* FinalColorView.swift */,
 				62C5ADBA2C3854610093C5E5 /* WaitingPlayerView.swift */,
+				7B0B24142C3C977800EC3F2D /* WaitingVoteView.swift */,
 				62C5ADBC2C3855EE0093C5E5 /* ColorBackgroundView.swift */,
 				62C5ADBE2C385B910093C5E5 /* CardView.swift */,
 				62C5ADC02C3860460093C5E5 /* PopUpView.swift */,
@@ -300,6 +305,7 @@
 				D8CE19752C3B094E00E28316 /* Sound.swift */,
 				620E3B792C3B6EB1002D5032 /* UIImage.swift */,
 				7BD834142C3C653900B3D0DB /* Data.swift */,
+				7B6DE9512C3CF12E00D9FC62 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -587,6 +593,7 @@
 				D821830D2C383B8A0015C5A9 /* CreditsView.swift in Sources */,
 				7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
+				7B6DE9522C3CF12E00D9FC62 /* String.swift in Sources */,
 				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
 				D8CE19762C3B094E00E28316 /* Sound.swift in Sources */,
 				D821830B2C37F95F0015C5A9 /* OthersView.swift in Sources */,
@@ -594,6 +601,7 @@
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
 				7BA3C3432C39108400B3117E /* CMView.swift in Sources */,
 				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
+				7B0B24152C3C977800EC3F2D /* WaitingVoteView.swift in Sources */,
 				62C5ADBF2C385B910093C5E5 /* CardView.swift in Sources */,
 				7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */,
 				D82183202C38E36B0015C5A9 /* TakePictureView.swift in Sources */,

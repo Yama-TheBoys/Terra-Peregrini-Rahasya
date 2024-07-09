@@ -11,9 +11,7 @@ struct VotingView: View {
     @EnvironmentObject var router: Router
     @EnvironmentObject var connectivityManager: ConnectivityManager
     @EnvironmentObject var missionManager: MissionManager
-    
-//    @State var playerNames : [String] = ["Jul", "Daffa", "Anjar", "Niko"]
-    
+        
     @State var isVotingDone = false
     
     @State var choosenPlayer : String = ""
@@ -47,7 +45,8 @@ struct VotingView: View {
                 Spacer()
                 
                 Button(action: {
-                    isVotingDone = true
+                    connectivityManager.sendVoteWithPeerIdToPeers(choosenPlayer)
+                    router.navigate(to: .waitingVoteView)
                 }, label: {
                     ZStack{
                         if choosenPlayer.isEmpty {
@@ -84,6 +83,32 @@ struct VotingView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.TPRColor.PrimaryPurple)
         .navigationBarBackButtonHidden()
+        .onAppear {
+            if connectivityManager.playersVote.count == 5 {
+                isVotingDone = true
+                
+                var highestVotePLayers = [String: Int]()
+                
+                for (_, value) in connectivityManager.playersVote {
+                    if highestVotePLayers[value] == 1 {
+                        highestVotePLayers[value] = (highestVotePLayers[value] ?? 1) + 1
+                    } else {
+                        highestVotePLayers[value] = 1
+                    }
+                }
+                print("highestVotePLayers", highestVotePLayers)
+                
+                if let maxValue = highestVotePLayers.values.max() {
+                    let votedPlayers = highestVotePLayers.filter { $0.value == maxValue }.keys
+                    for votedPlayer in votedPlayers {
+                        choosenPlayer += votedPlayer + " "
+                        if votedPlayer == connectivityManager.getCandidateName() {
+                            missionManager.playerPoints -= 10
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

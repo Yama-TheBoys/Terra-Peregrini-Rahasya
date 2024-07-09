@@ -36,6 +36,7 @@ final class Router: ObservableObject {
         case credits
         case votingScreen
         case waitingPlayerView(Destination)
+        case waitingVoteView
     }
     
     @Published var navPath = NavigationPath()

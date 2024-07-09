@@ -46,7 +46,11 @@ final class ConnectivityManager: ObservableObject {
     @Published var selfTimeStamp = 0.0
     
     // For Voting
-    @Published var playersVote = [MCPeerID : MCPeerID]()
+    @Published var isRequestingVote = false
+    @Published var isShowPopUpVote = false
+    @Published var isMoveToVotePage = false
+    @Published var playersRequest = [MCPeerID]()
+    @Published var playersVote = [MCPeerID : String]()
         
     init(mpcService: MPCService? = nil) {
         self.mpcService = mpcService
@@ -139,22 +143,48 @@ final class ConnectivityManager: ObservableObject {
         self.mpcService?.sendTimestampToPeers(timestamp)
     }
     
-    func resetStatus() {
+    func resetStatusMission() {
         self.isSelfFirstBlood = false
         self.playersTimeStamp.removeAll()
         self.selfTimeStamp = 0.0
     }
     
-    func sendVoteWithPeerIdToPeers(_ chosen: MCPeerID) {
+    func resetStatusVote() {
+        self.isRequestingVote = false
+        self.isShowPopUpVote = false
+        self.isMoveToVotePage = false
+        self.playersRequest.removeAll()
+        self.playersVote.removeAll()
+    }
+    
+    func sendRequestForClue() {
+        self.mpcService?.sendMessageToPeers(.requestForClue)
+    }
+    
+    func sendRequestToVote() {
+        self.isRequestingVote = true
+        if self.isRequestingVote && self.playersRequest.count >= 2 {
+            self.isMoveToVotePage = true
+        }
+        
+        self.mpcService?.sendMessageToPeers(.moveToVote)
+    }
+    
+    func sendVoteWithPeerIdToPeers(_ chosen: String) {
         guard let localPeerId = mpcService?.localPeerId else { return }
         self.playersVote[localPeerId] = chosen
-        
-        
+        self.mpcService?.sendVoteToPeers(vote: chosen)
     }
     
 }
 
 extension ConnectivityManager: MPCServiceDelegate {
+    func didReceiveVote(_ vote: String, fromPeer peerId: MCPeerID) {
+        DispatchQueue.main.async {
+            self.playersVote[peerId] = vote
+        }
+    }
+    
     func didReceiveTimeStamp(_ timestamp: Double, fromPeer peerId: MCPeerID) {
         DispatchQueue.main.async {
             self.playersTimeStamp[peerId] = timestamp
@@ -208,6 +238,18 @@ extension ConnectivityManager: MPCServiceDelegate {
         case .wrongFirstMission:
             DispatchQueue.main.async {
                 self.playersCorrectFirstMission[peerId] = false
+            }
+        case .moveToVote:
+            DispatchQueue.main.async {
+                self.playersRequest.append(peerId)
+                
+                if self.playersRequest.count > 2 || (self.isRequestingVote && self.playersRequest.count == 2) {
+                    self.isMoveToVotePage = true
+                }
+            }
+        case .requestForClue:
+            DispatchQueue.main.async {
+                self.isShowPopUpVote = true
             }
         case .unknown:
             break

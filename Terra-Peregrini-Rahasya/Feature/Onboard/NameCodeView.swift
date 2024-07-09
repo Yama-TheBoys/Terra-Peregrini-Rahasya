@@ -83,7 +83,7 @@ struct NameCodeView: View {
                     .padding(.bottom, 300)
                     
                     Button(action: { // button nya belom ke disable klo belom ada input
-                        connectivityManager.startConnecting(name: "daffa yang bener", teamCode: "1234")
+                        connectivityManager.startConnecting(name: candidateName, teamCode: teamCode)
                         router.navigate(to: .assemble(candidateName))
                         playButtonClickSound()
                     }, label: {

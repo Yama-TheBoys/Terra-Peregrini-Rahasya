@@ -16,12 +16,15 @@ enum SendState: String {
     case playerQueued = "player-queue"
     case correctFirtMission = "correct-first-mission"
     case wrongFirstMission = "wrong-first-mission"
+    case requestForClue = "request-for-clue"
+    case moveToVote = "move-to-vote"
     case unknown
 }
 
 protocol MPCServiceDelegate: AnyObject {
     func didReceiveData(_ state: SendState, fromPeer peerId: MCPeerID)
     func didReceiveTimeStamp(_ timestamp: Double, fromPeer peerId: MCPeerID)
+    func didReceiveVote(_ vote: String, fromPeer peerId: MCPeerID)
     func didConnectedToPeer(_ peer: MCPeerID)
     func didDisconnectedFromPeer(_ peer: MCPeerID)
 }
@@ -40,7 +43,7 @@ final class MPCService: NSObject {
     var confirmationFromPeers = [MCPeerID]()
     
     init(name: String, teamCode: String) {
-        self.localPeerId = MCPeerID(displayName: name)
+        self.localPeerId = MCPeerID(displayName: "\(name)#\(String().randomString(length: 3))")
         
         self.peerSession = MCSession(peer: localPeerId)
         self.browserSession = MCNearbyServiceBrowser(peer: localPeerId, serviceType: serviceType)
@@ -78,12 +81,17 @@ final class MPCService: NSObject {
             let data = Data(from: timestamp)
             try peerSession.send(data, toPeers: peerSession.connectedPeers, with: .reliable)
         } catch(let error) {
-            print("Error sendMessageSetupHomeToPeers: \(error.localizedDescription)")
+            print("Error sendTimestampToPeers: \(error.localizedDescription)")
         }
     }
     
     func sendVoteToPeers(vote: String) {
-        
+        do {
+            let data = vote.data(using: .utf8)!
+            try peerSession.send(data, toPeers: peerSession.connectedPeers, with: .reliable)
+        } catch {
+            print("Error sendVoteToPeers: \(error.localizedDescription)")
+        }
     }
     
     func peerConnected(peerId: MCPeerID) {
@@ -102,8 +110,10 @@ final class MPCService: NSObject {
     }
     
     func peerDidShareMessage(_ data: Data, from peer: MCPeerID) {
-        if let message = String(data: data, encoding: .utf8) {
-            delegate?.didReceiveData(SendState(rawValue: message) ?? .unknown, fromPeer: peer)
+        if let message = String(data: data, encoding: .utf8), let state = SendState(rawValue: message) {
+            delegate?.didReceiveData(state, fromPeer: peer)
+        } else if let vote = String(data: data, encoding: .utf8) {
+            delegate?.didReceiveVote(vote, fromPeer: peer)
         } else if let timestamp = data.to(type: Double.self) {
             delegate?.didReceiveTimeStamp(timestamp, fromPeer: peer)
         }

@@ -98,6 +98,7 @@ struct MissionMainScreen: View {
             }
             .onTapGesture {
                 isPopUpActive = true
+                connectivityManager.sendRequestForClue()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             
@@ -203,7 +204,7 @@ struct MissionMainScreen: View {
                     isActive: $isPopUpActive,
                     message: "Are you sure you need extra clues?",
                     onYes: {
-                        moveToVoting()
+                        connectivityManager.sendRequestToVote()
                     },
                     onNo: {
                         print("User selected No")
@@ -254,10 +255,7 @@ struct MissionMainScreen: View {
             showOverlayAfterMissionSuccess()
         }
         .onAppear {
-            backFromVoting()
-        }
-        .onAppear {
-            startMission()
+            onScreenAppear()
         }
         .onChange(of: missionManager.isFirstMissionDone) {
             firstMissionCorrect()
@@ -271,6 +269,12 @@ struct MissionMainScreen: View {
         .onChange(of: missionManager.doneTimeStamp) {
             assignSelfTimeStamp()
         }
+        .onChange(of: connectivityManager.isShowPopUpVote, {
+            isPopUpActive = connectivityManager.isShowPopUpVote
+        })
+        .onChange(of: connectivityManager.isMoveToVotePage) {
+            moveToVoting()
+        }
     }
     
     func missionTimesUp() {
@@ -281,19 +285,25 @@ struct MissionMainScreen: View {
     }
     
     func moveToVoting() {
-        print("User selected Yes")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            isFromVotingScreen = true
-            router.navigate(to: .votingScreen)
+        if connectivityManager.isMoveToVotePage {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                isFromVotingScreen = true
+                router.navigate(to: .votingScreen)
+            }
         }
-        
     }
     
-    func backFromVoting() {
+    func onScreenAppear() {
         if isFromVotingScreen {
+            connectivityManager.resetStatusVote()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 isClueClicked = true
                 isFromVotingScreen = false
+            }
+        } else {
+            connectivityManager.sendMessagePlayerStartMission()
+            if mission == 0 {
+                missionManager.startFirstMission()
             }
         }
     }
@@ -312,18 +322,11 @@ struct MissionMainScreen: View {
             missionManager.playerPoints += 10
         }
         
-        connectivityManager.resetStatus()
+        connectivityManager.resetStatusMission()
         if mission < 3 {
             router.navigate(to: .missionIntro(mission + 1))
         } else {
             router.navigate(to: .leaderboard)
-        }
-    }
-    
-    func startMission() {
-        connectivityManager.sendMessagePlayerStartMission()
-        if mission == 0 {
-            missionManager.startFirstMission()
         }
     }
     

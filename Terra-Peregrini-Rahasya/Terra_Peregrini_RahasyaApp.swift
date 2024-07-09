@@ -74,6 +74,8 @@ struct Terra_Peregrini_RahasyaApp: App {
                             VotingView()
                         case .waitingPlayerView(let destination):
                             WaitingPlayerView(destination: destination)
+                        case .waitingVoteView:
+                            WaitingVoteView()
                         }
                     }
             }
