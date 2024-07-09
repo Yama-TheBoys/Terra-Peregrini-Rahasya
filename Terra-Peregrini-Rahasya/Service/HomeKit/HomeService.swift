@@ -145,6 +145,39 @@ final class HomeService: NSObject {
             }
         }
     }
+    
+    func setSmartLampBrightness(for accessory: HMAccessory, brightness: CGFloat) {
+        guard let brightnessCharacteristic = accessory.findCharacteristic(type: HMCharacteristicTypeBrightness) else {
+            print("Smart lamp color characteristics not found.")
+            return
+        }
+        
+        
+        brightnessCharacteristic.writeValue(brightness) { error in
+            if let error = error {
+                print("Error writing brightness: \(error)")
+            }
+        }
+
+    }
+    
+    func fetchSmartLampBrightness(for accessory: HMAccessory, completion: @escaping (CGFloat) -> Void) {
+        guard let brightnessCharacteristic = accessory.findCharacteristic(type: HMCharacteristicTypeBrightness) else {
+            return
+        }
+        
+        brightnessCharacteristic.readValue { error in
+            if let error = error {
+                print("Error reading brightness: \(error.localizedDescription)")
+                return
+            }
+            let brightnessValue = CGFloat(brightnessCharacteristic.value as? Float ?? 0.0)
+            
+            DispatchQueue.main.async {
+                completion(brightnessValue)
+            }
+        }
+    }
 }
 
 extension HomeService: HMHomeManagerDelegate {

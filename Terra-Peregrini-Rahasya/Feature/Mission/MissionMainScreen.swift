@@ -325,6 +325,9 @@ struct MissionMainScreen: View {
         if mission == 0 {
             missionManager.startFirstMission()
         }
+        if mission == 2 {
+            missionManager.startThirdMission()
+        }
     }
     
     func showOverlayAfterMissionSuccess() {
@@ -358,5 +361,5 @@ struct MissionMainScreen: View {
 }
 
 #Preview {
-    MissionMainScreen(mission: 3)
+    MissionMainScreen(mission: 2)
 }

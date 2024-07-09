@@ -74,10 +74,18 @@
 		D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */; };
 		D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F10EB2C27F39700D8AAB9 /* SplashView.swift */; };
 		D84F110C2C33EFBE00D8AAB9 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F110B2C33EFBE00D8AAB9 /* DisclaimerView.swift */; };
-		D8CE19732C3B071B00E28316 /* Opening_Dystopian.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19712C3B071B00E28316 /* Opening_Dystopian.wav */; };
 		D8CE19742C3B071B00E28316 /* Point-Earned.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19722C3B071B00E28316 /* Point-Earned.wav */; };
 		D8CE19762C3B094E00E28316 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE19752C3B094E00E28316 /* Sound.swift */; };
-		D8CE19782C3B0BDF00E28316 /* button-clicked.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19772C3B0BDF00E28316 /* button-clicked.wav */; };
+		D8CE19782C3B0BDF00E28316 /* Button-Clicked.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19772C3B0BDF00E28316 /* Button-Clicked.wav */; };
+		D8CE19832C3C664300E28316 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8CE19822C3C664300E28316 /* CoreBluetooth.framework */; };
+		D8CE19852C3C66A100E28316 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE19842C3C66A100E28316 /* ContentView.swift */; };
+		D8CE19892C3C8F5100E28316 /* ShakeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE19882C3C8F5100E28316 /* ShakeDetector.swift */; };
+		D8CE198B2C3C914D00E28316 /* FlashlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE198A2C3C914D00E28316 /* FlashlightManager.swift */; };
+		D8CE198D2C3C919200E28316 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE198C2C3C919200E28316 /* GameManager.swift */; };
+		D8CE19922C3CD97700E28316 /* Ending-Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE198E2C3CD97600E28316 /* Ending-Sound.wav */; };
+		D8CE19932C3CD97700E28316 /* Clue-Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE198F2C3CD97700E28316 /* Clue-Sound.wav */; };
+		D8CE19942C3CD97700E28316 /* Mission-Start.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19902C3CD97700E28316 /* Mission-Start.wav */; };
+		D8CE19952C3CD97700E28316 /* Opening-Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19912C3CD97700E28316 /* Opening-Sound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,10 +159,18 @@
 		D84F10E02C27E52D00D8AAB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D84F10EB2C27F39700D8AAB9 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		D84F110B2C33EFBE00D8AAB9 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
-		D8CE19712C3B071B00E28316 /* Opening_Dystopian.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Opening_Dystopian.wav; sourceTree = "<group>"; };
 		D8CE19722C3B071B00E28316 /* Point-Earned.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Point-Earned.wav"; sourceTree = "<group>"; };
 		D8CE19752C3B094E00E28316 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
-		D8CE19772C3B0BDF00E28316 /* button-clicked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "button-clicked.wav"; sourceTree = "<group>"; };
+		D8CE19772C3B0BDF00E28316 /* Button-Clicked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Button-Clicked.wav"; sourceTree = "<group>"; };
+		D8CE19822C3C664300E28316 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		D8CE19842C3C66A100E28316 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D8CE19882C3C8F5100E28316 /* ShakeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeDetector.swift; sourceTree = "<group>"; };
+		D8CE198A2C3C914D00E28316 /* FlashlightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashlightManager.swift; sourceTree = "<group>"; };
+		D8CE198C2C3C919200E28316 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		D8CE198E2C3CD97600E28316 /* Ending-Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Ending-Sound.wav"; path = "../../../../../../../../Downloads/Ending-Sound.wav"; sourceTree = "<group>"; };
+		D8CE198F2C3CD97700E28316 /* Clue-Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Clue-Sound.wav"; path = "../../../../../../../../Downloads/Clue-Sound.wav"; sourceTree = "<group>"; };
+		D8CE19902C3CD97700E28316 /* Mission-Start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Mission-Start.wav"; path = "../../../../../../../../Downloads/Mission-Start.wav"; sourceTree = "<group>"; };
+		D8CE19912C3CD97700E28316 /* Opening-Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Opening-Sound.wav"; path = "../../../../../../../../Downloads/Opening-Sound.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CE19832C3C664300E28316 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +200,8 @@
 				62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */,
 				62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */,
 				62C5ADB82C37A6210093C5E5 /* VotingView.swift */,
+				D8CE19842C3C66A100E28316 /* ContentView.swift */,
+				D8CE198C2C3C919200E28316 /* GameManager.swift */,
 			);
 			path = Mission;
 			sourceTree = "<group>";
@@ -338,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				7BA3C33E2C390BEE00B3117E /* CMService.swift */,
+				D8CE19882C3C8F5100E28316 /* ShakeDetector.swift */,
 			);
 			path = CoreMotion;
 			sourceTree = "<group>";
@@ -353,6 +373,7 @@
 		7BC354722C2C1E9F0050EB72 /* AVFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				D8CE198A2C3C914D00E28316 /* FlashlightManager.swift */,
 			);
 			path = AVFoundation;
 			sourceTree = "<group>";
@@ -417,6 +438,7 @@
 			children = (
 				D84F10D82C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya */,
 				D84F10D72C27E52C00D8AAB9 /* Products */,
+				D8CE19812C3C664300E28316 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -489,11 +511,22 @@
 		D8CE19702C3B06FD00E28316 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				D8CE19772C3B0BDF00E28316 /* button-clicked.wav */,
-				D8CE19712C3B071B00E28316 /* Opening_Dystopian.wav */,
+				D8CE19902C3CD97700E28316 /* Mission-Start.wav */,
+				D8CE198F2C3CD97700E28316 /* Clue-Sound.wav */,
+				D8CE19912C3CD97700E28316 /* Opening-Sound.wav */,
+				D8CE198E2C3CD97600E28316 /* Ending-Sound.wav */,
+				D8CE19772C3B0BDF00E28316 /* Button-Clicked.wav */,
 				D8CE19722C3B071B00E28316 /* Point-Earned.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		D8CE19812C3C664300E28316 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8CE19822C3C664300E28316 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -557,10 +590,13 @@
 				D82182FA2C3682180015C5A9 /* JetBrainsMono-Italic.ttf in Resources */,
 				D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */,
 				D8CE19742C3B071B00E28316 /* Point-Earned.wav in Resources */,
+				D8CE19942C3CD97700E28316 /* Mission-Start.wav in Resources */,
+				D8CE19932C3CD97700E28316 /* Clue-Sound.wav in Resources */,
 				620E3B772C3B08B2002D5032 /* Orbitron-Medium.ttf in Resources */,
 				D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */,
-				D8CE19732C3B071B00E28316 /* Opening_Dystopian.wav in Resources */,
-				D8CE19782C3B0BDF00E28316 /* button-clicked.wav in Resources */,
+				D8CE19782C3B0BDF00E28316 /* Button-Clicked.wav in Resources */,
+				D8CE19952C3CD97700E28316 /* Opening-Sound.wav in Resources */,
+				D8CE19922C3CD97700E28316 /* Ending-Sound.wav in Resources */,
 				D82182E42C358A540015C5A9 /* JetBrainsMono-Regular.ttf in Resources */,
 				D82182E82C359EEE0015C5A9 /* JetBrainsMono-Bold.ttf in Resources */,
 			);
@@ -598,6 +634,7 @@
 				7BC3545A2C2BF0500050EB72 /* Router.swift in Sources */,
 				D82183202C38E36B0015C5A9 /* TakePictureView.swift in Sources */,
 				7BC354692C2BF74A0050EB72 /* HomeService.swift in Sources */,
+				D8CE19852C3C66A100E28316 /* ContentView.swift in Sources */,
 				7B30E2272C355A0B004B0346 /* ConnectivityManager.swift in Sources */,
 				D84F110C2C33EFBE00D8AAB9 /* DisclaimerView.swift in Sources */,
 				D84F10EC2C27F39700D8AAB9 /* SplashView.swift in Sources */,
@@ -612,6 +649,7 @@
 				620E3B7F2C3B6FD7002D5032 /* ActivityView.swift in Sources */,
 				7BD834152C3C653900B3D0DB /* Data.swift in Sources */,
 				620E3B7D2C3B6F55002D5032 /* SaveImageActivity.swift in Sources */,
+				D8CE19892C3C8F5100E28316 /* ShakeDetector.swift in Sources */,
 				7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */,
 				62EF13832C39BC77001DA6D9 /* ReconnectingView.swift in Sources */,
 				62C5ADB92C37A6210093C5E5 /* VotingView.swift in Sources */,
@@ -625,6 +663,7 @@
 				62C5ADB12C36ECCF0093C5E5 /* FinalCodeView.swift in Sources */,
 				62C5ADB52C36F6580093C5E5 /* EndingStatus.swift in Sources */,
 				62C5ADBD2C3855EE0093C5E5 /* ColorBackgroundView.swift in Sources */,
+				D8CE198B2C3C914D00E28316 /* FlashlightManager.swift in Sources */,
 				62C5ADC12C3860460093C5E5 /* PopUpView.swift in Sources */,
 				7BA3C33F2C390BEE00B3117E /* CMService.swift in Sources */,
 				62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */,
@@ -639,6 +678,7 @@
 				620E3B7A2C3B6EB1002D5032 /* UIImage.swift in Sources */,
 				D82183022C370AF70015C5A9 /* RoomCompSuccessHostView.swift in Sources */,
 				D82182E22C357ECA0015C5A9 /* InvitationView.swift in Sources */,
+				D8CE198D2C3C919200E28316 /* GameManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,8 +817,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Terra-Peregrini-Rahasya";
+				INFOPLIST_KEY_CFBundleDisplayName = TAPERA;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to use the camera for taking photos.";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
@@ -814,14 +856,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Terra-Peregrini-Rahasya/Terra-Peregrini-Rahasya.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
 				DEVELOPMENT_TEAM = 3B2V262XU7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Terra-Peregrini-Rahasya";
+				INFOPLIST_KEY_CFBundleDisplayName = TAPERA;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to use the camera for taking photos.";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
