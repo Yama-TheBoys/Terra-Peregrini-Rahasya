@@ -17,9 +17,7 @@ struct Terra_Peregrini_RahasyaApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navPath) {
-//                DisclaimerView()
-                NameCodeView()
-//                MissionMainScreen(mission: 0)
+                BluetoothViews()
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
                         case .minimumreq:

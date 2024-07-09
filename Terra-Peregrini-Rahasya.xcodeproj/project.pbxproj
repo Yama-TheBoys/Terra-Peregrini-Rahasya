@@ -29,6 +29,9 @@
 		62C5ADC12C3860460093C5E5 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADC02C3860460093C5E5 /* PopUpView.swift */; };
 		62C5ADC32C3884300093C5E5 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADC22C3884300093C5E5 /* Instructions.swift */; };
 		62C5ADC72C39A2FF0093C5E5 /* PointResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADC62C39A2FF0093C5E5 /* PointResultView.swift */; };
+		62DAD2992C3C656400B44F09 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD2982C3C656400B44F09 /* BluetoothManager.swift */; };
+		62DAD29B2C3C664200B44F09 /* BluetoothViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD29A2C3C664200B44F09 /* BluetoothViews.swift */; };
+		62DAD29E2C3C71CD00B44F09 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DAD29D2C3C71CD00B44F09 /* CoreBluetooth.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		62EF13832C39BC77001DA6D9 /* ReconnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EF13822C39BC77001DA6D9 /* ReconnectingView.swift */; };
 		7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F772C2D44F700DB1EA4 /* MPCService.swift */; };
 		7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F7E2C2D586900DB1EA4 /* MPCView.swift */; };
@@ -103,6 +106,9 @@
 		62C5ADC02C3860460093C5E5 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		62C5ADC22C3884300093C5E5 /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
 		62C5ADC62C39A2FF0093C5E5 /* PointResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointResultView.swift; sourceTree = "<group>"; };
+		62DAD2982C3C656400B44F09 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		62DAD29A2C3C664200B44F09 /* BluetoothViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViews.swift; sourceTree = "<group>"; };
+		62DAD29D2C3C71CD00B44F09 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		62EF13822C39BC77001DA6D9 /* ReconnectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconnectingView.swift; sourceTree = "<group>"; };
 		7B245F772C2D44F700DB1EA4 /* MPCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCService.swift; sourceTree = "<group>"; };
 		7B245F7E2C2D586900DB1EA4 /* MPCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCView.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DAD29E2C3C71CD00B44F09 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,12 +240,29 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		62DAD2972C3C654E00B44F09 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				62DAD2982C3C656400B44F09 /* BluetoothManager.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		62DAD29C2C3C71CD00B44F09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62DAD29D2C3C71CD00B44F09 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7B245F7D2C2D585700DB1EA4 /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				7B245F7E2C2D586900DB1EA4 /* MPCView.swift */,
 				7BA3C3422C39108400B3117E /* CMView.swift */,
 				7BC5DDD62C39B4B5007149D8 /* GAView.swift */,
+				62DAD29A2C3C664200B44F09 /* BluetoothViews.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -308,7 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				7BA3C33D2C3909FB00B3117E /* GroupActivities */,
-				7BC354732C2C1EB30050EB72 /* Torch */,
+				62DAD2972C3C654E00B44F09 /* Bluetooth */,
 				7BC354722C2C1E9F0050EB72 /* AVFoundation */,
 				7BC354712C2C1E900050EB72 /* Camera */,
 				7BC3546F2C2C1E7F0050EB72 /* CoreMotion */,
@@ -355,13 +379,6 @@
 			children = (
 			);
 			path = AVFoundation;
-			sourceTree = "<group>";
-		};
-		7BC354732C2C1EB30050EB72 /* Torch */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Torch;
 			sourceTree = "<group>";
 		};
 		D82182D72C33FF7B0015C5A9 /* Fonts */ = {
@@ -417,6 +434,7 @@
 			children = (
 				D84F10D82C27E52C00D8AAB9 /* Terra-Peregrini-Rahasya */,
 				D84F10D72C27E52C00D8AAB9 /* Products */,
+				62DAD29C2C3C71CD00B44F09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -634,8 +652,10 @@
 				7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */,
 				62C5ADBB2C3854610093C5E5 /* WaitingPlayerView.swift in Sources */,
 				D82182F02C365F1B0015C5A9 /* RoomReqHostView.swift in Sources */,
+				62DAD2992C3C656400B44F09 /* BluetoothManager.swift in Sources */,
 				62C5ADAA2C367B710093C5E5 /* Mission.swift in Sources */,
 				D821832A2C3916390015C5A9 /* IdCardOverView.swift in Sources */,
+				62DAD29B2C3C664200B44F09 /* BluetoothViews.swift in Sources */,
 				620E3B7A2C3B6EB1002D5032 /* UIImage.swift in Sources */,
 				D82183022C370AF70015C5A9 /* RoomCompSuccessHostView.swift in Sources */,
 				D82182E22C357ECA0015C5A9 /* InvitationView.swift in Sources */,
@@ -773,12 +793,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 3B2V262XU7;
+				DEVELOPMENT_TEAM = WTU6YK528U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Terra-Peregrini-Rahasya";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app needs access to Bluetooth to communicate with nearby devices.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "This app needs access to Bluetooth to communicate with nearby devices.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to use the camera for taking photos.";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
@@ -816,12 +838,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 3B2V262XU7;
+				DEVELOPMENT_TEAM = WTU6YK528U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Terra-Peregrini-Rahasya";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app needs access to Bluetooth to communicate with nearby devices.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "This app needs access to Bluetooth to communicate with nearby devices.";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your permission to use the camera for taking photos.";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configure accessories for immersive experience";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Configure nearby devices connectivity";
