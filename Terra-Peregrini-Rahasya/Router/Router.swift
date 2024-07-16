@@ -27,6 +27,7 @@ final class Router: ObservableObject {
         case homenotfound
         case missionIntro(Int)
         case missionMainScreen(Int)
+        case missionThreeMainScreen(Int)
         case leaderboard
         case firstplace
         case others

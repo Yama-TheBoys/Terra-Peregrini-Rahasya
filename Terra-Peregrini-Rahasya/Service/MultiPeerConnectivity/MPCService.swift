@@ -16,6 +16,7 @@ enum SendState: String {
     case playerQueued = "player-queue"
     case correctFirtMission = "correct-first-mission"
     case wrongFirstMission = "wrong-first-mission"
+    case shakeStatus = "shake-status"
     case unknown
 }
 

@@ -29,6 +29,7 @@
 		62C5ADC12C3860460093C5E5 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADC02C3860460093C5E5 /* PopUpView.swift */; };
 		62C5ADC32C3884300093C5E5 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADC22C3884300093C5E5 /* Instructions.swift */; };
 		62C5ADC72C39A2FF0093C5E5 /* PointResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADC62C39A2FF0093C5E5 /* PointResultView.swift */; };
+		62DAD2C02C457C4A00B44F09 /* MissionThreeMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAD2BF2C457C4A00B44F09 /* MissionThreeMainScreen.swift */; };
 		62EF13832C39BC77001DA6D9 /* ReconnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EF13822C39BC77001DA6D9 /* ReconnectingView.swift */; };
 		7B245F782C2D44F700DB1EA4 /* MPCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F772C2D44F700DB1EA4 /* MPCService.swift */; };
 		7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B245F7E2C2D586900DB1EA4 /* MPCView.swift */; };
@@ -82,10 +83,6 @@
 		D8CE19892C3C8F5100E28316 /* ShakeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE19882C3C8F5100E28316 /* ShakeDetector.swift */; };
 		D8CE198B2C3C914D00E28316 /* FlashlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE198A2C3C914D00E28316 /* FlashlightManager.swift */; };
 		D8CE198D2C3C919200E28316 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE198C2C3C919200E28316 /* GameManager.swift */; };
-		D8CE19922C3CD97700E28316 /* Ending-Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE198E2C3CD97600E28316 /* Ending-Sound.wav */; };
-		D8CE19932C3CD97700E28316 /* Clue-Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE198F2C3CD97700E28316 /* Clue-Sound.wav */; };
-		D8CE19942C3CD97700E28316 /* Mission-Start.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19902C3CD97700E28316 /* Mission-Start.wav */; };
-		D8CE19952C3CD97700E28316 /* Opening-Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D8CE19912C3CD97700E28316 /* Opening-Sound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +108,7 @@
 		62C5ADC02C3860460093C5E5 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		62C5ADC22C3884300093C5E5 /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
 		62C5ADC62C39A2FF0093C5E5 /* PointResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointResultView.swift; sourceTree = "<group>"; };
+		62DAD2BF2C457C4A00B44F09 /* MissionThreeMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionThreeMainScreen.swift; sourceTree = "<group>"; };
 		62EF13822C39BC77001DA6D9 /* ReconnectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconnectingView.swift; sourceTree = "<group>"; };
 		7B245F772C2D44F700DB1EA4 /* MPCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCService.swift; sourceTree = "<group>"; };
 		7B245F7E2C2D586900DB1EA4 /* MPCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCView.swift; sourceTree = "<group>"; };
@@ -167,10 +165,6 @@
 		D8CE19882C3C8F5100E28316 /* ShakeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeDetector.swift; sourceTree = "<group>"; };
 		D8CE198A2C3C914D00E28316 /* FlashlightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashlightManager.swift; sourceTree = "<group>"; };
 		D8CE198C2C3C919200E28316 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
-		D8CE198E2C3CD97600E28316 /* Ending-Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Ending-Sound.wav"; path = "../../../../../../../../Downloads/Ending-Sound.wav"; sourceTree = "<group>"; };
-		D8CE198F2C3CD97700E28316 /* Clue-Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Clue-Sound.wav"; path = "../../../../../../../../Downloads/Clue-Sound.wav"; sourceTree = "<group>"; };
-		D8CE19902C3CD97700E28316 /* Mission-Start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Mission-Start.wav"; path = "../../../../../../../../Downloads/Mission-Start.wav"; sourceTree = "<group>"; };
-		D8CE19912C3CD97700E28316 /* Opening-Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Opening-Sound.wav"; path = "../../../../../../../../Downloads/Opening-Sound.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +193,7 @@
 			children = (
 				62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */,
 				62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */,
+				62DAD2BF2C457C4A00B44F09 /* MissionThreeMainScreen.swift */,
 				62C5ADB82C37A6210093C5E5 /* VotingView.swift */,
 				D8CE19842C3C66A100E28316 /* ContentView.swift */,
 				D8CE198C2C3C919200E28316 /* GameManager.swift */,
@@ -511,10 +506,6 @@
 		D8CE19702C3B06FD00E28316 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				D8CE19902C3CD97700E28316 /* Mission-Start.wav */,
-				D8CE198F2C3CD97700E28316 /* Clue-Sound.wav */,
-				D8CE19912C3CD97700E28316 /* Opening-Sound.wav */,
-				D8CE198E2C3CD97600E28316 /* Ending-Sound.wav */,
 				D8CE19772C3B0BDF00E28316 /* Button-Clicked.wav */,
 				D8CE19722C3B071B00E28316 /* Point-Earned.wav */,
 			);
@@ -590,13 +581,9 @@
 				D82182FA2C3682180015C5A9 /* JetBrainsMono-Italic.ttf in Resources */,
 				D84F10E12C27E52D00D8AAB9 /* Preview Assets.xcassets in Resources */,
 				D8CE19742C3B071B00E28316 /* Point-Earned.wav in Resources */,
-				D8CE19942C3CD97700E28316 /* Mission-Start.wav in Resources */,
-				D8CE19932C3CD97700E28316 /* Clue-Sound.wav in Resources */,
 				620E3B772C3B08B2002D5032 /* Orbitron-Medium.ttf in Resources */,
 				D84F10DE2C27E52D00D8AAB9 /* Assets.xcassets in Resources */,
 				D8CE19782C3B0BDF00E28316 /* Button-Clicked.wav in Resources */,
-				D8CE19952C3CD97700E28316 /* Opening-Sound.wav in Resources */,
-				D8CE19922C3CD97700E28316 /* Ending-Sound.wav in Resources */,
 				D82182E42C358A540015C5A9 /* JetBrainsMono-Regular.ttf in Resources */,
 				D82182E82C359EEE0015C5A9 /* JetBrainsMono-Bold.ttf in Resources */,
 			);
@@ -673,6 +660,7 @@
 				7B245F7F2C2D586900DB1EA4 /* MPCView.swift in Sources */,
 				62C5ADBB2C3854610093C5E5 /* WaitingPlayerView.swift in Sources */,
 				D82182F02C365F1B0015C5A9 /* RoomReqHostView.swift in Sources */,
+				62DAD2C02C457C4A00B44F09 /* MissionThreeMainScreen.swift in Sources */,
 				62C5ADAA2C367B710093C5E5 /* Mission.swift in Sources */,
 				D821832A2C3916390015C5A9 /* IdCardOverView.swift in Sources */,
 				620E3B7A2C3B6EB1002D5032 /* UIImage.swift in Sources */,
@@ -813,7 +801,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 3B2V262XU7;
+				DEVELOPMENT_TEAM = WTU6YK528U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
@@ -858,7 +846,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 3B2V262XU7;
+				DEVELOPMENT_TEAM = WTU6YK528U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";

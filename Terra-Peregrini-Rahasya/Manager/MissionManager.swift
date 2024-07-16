@@ -16,7 +16,8 @@ class MissionManager: ObservableObject {
     @Published var shakeCount: Int = 0
     @Published var flashlightManager = FlashlightManager()
     
-    @Published var lampBrightness = 0.25
+    @Published var isShakeFinished = false
+    @Published var isFlashlightOn = false
     
     private var shakeDetector = ShakeDetector()
     
@@ -64,33 +65,33 @@ class MissionManager: ObservableObject {
     
     func startThirdMission() {
         detectShaking()
-        condition = { self.lampBrightness <= 1 }
-        
         startSession()
     }
     
     func detectShaking() {
         shakeDetector.onShakeDetected = { [weak self] in
-            
-            if self!.isFirstShaking && !self!.isGameFinish {
-                self!.isFirstShaking = false
-            } else if !self!.isFirstShaking && self!.isGameFinish {
-                self!.stopGame()
+            guard let self = self else { return }
+            if self.isFirstShaking && !self.isGameFinish {
+                self.isFirstShaking = false
+            } else if !self.isFirstShaking && self.isGameFinish {
+                self.stopGame()
             }
             
-            self?.handleShake()
+            self.handleShake()
         }
     }
     
     func startGame() {
         resetGame()
-        flashlightManager.toggleFlashlight(on: true)
+        self.isFlashlightOn = Bool.random()
+        flashlightManager.toggleFlashlight(on: isFlashlightOn)
         shakeDetector.startDetection()
     }
     
     func stopGame() {
         shakeDetector.stopDetection()
         flashlightManager.toggleFlashlight(on: false)
+        shakeCount = 0
     }
     
     private func resetGame() {
@@ -101,8 +102,8 @@ class MissionManager: ObservableObject {
     
     private func handleShake() {
         shakeCount += 1
-        lampBrightness += 0.0025
-        print("Lamp Brightness: \(lampBrightness)")
+//        lampBrightness += 0.0025
+//        print("Lamp Brightness: \(lampBrightness)")
     }
     
     private func turnOffFlashlight() {
@@ -112,7 +113,7 @@ class MissionManager: ObservableObject {
     
     private func startSession() {
         startGame()
-        var times = Int.random(in: 3...10)
+        var times = Int.random(in: 3...8)
         sessionDuration = TimeInterval(times)
         
         print(times)
@@ -125,12 +126,11 @@ class MissionManager: ObservableObject {
     private func endSession() {
         turnOffFlashlight()
         
-        //TODO: Simulasi Ganti Orang
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            if self.condition() {
-                self.startSession()
-            } else {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            if self.isShakeFinished {
                 self.stopGame()
+            } else {
+                self.startSession()
             }
         }
         

@@ -101,7 +101,13 @@ struct MissionIntro: View {
     }
     
     func moveToWaitingRoom() {
-        router.navigate(to: .waitingPlayerView(.missionMainScreen(mission)))
+        switch mission {
+        case 2:
+            router.navigate(to: .waitingPlayerView(.missionThreeMainScreen(mission)))
+        default:
+            router.navigate(to: .waitingPlayerView(.missionMainScreen(mission)))
+        }
+        
     }
 }
 

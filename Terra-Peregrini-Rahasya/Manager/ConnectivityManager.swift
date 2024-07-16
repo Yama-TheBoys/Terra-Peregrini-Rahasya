@@ -47,6 +47,9 @@ final class ConnectivityManager: ObservableObject {
     
     // For Voting
     @Published var playersVote = [MCPeerID : MCPeerID]()
+    
+    // For
+    @Published var lampBrightness = 0.05
         
     init(mpcService: MPCService? = nil) {
         self.mpcService = mpcService
@@ -152,6 +155,9 @@ final class ConnectivityManager: ObservableObject {
         
     }
     
+    func sentShakeMessage() {
+        self.mpcService?.sendMessageToPeers(.shakeStatus)
+    }
 }
 
 extension ConnectivityManager: MPCServiceDelegate {
@@ -195,8 +201,8 @@ extension ConnectivityManager: MPCServiceDelegate {
                 self.playersCorrectFirstMission[peerId] = true
                 
                 if !self.playersCorrectFirstMission.values.contains(where: { $0 == false }),
-                    self.isSelfCorrectFirstMission,
-                    self.playersCorrectFirstMission.count == 4 {
+                   self.isSelfCorrectFirstMission,
+                   self.playersCorrectFirstMission.count == 4 {
                     self.isAllPlayerCorrectFirstMission = true
                     
                     if !self.playersTimeStamp.values.contains(where: { $0 < self.selfTimeStamp}) {
@@ -208,6 +214,10 @@ extension ConnectivityManager: MPCServiceDelegate {
         case .wrongFirstMission:
             DispatchQueue.main.async {
                 self.playersCorrectFirstMission[peerId] = false
+            }
+        case .shakeStatus:
+            DispatchQueue.main.async {
+                self.lampBrightness += 0.00025
             }
         case .unknown:
             break

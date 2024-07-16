@@ -17,7 +17,7 @@ struct Terra_Peregrini_RahasyaApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navPath) {
-                MissionMainScreen(mission: 2)
+                DisclaimerView()
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
                         case .minimumreq:
@@ -52,6 +52,8 @@ struct Terra_Peregrini_RahasyaApp: App {
                             HomeNotFoundHostView()
                         case .missionIntro(let mission):
                             MissionIntro(mission: mission)
+                        case .missionThreeMainScreen(let mission):
+                            MissionThreeMainScreen(mission: mission)
                         case .missionMainScreen(let mission):
                             MissionMainScreen(mission: mission)
                         case .leaderboard:
