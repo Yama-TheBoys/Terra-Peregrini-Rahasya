@@ -34,7 +34,7 @@ struct AssembleView: View {
                 }
                 .padding(.bottom, -15)
                 
-                ForEach(0 ..< 4, id: \.self) { index in
+                ForEach(0 ..< (connectivityManager.mpcService?.maxNumberPeers ?? 2), id: \.self) { index in
                     ZStack{
                         Image.Candidate
                             .resizable()
@@ -114,7 +114,7 @@ struct AssembleView: View {
     }
     
     func isAssembled() -> Bool {
-        connectivityManager.connectedPeers.count == 4
+        connectivityManager.connectedPeers.count == connectivityManager.mpcService?.maxNumberPeers
     }
     
     func isCandidateExist(_ index: Int) -> String {

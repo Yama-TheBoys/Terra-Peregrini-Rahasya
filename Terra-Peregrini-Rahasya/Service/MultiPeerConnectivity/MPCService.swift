@@ -36,14 +36,14 @@ final class MPCService: NSObject {
     let peerSession: MCSession
     let browserSession: MCNearbyServiceBrowser
     let advertiserSession: MCNearbyServiceAdvertiser
-    let maxNumberPeers = 4
+    let maxNumberPeers = 2
     
     weak var delegate: MPCServiceDelegate?
     
     var confirmationFromPeers = [MCPeerID]()
     
     init(name: String, teamCode: String) {
-        self.localPeerId = MCPeerID(displayName: "\(name)#\(String().randomString(length: 3))")
+        self.localPeerId = MCPeerID(displayName: "\(name)#\(String().randomString(length: 1))")
         
         self.peerSession = MCSession(peer: localPeerId)
         self.browserSession = MCNearbyServiceBrowser(peer: localPeerId, serviceType: serviceType)
@@ -158,6 +158,10 @@ extension MPCService: MCSessionDelegate {
     
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: (any Error)?) {
         print("MPCService didFinishReceivingResourceWithName: \(resourceName), from: \(peerID)")
+    }
+    
+    func session(_ session: MCSession, didReceiveCertificate certificate: [Any]?, fromPeer peerID: MCPeerID, certificateHandler: @escaping (Bool) -> Void) {
+        certificateHandler(true)
     }
     
 }

@@ -47,8 +47,8 @@ struct WaitingVoteView: View {
     }
     
     func waitForOtherPlayer() {
-        teamProgress = Double(connectivityManager.playersVote.count) / 5.0
-        if connectivityManager.playersVote.count == 5 {
+        teamProgress = Double(connectivityManager.playersVote.count) / Double((connectivityManager.mpcService?.maxNumberPeers ?? 2) + 1)
+        if connectivityManager.playersVote.count == (connectivityManager.mpcService?.maxNumberPeers ?? 2) + 1 {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 router.navigateBack()
             }

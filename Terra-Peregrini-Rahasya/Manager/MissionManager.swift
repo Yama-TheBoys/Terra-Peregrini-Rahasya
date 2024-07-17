@@ -25,7 +25,6 @@ class MissionManager: ObservableObject {
                 let yawEqualToZero = motion?.attitude.yaw ?? 0.1 > -0.5 && motion?.attitude.yaw ?? 0.1 < 0.5
 
                 if pitchEqualToZero && rollEqualToZero && yawEqualToZero {
-                    print("device placed down")
                     DispatchQueue.main.async {
                         self.isFirstMissionDone = true
                         if self.doneTimeStamp == nil {
@@ -33,13 +32,17 @@ class MissionManager: ObservableObject {
                         }
                     }
                 } else {
-                    print("device not in right position")
                     DispatchQueue.main.async {
                         self.isFirstMissionDone = false
                     }
                 }
             }
         }
+    }
+    
+    func pauseFirstMission() {
+        print("pauseFirstMission")
+        cmService.endMotion()
     }
     
     func endFirstMission() {

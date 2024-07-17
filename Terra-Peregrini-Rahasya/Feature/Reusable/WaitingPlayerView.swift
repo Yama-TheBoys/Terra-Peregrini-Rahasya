@@ -50,9 +50,8 @@ struct WaitingPlayerView: View {
     }
     
     func waitForOtherPlayer() {
-        teamProgress = Double((connectivityManager.playersQueued.count + 1 )) / 5.0
-        print(self.teamProgress)
-        if connectivityManager.playersQueued.count == 4 {
+        teamProgress = Double((connectivityManager.playersQueued.count + 1 )) / Double(connectivityManager.mpcService?.maxNumberPeers ?? 2 + 1)
+        if connectivityManager.playersQueued.count == connectivityManager.mpcService?.maxNumberPeers {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 router.navigate(to: destination)
             }

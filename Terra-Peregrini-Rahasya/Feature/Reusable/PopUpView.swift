@@ -21,9 +21,9 @@ struct PopUpView: View {
         ZStack {
             Color(.black)
                 .opacity(0.7)
-                .onTapGesture {
-                    closeDialog()
-                }
+//                .onTapGesture {
+//                    closeDialog()
+//                }
             
             Image.Alert
                 .resizable()

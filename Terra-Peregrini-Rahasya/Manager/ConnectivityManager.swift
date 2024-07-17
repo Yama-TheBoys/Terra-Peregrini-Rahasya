@@ -129,7 +129,7 @@ final class ConnectivityManager: ObservableObject {
     func sendMessageCorrectFirstMission(correct: Bool) {
         if !self.playersCorrectFirstMission.values.contains(where: { $0 == false }),
            correct,
-           self.playersCorrectFirstMission.count == 4 {
+           self.playersCorrectFirstMission.count == self.mpcService?.maxNumberPeers {
             DispatchQueue.main.async {
                 self.isAllPlayerCorrectFirstMission = true
             }
@@ -163,7 +163,7 @@ final class ConnectivityManager: ObservableObject {
     
     func sendRequestToVote() {
         self.isRequestingVote = true
-        if self.isRequestingVote && self.playersRequest.count >= 2 {
+        if self.isRequestingVote && self.playersRequest.count >= 1 {
             self.isMoveToVotePage = true
         }
         
@@ -216,7 +216,7 @@ extension ConnectivityManager: MPCServiceDelegate {
         case .playerQueued:
             DispatchQueue.main.async {
                 self.playersQueued.append(peerId)
-                if self.playersQueued.count == 4 {
+                if self.playersQueued.count == self.mpcService?.maxNumberPeers {
                     self.isPlayersReady.toggle()
                 }
             }
@@ -226,7 +226,7 @@ extension ConnectivityManager: MPCServiceDelegate {
                 
                 if !self.playersCorrectFirstMission.values.contains(where: { $0 == false }),
                     self.isSelfCorrectFirstMission,
-                    self.playersCorrectFirstMission.count == 4 {
+                   self.playersCorrectFirstMission.count == self.mpcService?.maxNumberPeers {
                     self.isAllPlayerCorrectFirstMission = true
                     
                     if !self.playersTimeStamp.values.contains(where: { $0 < self.selfTimeStamp}) {
@@ -243,7 +243,7 @@ extension ConnectivityManager: MPCServiceDelegate {
             DispatchQueue.main.async {
                 self.playersRequest.append(peerId)
                 
-                if self.playersRequest.count > 2 || (self.isRequestingVote && self.playersRequest.count == 2) {
+                if self.playersRequest.count > 1 || (self.isRequestingVote && self.playersRequest.count == 1) {
                     self.isMoveToVotePage = true
                 }
             }

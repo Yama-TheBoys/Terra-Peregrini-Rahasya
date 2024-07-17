@@ -35,7 +35,7 @@ struct VotingView: View {
                 .padding(.top, 80)
                 .padding(.bottom, 40)
                 
-                ForEach(0..<connectivityManager.connectedPeers.count) { index in
+                ForEach(0..<connectivityManager.connectedPeers.count, id: \.self) { index in
                     HomeButton(title: connectivityManager.connectedPeers[index].displayName.uppercased(), isSelected: choosenPlayer == connectivityManager.connectedPeers[index].displayName)
                         .onTapGesture {
                             choosenPlayer = connectivityManager.connectedPeers[index].displayName
@@ -86,17 +86,22 @@ struct VotingView: View {
         .background(Color.TPRColor.PrimaryPurple)
         .navigationBarBackButtonHidden()
         .onAppear {
-            if connectivityManager.playersVote.count == 5 {
+            if connectivityManager.playersVote.count == (connectivityManager.mpcService?.maxNumberPeers ?? 2) + 1 {
                 isVotingDone = true
                 
                 var highestVotePLayers = [String: Int]()
                 
                 for (_, value) in connectivityManager.playersVote {
-                    if highestVotePLayers[value] == 1 {
-                        highestVotePLayers[value] = (highestVotePLayers[value] ?? 1) + 1
+                    if let votedPlayer = highestVotePLayers[value] {
+                        highestVotePLayers[value] = votedPlayer + 1
                     } else {
                         highestVotePLayers[value] = 1
                     }
+//                    if highestVotePLayers[value] ?? 1 >= 1 {
+//                        highestVotePLayers[value] = (highestVotePLayers[value] ?? 1) + 1
+//                    } else {
+//                        highestVotePLayers[value] = 1
+//                    }
                 }
                 print("highestVotePLayers", highestVotePLayers)
                 

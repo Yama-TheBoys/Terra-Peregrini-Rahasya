@@ -110,9 +110,6 @@ struct MissionMainScreen: View {
                     title: allMission[mission].tagline,
                     description: allMission[mission].objective
                 )
-                .onTapGesture {
-                    isShowInstruction = !isShowInstruction
-                }
                 
                 if mission == 1 && isOtherDeviceDetected {
                     
@@ -293,6 +290,7 @@ struct MissionMainScreen: View {
     
     func moveToVoting() {
         if connectivityManager.isMoveToVotePage {
+            missionManager.pauseFirstMission()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 isFromVotingScreen = true
                 router.navigate(to: .votingScreen)
@@ -303,6 +301,7 @@ struct MissionMainScreen: View {
     func onScreenAppear() {
         if isFromVotingScreen {
             connectivityManager.resetStatusVote()
+            missionManager.startFirstMission()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 isClueClicked = true
                 isFromVotingScreen = false
