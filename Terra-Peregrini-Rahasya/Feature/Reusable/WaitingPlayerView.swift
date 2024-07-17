@@ -11,7 +11,7 @@ struct WaitingPlayerView: View {
     @EnvironmentObject var router: Router
     @EnvironmentObject var connectivityManager: ConnectivityManager
     
-    @State var teamProgress = 0.2
+    @State var teamProgress = 0.0
     
     let destination: Router.Destination
     

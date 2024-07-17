@@ -18,6 +18,7 @@ enum SendState: String {
     case wrongFirstMission = "wrong-first-mission"
     case requestForClue = "request-for-clue"
     case moveToVote = "move-to-vote"
+    case shakeStatus = "shake-status"
     case unknown
 }
 

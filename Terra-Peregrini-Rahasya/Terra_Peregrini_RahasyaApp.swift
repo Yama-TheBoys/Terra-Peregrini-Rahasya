@@ -56,6 +56,8 @@ struct Terra_Peregrini_RahasyaApp: App {
                             MissionIntro(mission: mission)
                         case .missionMainScreen(let mission):
                             MissionMainScreen(mission: mission)
+                        case .missionThreeMainScreen(let mission):
+                            MissionThreeMainScreen(mission: mission)
                         case .leaderboard:
                             LeaderboardView()
                         case .firstplace:

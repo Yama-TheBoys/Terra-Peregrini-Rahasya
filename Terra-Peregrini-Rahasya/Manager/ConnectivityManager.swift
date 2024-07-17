@@ -51,6 +51,8 @@ final class ConnectivityManager: ObservableObject {
     @Published var isMoveToVotePage = false
     @Published var playersRequest = [MCPeerID]()
     @Published var playersVote = [MCPeerID : String]()
+    
+    @Published var lampBrightness = 0.55
         
     init(mpcService: MPCService? = nil) {
         self.mpcService = mpcService
@@ -176,6 +178,10 @@ final class ConnectivityManager: ObservableObject {
         self.mpcService?.sendVoteToPeers(vote: chosen)
     }
     
+    func sentShakeMessage() {
+        self.mpcService?.sendMessageToPeers(.shakeStatus)
+    }
+    
 }
 
 extension ConnectivityManager: MPCServiceDelegate {
@@ -250,6 +256,10 @@ extension ConnectivityManager: MPCServiceDelegate {
         case .requestForClue:
             DispatchQueue.main.async {
                 self.isShowPopUpVote = true
+            }
+        case .shakeStatus:
+            DispatchQueue.main.async {
+                self.lampBrightness += 0.0025
             }
         case .unknown:
             break

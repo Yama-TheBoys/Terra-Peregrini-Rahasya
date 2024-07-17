@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 extension UIImage {
-    func overlayWith(image: UIImage, at point: CGPoint) -> UIImage? {
+    func overlayWith(image: UIImage, at point: CGPoint, candidateName name: String) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         draw(in: CGRect(origin: point, size: CGSize(width: self.size.width * 0.6, height: self.size.height * 0.6)))
         image.draw(in: CGRect(origin: CGPoint(x: 0, y: 0), size: self.size))
         let combinedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return combinedImage!.combineImageAndText(text: "ANJAR", fontName: "Orbitron-Medium").resizeImage()
+        return combinedImage!.combineImageAndText(text: name, fontName: "Orbitron-Medium").resizeImage()
     }
     
     func combineImageAndText(text: String, fontName: String) -> UIImage {

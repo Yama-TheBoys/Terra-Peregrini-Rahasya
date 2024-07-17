@@ -11,6 +11,8 @@ struct TakePictureView: View {
     @EnvironmentObject var router: Router
     @StateObject private var cameraModel = CameraModel()
     
+    @AppStorage("candidateName") private var candidateName = ""
+    
     let idCardImage = UIImage(named: "IdCard")
     
     var body: some View {
@@ -58,7 +60,7 @@ struct TakePictureView: View {
         }
         .onChange(of: cameraModel.capturedPhoto) { _, photo in
             if let photo = photo {
-                let combinedImage = photo.overlayWith(image: idCardImage!, at: CGPoint(x: 230, y: 150))
+                let combinedImage = photo.overlayWith(image: idCardImage!, at: CGPoint(x: 230, y: 150), candidateName: candidateName)
                 if let combinedImage = combinedImage {
                     router.navigate(to: .captured(combinedImage))
                 }

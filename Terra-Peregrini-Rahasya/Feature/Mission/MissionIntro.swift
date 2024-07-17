@@ -10,7 +10,7 @@ import SwiftUI
 struct MissionIntro: View {
     @EnvironmentObject var router: Router
     
-    var mission: Int = 3
+    var mission: Int = 1
     
     var body: some View {
         VStack {
@@ -103,7 +103,13 @@ struct MissionIntro: View {
     }
     
     func moveToWaitingRoom() {
-        router.navigate(to: .waitingPlayerView(.missionMainScreen(mission)))
+        switch mission {
+        case 1:
+            router.navigate(to: .waitingPlayerView(.missionThreeMainScreen(mission)))
+        default:
+            router.navigate(to: .waitingPlayerView(.missionMainScreen(mission)))
+        }
+        
     }
 }
 

@@ -29,16 +29,16 @@ let allMission: [MissionDetail] = [
         missionSuccess: "Excellent work! The lighting power system has been restored.",
         missionFailed: "Mission failed! Lighting power system remains uncontrolled."
     ),
-    MissionDetail(
-        order: "2nd",
-        name: "Tolerance Skills",
-        description: "The test system has regained control of the lighting power, but it's unstable. Find a way to stabilize the lighting power system and make it work normally.",
-        tagline: "UNIQUENE5S IS A KEY VALUE FOR CREATING UNITY IN DIVERSITY",
-        objective: "_Objective:_ Find the **common ground** and **switch the lamp** back to normal.",
-        clue: "Unity forms where boundaries meet.",
-        missionSuccess: "Excellent job! You have found the common ground.",
-        missionFailed: "Mission failed! You were unable to find the common ground."
-    ),
+//    MissionDetail(
+//        order: "2nd",
+//        name: "Tolerance Skills",
+//        description: "The test system has regained control of the lighting power, but it's unstable. Find a way to stabilize the lighting power system and make it work normally.",
+//        tagline: "UNIQUENE5S IS A KEY VALUE FOR CREATING UNITY IN DIVERSITY",
+//        objective: "_Objective:_ Find the **common ground** and **switch the lamp** back to normal.",
+//        clue: "Unity forms where boundaries meet.",
+//        missionSuccess: "Excellent job! You have found the common ground.",
+//        missionFailed: "Mission failed! You were unable to find the common ground."
+//    ),
     MissionDetail(
         order: "3rd",
         name: "Collaboration Skills",

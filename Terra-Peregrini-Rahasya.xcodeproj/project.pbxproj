@@ -14,6 +14,9 @@
 		620E3B7F2C3B6FD7002D5032 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B7E2C3B6FD7002D5032 /* ActivityView.swift */; };
 		620E3B812C3B717E002D5032 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B802C3B717E002D5032 /* Util.swift */; };
 		620E3B832C3B7E60002D5032 /* CountdownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E3B822C3B7E60002D5032 /* CountdownTimerView.swift */; };
+		621145432C47806F000FE9F6 /* FlashlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621145422C47806F000FE9F6 /* FlashlightManager.swift */; };
+		621145452C4780BC000FE9F6 /* ShakeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621145442C4780BC000FE9F6 /* ShakeDetector.swift */; };
+		621145472C4781A2000FE9F6 /* MissionThreeMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621145462C4781A2000FE9F6 /* MissionThreeMainScreen.swift */; };
 		62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */; };
 		62C5ADA62C3644300093C5E5 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */; };
 		62C5ADA82C364A4D0093C5E5 /* MissionMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */; };
@@ -93,6 +96,9 @@
 		620E3B7E2C3B6FD7002D5032 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		620E3B802C3B717E002D5032 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		620E3B822C3B7E60002D5032 /* CountdownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerView.swift; sourceTree = "<group>"; };
+		621145422C47806F000FE9F6 /* FlashlightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FlashlightManager.swift; path = "Terra-Peregrini-Rahasya/Feature/Mission/FlashlightManager.swift"; sourceTree = SOURCE_ROOT; };
+		621145442C4780BC000FE9F6 /* ShakeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeDetector.swift; sourceTree = "<group>"; };
+		621145462C4781A2000FE9F6 /* MissionThreeMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionThreeMainScreen.swift; sourceTree = "<group>"; };
 		62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionIntro.swift; sourceTree = "<group>"; };
 		62C5ADA52C3644300093C5E5 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionMainScreen.swift; sourceTree = "<group>"; };
@@ -193,6 +199,7 @@
 				62C5ADA22C3590C50093C5E5 /* MissionIntro.swift */,
 				62C5ADA72C364A4D0093C5E5 /* MissionMainScreen.swift */,
 				62C5ADB82C37A6210093C5E5 /* VotingView.swift */,
+				621145462C4781A2000FE9F6 /* MissionThreeMainScreen.swift */,
 			);
 			path = Mission;
 			sourceTree = "<group>";
@@ -350,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				7BA3C33E2C390BEE00B3117E /* CMService.swift */,
+				621145442C4780BC000FE9F6 /* ShakeDetector.swift */,
 			);
 			path = CoreMotion;
 			sourceTree = "<group>";
@@ -365,6 +373,7 @@
 		7BC354722C2C1E9F0050EB72 /* AVFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				621145422C47806F000FE9F6 /* FlashlightManager.swift */,
 			);
 			path = AVFoundation;
 			sourceTree = "<group>";
@@ -612,6 +621,7 @@
 				7BC3545F2C2BF22A0050EB72 /* EmailView.swift in Sources */,
 				D84F10DA2C27E52C00D8AAB9 /* Terra_Peregrini_RahasyaApp.swift in Sources */,
 				7BA3C3432C39108400B3117E /* CMView.swift in Sources */,
+				621145472C4781A2000FE9F6 /* MissionThreeMainScreen.swift in Sources */,
 				D82182DE2C3402260015C5A9 /* Font.swift in Sources */,
 				7B0B24152C3C977800EC3F2D /* WaitingVoteView.swift in Sources */,
 				62C5ADBF2C385B910093C5E5 /* CardView.swift in Sources */,
@@ -645,9 +655,11 @@
 				62C5ADB12C36ECCF0093C5E5 /* FinalCodeView.swift in Sources */,
 				62C5ADB52C36F6580093C5E5 /* EndingStatus.swift in Sources */,
 				62C5ADBD2C3855EE0093C5E5 /* ColorBackgroundView.swift in Sources */,
+				621145432C47806F000FE9F6 /* FlashlightManager.swift in Sources */,
 				62C5ADC12C3860460093C5E5 /* PopUpView.swift in Sources */,
 				7BA3C33F2C390BEE00B3117E /* CMService.swift in Sources */,
 				62C5ADA32C3590C50093C5E5 /* MissionIntro.swift in Sources */,
+				621145452C4780BC000FE9F6 /* ShakeDetector.swift in Sources */,
 				7BC354652C2BF54D0050EB72 /* Color.swift in Sources */,
 				7BA3C3452C3930A100B3117E /* GAService.swift in Sources */,
 				620E3B832C3B7E60002D5032 /* CountdownTimerView.swift in Sources */,
@@ -793,7 +805,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 3B2V262XU7;
+				DEVELOPMENT_TEAM = WTU6YK528U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
@@ -836,7 +848,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Terra-Peregrini-Rahasya/Preview Content\"";
-				DEVELOPMENT_TEAM = 3B2V262XU7;
+				DEVELOPMENT_TEAM = WTU6YK528U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra-Peregrini-Rahasya/Info.plist";
