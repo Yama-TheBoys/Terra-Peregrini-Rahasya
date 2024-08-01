@@ -36,7 +36,7 @@ final class MPCService: NSObject {
     let peerSession: MCSession
     let browserSession: MCNearbyServiceBrowser
     let advertiserSession: MCNearbyServiceAdvertiser
-    let maxNumberPeers = 2
+    let maxNumberPeers = 1
     
     weak var delegate: MPCServiceDelegate?
     
@@ -99,6 +99,7 @@ final class MPCService: NSObject {
         
         let isRoomFull = peerSession.connectedPeers.count == maxNumberPeers
         if isRoomFull {
+            print("Room Full stop boradcasting")
             self.stopBroadcasting()
         }
     }
@@ -118,7 +119,7 @@ final class MPCService: NSObject {
             delegate?.didReceiveTimeStamp(timestamp, fromPeer: peer)
         }
     }
-        
+    
 }
 
 extension MPCService: MCSessionDelegate {
@@ -145,7 +146,7 @@ extension MPCService: MCSessionDelegate {
         print("MPCService didReceive: \(data), from: \(peerID)")
         
         peerDidShareMessage(data, from: peerID)
-//        delegate?.didReceiveData(data, fromPeer: peerID)
+        //        delegate?.didReceiveData(data, fromPeer: peerID)
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -169,11 +170,15 @@ extension MPCService: MCSessionDelegate {
 extension MPCService: MCNearbyServiceBrowserDelegate {
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
         print("Nearby browser foundPeer: \(peerID), withDiscoveryInfo: \(String(describing: info))")
-
+        
         let isTeamCodeSame = info?["team_code"] == self.advertiserSession.discoveryInfo?["team_code"] && peerSession.connectedPeers.count < maxNumberPeers
-            if isTeamCodeSame {
-                browser.invitePeer(peerID, to: peerSession, withContext: nil, timeout: 10)
-            }
+        let isTheFirstBroadcast = Double(info?["timestamp"] ?? "1") ?? 1 > Double(self.advertiserSession.discoveryInfo?["timestamp"] ?? "1") ?? 1
+        if isTeamCodeSame, isTheFirstBroadcast {
+            print("invitePeer")
+            browser.invitePeer(peerID, to: peerSession, withContext: nil, timeout: 10)
+        } else {
+            self.browserSession.stopBrowsingForPeers()
+        }
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
